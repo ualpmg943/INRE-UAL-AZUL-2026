@@ -12,7 +12,31 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, proveedor y administrador. Los compradores pueden agregar productos, consultar precios, finalizar la compra y consultar ofertas. Agregar productos implica marcar esos productos como bloqueados. Los vendedores también pueden consultar ofertas y consultar precios. Los proveedores pueden consultar precios, avisar de nuevos productos y consultar ofertas. Avisar de nuevos productos, de forma excepcional, realiza la incorporación de una oferta. Los proveedores también tienen una funcionalidad para avisar del fin de una oferta. Cuando se avisa del fin de una oferta, se ejecuta la funcionalidad de eliminar la oferta. Ambas funcionalidades de avisar del proveedor tienen en común que se encarga de enviar una notificación. Los administradores pueden consultar precios, consultar ofertas y eliminar productos. La funcionalidad de consultar precios incluye una funcionalidad de buscar productos que es similar a la funcionalidad de consultar productos de los compradores. Sin embargo, la funcionalidad de consultar productos añade una funcionalidad para verificar la disponibilidad. Para realizar una venta, un comprador y un vendedor participan de forma conjunta. En dicha operación, se lleva a cabo el acuerdo de un precio; excepcionalmente, durante la realización de la venta, se consultará el histórico de ventas.
 
 ![Ejercicio-2](ejercicio2.png)
-#### Aqui los requisitos del diagrama
+
+### Requisitos del diagrama de casos de uso
+| **Nombre:**        | <span>Agregar productos</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span>Permite agregar un producto a la cesta de compra.</span> |
+| **Actores:**       | <span>Comprador</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- El actor pulsa sobre el botón para agregar un producto a su cesta. <br>2.- El sistema añade el producto deseado a la cesta de compra del actor. <br>3.- El sistema muestra un mensaje de éxito.</span> |
+| **Flujo Alternativo:** | <span>2.A- El sistema añade el producto deseado a la cesta del comprador, si el producto no está disponible cancela la operción y avisa al actor.</span> |
+| **Poscondiciones:**| <span>El producto debe haberse guardado en la cesta de la compra del actor.</span> |
+
+### ---
+
+| **Nombre:**        | <span>Finalizar compra</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | INRE Equipo Azul |
+| **Fecha:**         | 23/09/2025 |
+| **Descripción:**   | Permite finalizar el proceso de selección de productos y pasar al proceso de pago. |
+| **Actores:**       | Comprador |
+| **Precondiciones:**| El usuario debe estar autenticado en el sistema y debe tener como mínimo un producto en la cesta. |
+| **Flujo Normal:**  | 1.- El actor pulsa sobre el botón para finalizar la compra. <br>2.- El sistema redirige al actor a la pasarela de pagos. <br>3.- Cuando el actor completa el proceso de pago el sistema comprueba que se haya hecho con exito. <br>4.- El sistema muestra una notificacion de éxito e inicia el proceso de envío de los productos. |
+| **Flujo Alternativo:** | 1.A- El sistema identifica si no hay productos en la cesta y notifica al actor que debe añadirlos antes de poder comprar. <br>3.A- Si el pago es fraudulento o no se ha completado con exito el sistema se lo comunica al actor y le da la opción de repetirlo. |
+| **Poscondiciones:**| Los productos se marcan como comprados y se preparan para ser enviados. |
 
 ## Supuesto 3: Compañia Hotelera
 

@@ -246,7 +246,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-205 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar precios" para el actor Proveedor. |
 | **Actores:** | Proveedor |
 | **Precondiciones:**| El proveedor debe estar autenticado. |
@@ -261,7 +261,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-206 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar precios" para el actor Administrador, que **incluye** la funcionalidad de "Buscar productos". |
 | **Actores:** | Administrador |
 | **Precondiciones:**| El administrador debe estar autenticado. |
@@ -276,7 +276,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-207 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Caso de uso general para que los usuarios puedan consultar las ofertas disponibles. |
 | **Actores:** | Comprador, Vendedor, Proveedor, Administrador |
 | **Precondiciones:**| El actor debe estar autenticado en el sistema. |
@@ -291,7 +291,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-208 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Comprador. |
 | **Actores:** | Comprador |
 | **Precondiciones:**| El comprador debe estar autenticado. |
@@ -306,7 +306,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-209 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Vendedor. |
 | **Actores:** | Vendedor |
 | **Precondiciones:**| El vendedor debe estar autenticado. |
@@ -321,7 +321,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-210 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Proveedor. |
 | **Actores:** | Proveedor |
 | **Precondiciones:**| El proveedor debe estar autenticado. |
@@ -336,7 +336,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-211 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Administrador. |
 | **Actores:** | Administrador |
 | **Precondiciones:**| El administrador debe estar autenticado. |
@@ -351,7 +351,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-212 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Permite al proveedor notificar la llegada de nuevos productos. Opcionalmente, **extiende** la funcionalidad a "Incorporar oferta". **Incluye** el envío de una notificación. |
 | **Actores:** | Proveedor |
 | **Precondiciones:**| El proveedor debe estar autenticado. |
@@ -366,7 +366,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-213 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Permite al proveedor notificar el fin de una oferta. **Incluye** las funcionalidades "Eliminar oferta" y "Enviar notificación". |
 | **Actores:** | Proveedor |
 | **Precondiciones:**| El proveedor debe estar autenticado. |
@@ -381,7 +381,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-214 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Permite al administrador eliminar un producto del sistema. |
 | **Actores:** | Administrador |
 | **Precondiciones:**| El administrador debe estar autenticado. |
@@ -396,7 +396,7 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | :--- | :--- |
 | **Codigo:** | CU-220 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Gestiona el proceso de venta entre un comprador y un vendedor. **Incluye** "Acordar un precio" y, excepcionalmente, **extiende** a "Consultar el histórico de ventas". |
 | **Actores:** | Comprador, Vendedor |
 | **Precondiciones:**| Comprador y vendedor deben estar autenticados. |

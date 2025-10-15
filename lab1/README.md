@@ -9,150 +9,170 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 </p>
 
 ### Requisitos del diagrama de casos de uso
-| **Nombre:**        | <span>Proponer cambios en los horarios</span> |
-|---------------------|---------------------------------------------------------------|
-| **Codigo:**         | <span>CU-101</span> |
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span>Permite proponer un cambio en un horario existente.</span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
-| **Artefactos relacionados:**         | <span></span> |
+
+| **Nombre:** | <span>Proponer cambios en los horarios</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-101</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Permite al PDI proponer un cambio en un horario existente para su posterior revisión y aprobación.</span> |
+| **Actores:** | <span>PDI</span> |
+| **Precondiciones:**| <span>El actor debe estar autenticado en el sistema como PDI.</span> |
+| **Flujo Normal:** | <span>1.- El PDI selecciona la opción para proponer un cambio de horario. <br>2.- El sistema muestra el horario actual. <br>3.- El PDI introduce los cambios deseados y una justificación. <br>4.- El sistema registra la propuesta y la envía para su aprobación.</span> |
+| **Flujo Alternativo:** | <span>3.A- El PDI decide cancelar la operación y el sistema vuelve al menú principal.</span> |
+| **Poscondiciones:**| <span>La propuesta de cambio de horario queda registrada en el sistema pendiente de aprobación.</span> |
+| **Artefactos relacionados:**| <span></span> |
 
 ### ---
 
-| **Nombre:**        | <span>Dar alta estudiante(PDI)</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span></span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
+| **Nombre:** | <span>Dar alta estudiante</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-102</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Caso de uso general para dar de alta a un estudiante en el sistema. Incluye la verificación de los datos del estudiante.</span> |
+| **Actores:** | <span>PDI, PAS</span> |
+| **Precondiciones:**| <span>El actor debe estar autenticado en el sistema.</span> |
+| **Flujo Normal:** | <span>1.- El actor inicia el proceso de alta. <br>2.- El sistema solicita los datos del estudiante. <br>3.- El actor introduce los datos. <br>4.- Se ejecuta el caso de uso "Verificar datos del estudiante" (CU-105). <br>5.- El sistema confirma el alta del estudiante.</span> |
+| **Flujo Alternativo:** | <span>4.A- Si la verificación de datos falla, el sistema informa al actor y permite corregir los datos.</span> |
+| **Poscondiciones:**| <span>El estudiante queda registrado en el sistema.</span> |
+| **Artefactos relacionados:**| <span>CU-103, CU-104, CU-105</span> |
 
 ### ---
 
-| **Nombre:**        | <span>Realizar busqueda en la lista de clase</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span></span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
+| **Nombre:** | <span>Dar alta estudiante(PDI)</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-103</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Versión del caso de uso "Dar alta estudiante" para el PDI. Opcionalmente, **extiende** la funcionalidad para buscar en la lista de clase.</span> |
+| **Actores:** | <span>PDI</span> |
+| **Precondiciones:**| <span>El actor debe estar autenticado como PDI.</span> |
+| **Flujo Normal:** | <span>1.- El PDI inicia el proceso de alta. <br>2.- El sistema solicita los datos del estudiante. <br>3.- El PDI introduce los datos. <br>4.- Se ejecuta el caso de uso "Verificar datos del estudiante" (CU-105). <br>5.- El sistema confirma el alta.</span> |
+| **Flujo Alternativo:** | <span>3.A- De forma excepcional, el PDI puede ejecutar el caso de uso "Realizar busqueda en la lista de clase" (CU-106) para autocompletar datos.</span> |
+| **Poscondiciones:**| <span>El estudiante queda registrado en el sistema.</span> |
+| **Artefactos relacionados:**| <span>CU-102, CU-105, CU-106</span> |
 
 ### ---
 
-| **Nombre:**        | <span>Dar alta estudiante</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span></span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
+| **Nombre:** | <span>Dar alta estudiante(PAS)</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-104</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Versión del caso de uso "Dar alta estudiante" para el PAS.</span> |
+| **Actores:** | <span>PAS</span> |
+| **Precondiciones:**| <span>El actor debe estar autenticado como PAS.</span> |
+| **Flujo Normal:** | <span>1.- El PAS inicia el proceso de alta. <br>2.- El sistema solicita los datos del estudiante. <br>3.- El PAS introduce los datos. <br>4.- Se ejecuta el caso de uso "Verificar datos del estudiante" (CU-105). <br>5.- El sistema confirma el alta.</span> |
+| **Flujo Alternativo:** | <span>4.A- Si la verificación de datos falla, el sistema informa al actor y permite corregir los datos.</span> |
+| **Poscondiciones:**| <span>El estudiante queda registrado en el sistema.</span> |
+| **Artefactos relacionados:**| <span>CU-102, CU-105</span> |
 
 ### ---
 
-| **Nombre:**        | <span>Verificar datos del estudiante</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span></span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
+| **Nombre:** | <span>Verificar datos del estudiante</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-105</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Funcionalidad que se **incluye** en "Dar alta estudiante" para verificar que los datos del estudiante son correctos y válidos.</span> |
+| **Actores:** | <span>(Sistema)</span> |
+| **Precondiciones:**| <span>Se está ejecutando un caso de uso que lo incluye (CU-103 o CU-104).</span> |
+| **Flujo Normal:** | <span>1.- El sistema recibe los datos del estudiante. <br>2.- El sistema comprueba el formato y la validez de los datos contra la base de datos de la universidad. <br>3.- El sistema devuelve un resultado de validación exitoso.</span> |
+| **Flujo Alternativo:** | <span>2.A- Si los datos no son válidos, el sistema devuelve un resultado de error.</span> |
+| **Poscondiciones:**| <span>Los datos del estudiante han sido validados.</span> |
+| **Artefactos relacionados:**| <span>CU-102</span> |
 
 ### ---
 
-| **Nombre:**        | <span>Dar alta estudiante(PAS)</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span></span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
+| **Nombre:** | <span>Realizar busqueda en la lista de clase</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-106</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Funcionalidad que **extiende** opcionalmente a "Dar alta estudiante(PDI)" para buscar a un estudiante en las listas de clase de las asignaturas del PDI.</span> |
+| **Actores:** | <span>PDI</span> |
+| **Precondiciones:**| <span>Se está ejecutando el caso de uso "Dar alta estudiante(PDI)" (CU-103).</span> |
+| **Flujo Normal:** | <span>1.- El PDI activa la búsqueda en la lista de clase. <br>2.- El sistema solicita el nombre del estudiante y la asignatura. <br>3.- El PDI introduce los datos. <br>4.- El sistema busca al estudiante y, si lo encuentra, autocompleta los datos en el formulario de alta.</span> |
+| **Flujo Alternativo:** | <span>4.A- Si el estudiante no se encuentra en la lista de clase, el sistema lo notifica.</span> |
+| **Poscondiciones:**| <span>Los datos del estudiante se han recuperado de la lista de clase.</span> |
+| **Artefactos relacionados:**| <span>CU-103</span> |
 
 ### ---
 
-| **Nombre:**        | <span>Modificar horarios</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span></span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
+| **Nombre:** | <span>Modificar horarios</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-107</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Permite al personal del PAS modificar directamente los horarios existentes.</span> |
+| **Actores:** | <span>PAS</span> |
+| **Precondiciones:**| <span>El actor debe estar autenticado como PAS.</span> |
+| **Flujo Normal:** | <span>1.- El PAS selecciona el horario que desea modificar. <br>2.- El sistema muestra la información del horario en un formulario editable. <br>3.- El PAS realiza las modificaciones. <br>4.- El PAS guarda los cambios y el sistema actualiza el horario.</span> |
+| **Flujo Alternativo:** | <span>3.A- El PAS cancela la modificación y los cambios no se guardan.</span> |
+| **Poscondiciones:**| <span>El horario ha sido actualizado en el sistema.</span> |
+| **Artefactos relacionados:**| <span></span> |
 
 ### ---
 
-| **Nombre:**        | <span>Consultar horarios(PAS)</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span></span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
+| **Nombre:** | <span>Consultar horario</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-108</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Caso de uso general que permite a los usuarios consultar horarios. Es especializado por los diferentes roles.</span> |
+| **Actores:** | <span>PDI, PAS, Estudiante</span> |
+| **Precondiciones:**| <span>El actor debe estar autenticado.</span> |
+| **Flujo Normal:** | <span>1.- El actor accede a la función de consulta de horarios. <br>2.- El sistema muestra las opciones de búsqueda (por curso, profesor, asignatura, etc.). <br>3.- El actor introduce sus criterios de búsqueda y el sistema muestra los resultados.</span> |
+| **Flujo Alternativo:** | <span>3.A- Si la búsqueda no produce resultados, el sistema muestra un mensaje informativo.</span> |
+| **Poscondiciones:**| <span>El actor ha visualizado la información del horario solicitado.</span> |
+| **Artefactos relacionados:**| <span>CU-109, CU-110, CU-111</span> |
 
 ### ---
 
-| **Nombre:**        | <span>Consultar horario</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span></span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
+| **Nombre:** | <span>Consultar horario(PDI)</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-109</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Versión del caso de uso "Consultar horario" para el actor PDI.</span> |
+| **Actores:** | <span>PDI</span> |
+| **Precondiciones:**| <span>El actor debe estar autenticado como PDI.</span> |
+| **Flujo Normal:** | <span>1.- El PDI accede a la consulta de horarios. <br>2.- El sistema muestra por defecto los horarios de sus asignaturas. <br>3.- El PDI puede realizar búsquedas específicas. <br>4.- El sistema muestra los horarios solicitados.</span> |
+| **Flujo Alternativo:** | <span>3.A- Si la búsqueda no produce resultados, el sistema lo indica.</span> |
+| **Poscondiciones:**| <span>El actor ha visualizado la información del horario.</span> |
+| **Artefactos relacionados:**| <span>CU-108</span> |
 
 ### ---
 
-| **Nombre:**        | <span>Consultar horario(estudiante)</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span></span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
+| **Nombre:** | <span>Consultar horario(PAS)</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-110</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Versión del caso de uso "Consultar horario" para el actor PAS.</span> |
+| **Actores:** | <span>PAS</span> |
+| **Precondiciones:**| <span>El actor debe estar autenticado como PAS.</span> |
+| **Flujo Normal:** | <span>1.- El PAS accede a la consulta de horarios. <br>2.- El sistema proporciona opciones de búsqueda avanzadas (por titulación, grupo, aula, etc.). <br>3.- El PAS introduce los criterios y el sistema muestra los resultados.</span> |
+| **Flujo Alternativo:** | <span>3.A- Si la búsqueda no produce resultados, el sistema lo indica.</span> |
+| **Poscondiciones:**| <span>El actor ha visualizado la información del horario.</span> |
+| **Artefactos relacionados:**| <span>CU-108</span> |
 
 ### ---
 
-| **Nombre:**        | <span>Consultar horario(PDI)</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span></span> |
-| **Actores:**       | <span>PDI</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- </span> |
-| **Flujo Alternativo:** | <span></span> |
-| **Poscondiciones:**| <span></span> |
-
-</br>
+| **Nombre:** | <span>Consultar horario(Estudiante)</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-111</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>23/09/2025</span> |
+| **Descripción:** | <span>Versión del caso de uso "Consultar horario" para el actor Estudiante.</span> |
+| **Actores:** | <span>Estudiante</span> |
+| **Precondiciones:**| <span>El actor debe estar autenticado como Estudiante.</span> |
+| **Flujo Normal:** | <span>1.- El estudiante accede a la consulta de horarios. <br>2.- El sistema muestra el horario personal del estudiante según sus asignaturas matriculadas. <br>3.- El estudiante puede realizar búsquedas de otros horarios.</span> |
+| **Flujo Alternativo:** | <span>3.A- Si la búsqueda no produce resultados, el sistema lo indica.</span> |
+| **Poscondiciones:**| <span>El actor ha visualizado la información del horario.</span> |
+| **Artefactos relacionados:**| <span>CU-108</span> |
+<br>
 
 ## Supuesto 2: Sistema de compras
 

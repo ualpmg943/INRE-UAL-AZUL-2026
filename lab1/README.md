@@ -207,6 +207,21 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Flujo Alternativo:** | 1.A- El sistema identifica si no hay productos en la cesta y notifica al actor que debe añadirlos antes de poder comprar. <br>3.A- Si el pago es fraudulento o no se ha completado con exito el sistema se lo comunica al actor y le da la opción de repetirlo. |
 | **Poscondiciones:**| Los productos se marcan como comprados y se preparan para ser enviados. |
 
+### ---
+
+| **Nombre:** | \<span\>Consultar productos\</span\> |
+|---------------------|---------------------------------------------------------------|
+| **Codigo:** | \<span\>CU-201\</span\> |
+| **Autor:** | \<span\>INRE Equipo Azul\</span\> |
+| **Fecha:** | \<span\>23/09/2025\</span\> |
+| **Descripción:** | \<span\>Permite a los compradores ver los productos disponibles en el sistema. Incluye la verificación de la disponibilidad del producto.\</span\> |
+| **Actores:** | \<span\>Comprador\</span\> |
+| **Precondiciones:**| \<span\>El actor debe haber iniciado sesión en el sistema.\</span\> |
+| **Flujo Normal:** | \<span\>1.- El comprador selecciona la opción de consultar productos. <br>2.- El sistema muestra una lista de los productos. <br>3.- El comprador selecciona un producto para ver los detalles. <br>4.- El sistema muestra la información del producto y ejecuta "Verificar disponibilidad" (CU-215).\</span\> |
+| **Flujo Alternativo:** | \<span\>2.A- Si no hay productos, el sistema muestra un mensaje indicándolo.\</span\> |
+| **Poscondiciones:**| \<span\>El comprador ha visto la información y disponibilidad de un producto.\</span\> |
+| **Artefactos relacionados:** | \<span\>CU-215\</span\> |
+
 </br>
 
 ## Supuesto 3: Compañia Hotelera

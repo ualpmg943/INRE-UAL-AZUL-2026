@@ -182,38 +182,11 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
   <img src="supuesto2.jpg" alt="img_supuesto1" width="750">
 </p>
 
-### Requisitos del diagrama de casos de uso
-| **Nombre:**        | <span>Agregar productos</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | <span>INRE Equipo Azul</span> |
-| **Fecha:**         | <span>23/09/2025</span> |
-| **Descripción:**   | <span>Permite agregar un producto a la cesta de compra.</span> |
-| **Actores:**       | <span>Comprador</span> |
-| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
-| **Flujo Normal:**  | <span>1.- El actor pulsa sobre el botón para agregar un producto a su cesta. <br>2.- El sistema añade el producto deseado a la cesta de compra del actor. <br>3.- El sistema muestra un mensaje de éxito.</span> |
-| **Flujo Alternativo:** | <span>2.A- El sistema añade el producto deseado a la cesta del comprador, si el producto no está disponible cancela la operción y avisa al actor.</span> |
-| **Poscondiciones:**| <span>El producto debe haberse guardado en la cesta de la compra del actor.</span> |
-
-### ---
-
-| **Nombre:**        | <span>Finalizar compra</span> |
-|---------------------|---------------------------------------------------------------|
-| **Autor:**         | INRE Equipo Azul |
-| **Fecha:**         | 23/09/2025 |
-| **Descripción:**   | Permite finalizar el proceso de selección de productos y pasar al proceso de pago. |
-| **Actores:**       | Comprador |
-| **Precondiciones:**| El usuario debe estar autenticado en el sistema y debe tener como mínimo un producto en la cesta. |
-| **Flujo Normal:**  | 1.- El actor pulsa sobre el botón para finalizar la compra. <br>2.- El sistema redirige al actor a la pasarela de pagos. <br>3.- Cuando el actor completa el proceso de pago el sistema comprueba que se haya hecho con exito. <br>4.- El sistema muestra una notificacion de éxito e inicia el proceso de envío de los productos. |
-| **Flujo Alternativo:** | 1.A- El sistema identifica si no hay productos en la cesta y notifica al actor que debe añadirlos antes de poder comprar. <br>3.A- Si el pago es fraudulento o no se ha completado con exito el sistema se lo comunica al actor y le da la opción de repetirlo. |
-| **Poscondiciones:**| Los productos se marcan como comprados y se preparan para ser enviados. |
-
-### ---
-
 | **Nombre:** | Consultar productos |
 | :--- | :--- |
 | **Codigo:** | CU-201 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 23/09/2025 |
+| **Fecha:** | 15/10/2025 |
 | **Descripción:** | Permite a los compradores ver los productos disponibles en el sistema. Incluye la verificación de la disponibilidad del producto. |
 | **Actores:** | Comprador |
 | **Precondiciones:**| El actor debe haber iniciado sesión en el sistema. |
@@ -221,6 +194,51 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Flujo Alternativo:** | 2.A- Si no hay productos, el sistema muestra un mensaje indicándolo. |
 | **Poscondiciones:**| El comprador ha visto la información y disponibilidad de un producto. |
 | **Artefactos relacionados:**| CU-215 |
+
+### ---
+
+| **Nombre:** | Consultar precios |
+| :--- | :--- |
+| **Codigo:** | CU-202 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 15/10/2025 |
+| **Descripción:** | Caso de uso general para consultar los precios de los productos. Es utilizado por compradores, vendedores, proveedores y administradores. |
+| **Actores:** | Comprador, Vendedor, Proveedor, Administrador |
+| **Precondiciones:**| El actor debe estar autenticado en el sistema. |
+| **Flujo Normal:** | 1.- El actor elige la opción de consultar precios. <br>2.- El sistema le permite buscar productos. <br>3.- El actor busca un producto. <br>4.- El sistema muestra el precio del producto. |
+| **Flujo Alternativo:** | 3.A- Si el producto no se encuentra, el sistema muestra un mensaje. |
+| **Poscondiciones:**| El actor ha consultado el precio de un producto. |
+| **Artefactos relacionados:**| CU-203, CU-204, CU-205, CU-206 |
+
+### ---
+
+| **Nombre:** | Consultar precios (comprador) |
+| :--- | :--- |
+| **Codigo:** | CU-203 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 15/10/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar precios" para el actor Comprador. |
+| **Actores:** | Comprador |
+| **Precondiciones:**| El comprador debe estar autenticado. |
+| **Flujo Normal:** | 1.- El comprador busca un producto. <br>2.- El sistema muestra el precio del producto. |
+| **Flujo Alternativo:** | 1.A- Si el producto no existe, se notifica al comprador. |
+| **Poscondiciones:**| El comprador conoce el precio de un producto. |
+| **Artefactos relacionados:**| CU-202 |
+
+### ---
+
+| **Nombre:** | Consultar precios (vendedor) |
+| :--- | :--- |
+| **Codigo:** | CU-204 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 15/10/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar precios" para el actor Vendedor. |
+| **Actores:** | Vendedor |
+| **Precondiciones:**| El vendedor debe estar autenticado. |
+| **Flujo Normal:** | 1.- El vendedor busca un producto. <br>2.- El sistema muestra el precio del producto. |
+| **Flujo Alternativo:** | 1.A- Si el producto no existe, se notifica al vendedor. |
+| **Poscondiciones:**| El vendedor conoce el precio de un producto. |
+| **Artefactos relacionados:**| CU-202 |
 
 </br>
 

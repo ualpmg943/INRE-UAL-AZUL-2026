@@ -240,6 +240,171 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Poscondiciones:**| El vendedor conoce el precio de un producto. |
 | **Artefactos relacionados:**| CU-202 |
 
+### ---
+
+| **Nombre:** | Consultar precios (proveedor) |
+| :--- | :--- |
+| **Codigo:** | CU-205 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar precios" para el actor Proveedor. |
+| **Actores:** | Proveedor |
+| **Precondiciones:**| El proveedor debe estar autenticado. |
+| **Flujo Normal:** | 1.- El proveedor busca un producto. <br>2.- El sistema muestra el precio del producto. |
+| **Flujo Alternativo:** | 1.A- Si el producto no existe, se notifica al proveedor. |
+| **Poscondiciones:**| El proveedor conoce el precio de un producto. |
+| **Artefactos relacionados:**| CU-202 |
+
+### ---
+
+| **Nombre:** | Consultar precios (administrador) |
+| :--- | :--- |
+| **Codigo:** | CU-206 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar precios" para el actor Administrador, que **incluye** la funcionalidad de "Buscar productos". |
+| **Actores:** | Administrador |
+| **Precondiciones:**| El administrador debe estar autenticado. |
+| **Flujo Normal:** | 1.- El administrador ejecuta "Buscar productos" (CU-216). <br>2.- El sistema muestra el precio del producto encontrado. |
+| **Flujo Alternativo:** | 1.A- Si no se encuentra el producto, el sistema lo notifica. |
+| **Poscondiciones:**| El administrador conoce el precio de un producto. |
+| **Artefactos relacionados:**| CU-202, CU-216 |
+
+### ---
+
+| **Nombre:** | Consultar oferta |
+| :--- | :--- |
+| **Codigo:** | CU-207 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Caso de uso general para que los usuarios puedan consultar las ofertas disponibles. |
+| **Actores:** | Comprador, Vendedor, Proveedor, Administrador |
+| **Precondiciones:**| El actor debe estar autenticado en el sistema. |
+| **Flujo Normal:** | 1.- El actor accede a la sección de ofertas. <br>2.- El sistema muestra las ofertas disponibles. <br>3.- El actor selecciona una oferta para ver sus detalles. |
+| **Flujo Alternativo:** | 2.A- Si no hay ofertas, el sistema muestra un mensaje. |
+| **Poscondiciones:**| El actor ha visto las ofertas disponibles. |
+| **Artefactos relacionados:**| CU-208, CU-209, CU-210, CU-211 |
+
+### ---
+
+| **Nombre:** | Consultar oferta (comprador) |
+| :--- | :--- |
+| **Codigo:** | CU-208 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Comprador. |
+| **Actores:** | Comprador |
+| **Precondiciones:**| El comprador debe estar autenticado. |
+| **Flujo Normal:** | 1.- El comprador accede a las ofertas. <br>2.- El sistema le muestra las ofertas. |
+| **Flujo Alternativo:** | 2.A- Si no hay ofertas, se le notifica. |
+| **Poscondiciones:**| El comprador conoce las ofertas. |
+| **Artefactos relacionados:**| CU-207 |
+
+### ---
+
+| **Nombre:** | Consultar oferta (vendedor) |
+| :--- | :--- |
+| **Codigo:** | CU-209 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Vendedor. |
+| **Actores:** | Vendedor |
+| **Precondiciones:**| El vendedor debe estar autenticado. |
+| **Flujo Normal:** | 1.- El vendedor accede a las ofertas. <br>2.- El sistema le muestra las ofertas. |
+| **Flujo Alternativo:** | 2.A- Si no hay ofertas, se le notifica. |
+| **Poscondiciones:**| El vendedor conoce las ofertas. |
+| **Artefactos relacionados:**| CU-207 |
+
+### ---
+
+| **Nombre:** | Consultar oferta (proveedor) |
+| :--- | :--- |
+| **Codigo:** | CU-210 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Proveedor. |
+| **Actores:** | Proveedor |
+| **Precondiciones:**| El proveedor debe estar autenticado. |
+| **Flujo Normal:** | 1.- El proveedor accede a las ofertas. <br>2.- El sistema le muestra las ofertas. |
+| **Flujo Alternativo:** | 2.A- Si no hay ofertas, se le notifica. |
+| **Poscondiciones:**| El proveedor conoce las ofertas. |
+| **Artefactos relacionados:**| CU-207 |
+
+### ---
+
+| **Nombre:** | Consultar oferta (administrador) |
+| :--- | :--- |
+| **Codigo:** | CU-211 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Administrador. |
+| **Actores:** | Administrador |
+| **Precondiciones:**| El administrador debe estar autenticado. |
+| **Flujo Normal:** | 1.- El administrador accede a las ofertas. <br>2.- El sistema le muestra las ofertas. |
+| **Flujo Alternativo:** | 2.A- Si no hay ofertas, se le notifica. |
+| **Poscondiciones:**| El administrador conoce las ofertas. |
+| **Artefactos relacionados:**| CU-207 |
+
+### ---
+
+| **Nombre:** | Avisar de nuevos productos |
+| :--- | :--- |
+| **Codigo:** | CU-212 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Permite al proveedor notificar la llegada de nuevos productos. Opcionalmente, **extiende** la funcionalidad a "Incorporar oferta". **Incluye** el envío de una notificación. |
+| **Actores:** | Proveedor |
+| **Precondiciones:**| El proveedor debe estar autenticado. |
+| **Flujo Normal:** | 1.- El proveedor avisa de un nuevo producto. <br>2.- El sistema registra el nuevo producto. <br>3.- El sistema ejecuta "Enviar notificación" (CU-217). |
+| **Flujo Alternativo:** | 2.A- De forma excepcional, el proveedor puede ejecutar "Incorporar oferta" (CU-218). |
+| **Poscondiciones:**| Se ha notificado y registrado un nuevo producto. |
+| **Artefactos relacionados:**| CU-217, CU-218 |
+
+### ---
+
+| **Nombre:** | Avisar de fin de oferta |
+| :--- | :--- |
+| **Codigo:** | CU-213 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Permite al proveedor notificar el fin de una oferta. **Incluye** las funcionalidades "Eliminar oferta" y "Enviar notificación". |
+| **Actores:** | Proveedor |
+| **Precondiciones:**| El proveedor debe estar autenticado. |
+| **Flujo Normal:** | 1.- El proveedor avisa del fin de una oferta. <br>2.- El sistema ejecuta "Eliminar oferta" (CU-219). <br>3.- El sistema ejecuta "Enviar notificación" (CU-217). |
+| **Flujo Alternativo:** | 2.A- Si la oferta no existe, el sistema lo notifica. |
+| **Poscondiciones:**| La oferta ha sido eliminada y se ha enviado una notificación. |
+| **Artefactos relacionados:**| CU-217, CU-219 |
+
+### ---
+
+| **Nombre:** | Eliminar producto |
+| :--- | :--- |
+| **Codigo:** | CU-214 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Permite al administrador eliminar un producto del sistema. |
+| **Actores:** | Administrador |
+| **Precondiciones:**| El administrador debe estar autenticado. |
+| **Flujo Normal:** | 1.- El administrador selecciona un producto. <br>2.- El administrador confirma la eliminación. <br>3.- El sistema elimina el producto. |
+| **Flujo Alternativo:** | 2.A- El administrador cancela la operación. |
+| **Poscondiciones:**| El producto ya no está disponible en el sistema. |
+| **Artefactos relacionados:**| |
+
+### ---
+
+| **Nombre:** | Realizar venta |
+| :--- | :--- |
+| **Codigo:** | CU-220 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Gestiona el proceso de venta entre un comprador y un vendedor. **Incluye** "Acordar un precio" y, excepcionalmente, **extiende** a "Consultar el histórico de ventas". |
+| **Actores:** | Comprador, Vendedor |
+| **Precondiciones:**| Comprador y vendedor deben estar autenticados. |
+| **Flujo Normal:** | 1.- Comprador y vendedor inician la venta. <br>2.- Se ejecuta "Acordar un precio" (CU-221). <br>3.- Se confirma la transacción. |
+| **Flujo Alternativo:** | 2.A- Durante la negociación, se puede ejecutar "Consultar el histórico de ventas" (CU-222). |
+| **Poscondiciones:**| La venta se ha completado. |
+| **Artefactos relacionados:**| CU-221, CU-222 |
+
 </br>
 
 ## Supuesto 3: Compañia Hotelera

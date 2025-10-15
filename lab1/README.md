@@ -11,6 +11,8 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 ### Requisitos del diagrama de casos de uso
 | **Nombre:**        | <span>Proponer cambios en los horarios</span> |
 |---------------------|---------------------------------------------------------------|
+| **Codigo:**         | <span>INRE Equipo Azul</span> |
+| **Artefactos relacionados:**         | <span>INRE Equipo Azul</span> |
 | **Autor:**         | <span>INRE Equipo Azul</span> |
 | **Fecha:**         | <span>23/09/2025</span> |
 | **Descripción:**   | <span>Permite proponer un cambio en un horario existente.</span> |

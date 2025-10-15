@@ -8,10 +8,149 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
   <img src="supuesto1.jpg" alt="img_supuesto1" width="750">
 </p>
 
-#### Aqui los requisitos del diagrama
+### Requisitos del diagrama de casos de uso
+| **Nombre:**        | <span>Proponer cambios en los horarios</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span>Permite proponer un cambio en un horario existente.</span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
+
+### ---
+
+| **Nombre:**        | <span>Dar alta estudiante(PDI)</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span></span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
+
+### ---
+
+| **Nombre:**        | <span>Realizar busqueda en la lista de clase</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span></span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
+
+### ---
+
+| **Nombre:**        | <span>Dar alta estudiante</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span></span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
+
+### ---
+
+| **Nombre:**        | <span>Verificar datos del estudiante</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span></span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
+
+### ---
+
+| **Nombre:**        | <span>Dar alta estudiante(PAS)</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span></span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
+
+### ---
+
+| **Nombre:**        | <span>Modificar horarios</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span></span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
+
+### ---
+
+| **Nombre:**        | <span>Consultar horarios(PAS)</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span></span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
+
+### ---
+
+| **Nombre:**        | <span>Consultar horario</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span></span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
+
+### ---
+
+| **Nombre:**        | <span>Consultar horario(estudiante)</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span></span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
+
+### ---
+
+| **Nombre:**        | <span>Consultar horario(PDI)</span> |
+|---------------------|---------------------------------------------------------------|
+| **Autor:**         | <span>INRE Equipo Azul</span> |
+| **Fecha:**         | <span>23/09/2025</span> |
+| **Descripción:**   | <span></span> |
+| **Actores:**       | <span>PDI</span> |
+| **Precondiciones:**| <span>No hay condiciones de uso.</span> |
+| **Flujo Normal:**  | <span>1.- </span> |
+| **Flujo Alternativo:** | <span></span> |
+| **Poscondiciones:**| <span></span> |
 
 </br>
-
 ## Supuesto 2: Sistema de Compras
 
 En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, proveedor y administrador. Los compradores pueden agregar productos, consultar precios, finalizar la compra y consultar ofertas. Agregar productos implica marcar esos productos como bloqueados. Los vendedores también pueden consultar ofertas y consultar precios. Los proveedores pueden consultar precios, avisar de nuevos productos y consultar ofertas. Avisar de nuevos productos, de forma excepcional, realiza la incorporación de una oferta. Los proveedores también tienen una funcionalidad para avisar del fin de una oferta. Cuando se avisa del fin de una oferta, se ejecuta la funcionalidad de eliminar la oferta. Ambas funcionalidades de avisar del proveedor tienen en común que se encarga de enviar una notificación. Los administradores pueden consultar precios, consultar ofertas y eliminar productos. La funcionalidad de consultar precios incluye una funcionalidad de buscar productos que es similar a la funcionalidad de consultar productos de los compradores. Sin embargo, la funcionalidad de consultar productos añade una funcionalidad para verificar la disponibilidad. Para realizar una venta, un comprador y un vendedor participan de forma conjunta. En dicha operación, se lleva a cabo el acuerdo de un precio; excepcionalmente, durante la realización de la venta, se consultará el histórico de ventas.

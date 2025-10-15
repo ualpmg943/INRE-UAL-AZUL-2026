@@ -209,18 +209,18 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 
 ### ---
 
-| **Nombre:** | \<span\>Consultar productos\</span\> |
-|---------------------|---------------------------------------------------------------|
-| **Codigo:** | \<span\>CU-201\</span\> |
-| **Autor:** | \<span\>INRE Equipo Azul\</span\> |
-| **Fecha:** | \<span\>23/09/2025\</span\> |
-| **Descripción:** | \<span\>Permite a los compradores ver los productos disponibles en el sistema. Incluye la verificación de la disponibilidad del producto.\</span\> |
-| **Actores:** | \<span\>Comprador\</span\> |
-| **Precondiciones:**| \<span\>El actor debe haber iniciado sesión en el sistema.\</span\> |
-| **Flujo Normal:** | \<span\>1.- El comprador selecciona la opción de consultar productos. <br>2.- El sistema muestra una lista de los productos. <br>3.- El comprador selecciona un producto para ver los detalles. <br>4.- El sistema muestra la información del producto y ejecuta "Verificar disponibilidad" (CU-215).\</span\> |
-| **Flujo Alternativo:** | \<span\>2.A- Si no hay productos, el sistema muestra un mensaje indicándolo.\</span\> |
-| **Poscondiciones:**| \<span\>El comprador ha visto la información y disponibilidad de un producto.\</span\> |
-| **Artefactos relacionados:** | \<span\>CU-215\</span\> |
+| **Nombre:** | Consultar productos |
+| :--- | :--- |
+| **Codigo:** | CU-201 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 23/09/2025 |
+| **Descripción:** | Permite a los compradores ver los productos disponibles en el sistema. Incluye la verificación de la disponibilidad del producto. |
+| **Actores:** | Comprador |
+| **Precondiciones:**| El actor debe haber iniciado sesión en el sistema. |
+| **Flujo Normal:** | 1.- El comprador selecciona la opción de consultar productos. <br>2.- El sistema muestra una lista de los productos. <br>3.- El comprador selecciona un producto para ver los detalles. <br>4.- El sistema muestra la información del producto y ejecuta "Verificar disponibilidad" (CU-215). |
+| **Flujo Alternativo:** | 2.A- Si no hay productos, el sistema muestra un mensaje indicándolo. |
+| **Poscondiciones:**| El comprador ha visto la información y disponibilidad de un producto. |
+| **Artefactos relacionados:**| CU-215 |
 
 </br>
 

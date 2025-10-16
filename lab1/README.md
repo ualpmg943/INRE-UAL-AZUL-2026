@@ -727,6 +727,9 @@ En una compañía hotelera, el administrador y el comercial pueden consultar res
 | **Flujo Alternativo:** | <span>2.A- Si ocurre un error al cargar los datos, el sistema muestra un mensaje de error.</span> |
 | **Poscondiciones:**| <span>El actor puede ver claramente la disponibilidad en el calendario.</span> |
 | **Artefactos relacionados:**| <span>CU-301</span> |
+
+</br>
+
 ## Supuesto 4: Fotografía Online
 
 En una aplicación de fotografía online, los clientes pueden visualizar las fotos, donde de forma excepcional se puede realizar una denuncia sobre la foto. Al denunciar una foto, se ha de introducir una explicación sobre la denuncia. Los clientes también pueden llevar a cabo consultas sobre las fotos, operación que es un caso particular de visualizar las fotos. Los controladores de fotos pueden indicar que una foto debe ser revisada. Esta funcionalidad es un caso general de la funcionalidad de denunciar foto. Además, los controladores también pueden editar la información de las fotos. En esta aplicación también participan usuarios de tipo vendedor. Los vendedores pueden escribir a los clientes para hacerles ofertas sobre los productos de la aplicación. De forma excepcional, al hacer una oferta pueden reducir el precio de un producto. Los vendedores también pueden buscar detalles en las fotos, operación que es un caso particular de visualizar fotos. Pero esa búsqueda conlleva la verificación de los datos introducidos. Por otro lado, los gestores de la aplicación pueden ver ofertas, bloquear ofertas, emitir facturas y editar facturas. La emisión de facturas requiere la participación de un software de facturación. El administrador de la tienda puede ver ofertas, emitir facturas, editar facturas, bloquear ofertas, crear usuarios y editar usuarios. Esta funcionalidad de ver ofertas también la pueden realizar los clientes. Editar usuarios tiene características en común con editar facturas. Crear usuarios conlleva el envío de un email en el que es necesario el uso de un gestor de correo.
@@ -747,4 +750,454 @@ En un sistema de gestión de incidencias, los técnicos y los operadores pueden 
   <img src="supuesto5.jpg" alt="img_supuesto1" width="750">
 </p>
 
-#### Aqui los requisitos del diagrama
+### Requisitos del diagrama de casos de uso
+
+| **Nombre:** | Dar de Alta Incidencia |
+| :--- | :--- |
+| **Codigo:** | CU-501 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Caso de uso general para dar de alta una nueva incidencia en el sistema. Opcionalmente, se extiende para enviar un correo de notificación. |
+| **Actores:** | Técnico, Operador |
+| **Precondiciones:**| El actor debe estar autenticado en el sistema. |
+| **Flujo Normal:** | 1.- El actor inicia el proceso para dar de alta una incidencia. <br>2.- El sistema solicita la información requerida. <br>3.- El actor introduce los datos de la incidencia. <br>4.- El sistema valida y registra la nueva incidencia. |
+| **Flujo Alternativo:** | 3.A- De forma excepcional, el actor puede ejecutar el caso de uso "Enviar correo" (CU-502) para notificar la alta. |
+| **Poscondiciones:**| La incidencia queda registrada en el sistema. |
+| **Artefactos relacionados:**| CU-502, CU-503, CU-504 |
+
+### ---
+
+| **Nombre:** | Enviar correo |
+| :--- | :--- |
+| **Codigo:** | CU-502 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Funcionalidad que **extiende** opcionalmente a "Dar de Alta Incidencia" para enviar una notificación por correo. |
+| **Actores:** | Gestor de correos |
+| **Precondiciones:**| Se está ejecutando el caso de uso "Dar de Alta Incidencia". |
+| **Flujo Normal:** | 1.- El sistema invoca al gestor de correos con los detalles de la incidencia. <br>2.- El gestor de correos envía la notificación a los interesados. |
+| **Flujo Alternativo:** | 2.A- Si el envío del correo falla, el sistema registra el error pero continúa el flujo principal. |
+| **Poscondiciones:**| Se ha enviado un correo electrónico notificando la nueva incidencia. |
+| **Artefactos relacionados:**| CU-501 |
+
+### ---
+
+| **Nombre:** | Dar de Alta Incidencia (Técnicos) |
+| :--- | :--- |
+| **Codigo:** | CU-503 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Versión del caso de uso "Dar de Alta Incidencia" para el actor Técnico. |
+| **Actores:** | Técnico |
+| **Precondiciones:**| El actor debe estar autenticado como Técnico. |
+| **Flujo Normal:** | 1.- El técnico inicia el alta de la incidencia. <br>2.- El sistema pide los datos. <br>3.- El técnico introduce los detalles. <br>4.- El sistema registra la incidencia. |
+| **Flujo Alternativo:** | 3.A- Opcionalmente, se ejecuta "Enviar correo" (CU-502). |
+| **Poscondiciones:**| La incidencia queda registrada en el sistema. |
+| **Artefactos relacionados:**| CU-501, CU-502 |
+
+### ---
+
+| **Nombre:** | Dar de Alta Incidencia (Operadores) |
+| :--- | :--- |
+| **Codigo:** | CU-504 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Versión del caso de uso "Dar de Alta Incidencia" para el actor Operador. |
+| **Actores:** | Operador |
+| **Precondiciones:**| El actor debe estar autenticado como Operador. |
+| **Flujo Normal:** | 1.- El operador inicia el alta de la incidencia. <br>2.- El sistema pide los datos. <br>3.- El operador introduce los detalles. <br>4.- El sistema registra la incidencia. |
+| **Flujo Alternativo:** | 3.A- Opcionalmente, se ejecuta "Enviar correo" (CU-502). |
+| **Poscondiciones:**| La incidencia queda registrada en el sistema. |
+| **Artefactos relacionados:**| CU-501, CU-502 |
+
+### ---
+
+| **Nombre:** | Atender llamadas |
+| :--- | :--- |
+| **Codigo:** | CU-505 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Caso de uso general para la atención de llamadas relacionadas con incidencias. |
+| **Actores:** | Técnico, Operador |
+| **Precondiciones:**| El actor debe estar autenticado. |
+| **Flujo Normal:** | 1.- El actor recibe una llamada sobre una incidencia. <br>2.- El actor busca la incidencia en el sistema. <br>3.- El actor gestiona la llamada según su rol. |
+| **Flujo Alternativo:** | 2.A- Si la incidencia no se encuentra, el actor puede proceder a darla de alta. |
+| **Poscondiciones:**| La llamada ha sido atendida y la incidencia correspondiente actualizada si es necesario. |
+| **Artefactos relacionados:**| CU-506, CU-507 |
+
+### ---
+
+| **Nombre:** | Atender llamadas (Técnicos) |
+| :--- | :--- |
+| **Codigo:** | CU-506 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Versión de "Atender llamadas" para el Técnico, que **incluye** la comprobación de datos de la incidencia. |
+| **Actores:** | Técnico |
+| **Precondiciones:**| El actor debe estar autenticado como Técnico. |
+| **Flujo Normal:** | 1.- El técnico atiende la llamada. <br>2.- El sistema solicita el identificador de la incidencia. <br>3.- El técnico lo introduce y se ejecuta "Comprobar datos de incidencia" (CU-508). <br>4.- El técnico resuelve la consulta. |
+| **Flujo Alternativo:** | 3.A- Si los datos son incorrectos, el sistema lo notifica. |
+| **Poscondiciones:**| La consulta de la llamada ha sido resuelta. |
+| **Artefactos relacionados:**| CU-505, CU-508 |
+
+### ---
+
+| **Nombre:** | Atender llamadas (Operadores) |
+| :--- | :--- |
+| **Codigo:** | CU-507 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Versión de "Atender llamadas" para el Operador, que **extiende** la funcionalidad para introducir nuevos datos. |
+| **Actores:** | Operador |
+| **Precondiciones:**| El actor debe estar autenticado como Operador. |
+| **Flujo Normal:** | 1.- El operador atiende la llamada y busca la incidencia. <br>2.- El operador actualiza la información verbalmente. |
+| **Flujo Alternativo:** | 1.A- Si es necesario, se ejecuta la extensión "Introducir nuevos datos incidencia" (CU-509). |
+| **Poscondiciones:**| La llamada ha sido gestionada. |
+| **Artefactos relacionados:**| CU-505, CU-509 |
+
+### ---
+
+| **Nombre:** | Comprobar datos de incidencia |
+| :--- | :--- |
+| **Codigo:** | CU-508 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Funcionalidad **incluida** en "Atender llamadas (Técnicos)" para verificar los datos de una incidencia. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando "Atender llamadas (Técnicos)". |
+| **Flujo Normal:** | 1.- El sistema recibe el identificador de la incidencia. <br>2.- El sistema busca y muestra los datos de la incidencia. |
+| **Flujo Alternativo:** | 2.A- Si la incidencia no existe, el sistema devuelve un error. |
+| **Poscondiciones:**| Los datos de la incidencia han sido verificados y mostrados. |
+| **Artefactos relacionados:**| CU-506 |
+
+### ---
+
+| **Nombre:** | Introducir nuevos datos incidencia |
+| :--- | :--- |
+| **Codigo:** | CU-509 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Funcionalidad que **extiende** a "Atender llamadas (Operadores)" para añadir información a una incidencia. |
+| **Actores:** | Operador |
+| **Precondiciones:**| Se está ejecutando "Atender llamadas (Operadores)". |
+| **Flujo Normal:** | 1.- El operador activa la opción para añadir nuevos datos. <br>2.- El sistema muestra los campos para añadir la nueva información. <br>3.- El operador introduce los datos y los guarda. |
+| **Flujo Alternativo:** | 3.A- El operador cancela la operación y no se guardan cambios. |
+| **Poscondiciones:**| La incidencia ha sido actualizada con nueva información. |
+| **Artefactos relacionados:**| CU-507 |
+
+### ---
+
+| **Nombre:** | Consultar incidencias (comun editores) |
+| :--- | :--- |
+| **Codigo:** | CU-510 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Permite a los usuarios con permisos de edición consultar incidencias, con la opción de editar sus datos. |
+| **Actores:** | Técnico, Operador, Administrador |
+| **Precondiciones:**| El actor debe estar autenticado en el sistema. |
+| **Flujo Normal:** | 1.- El actor busca y selecciona una incidencia. <br>2.- El sistema muestra los detalles de la incidencia. |
+| **Flujo Alternativo:** | 2.A- De forma excepcional, el actor puede ejecutar el caso de uso "Editar datos de la incidencia" (CU-511). |
+| **Poscondiciones:**| El actor ha consultado la información de la incidencia. |
+| **Artefactos relacionados:**| CU-511, CU-512, CU-513, CU-514 |
+
+### ---
+
+| **Nombre:** | Editar datos de la incidencia |
+| :--- | :--- |
+| **Codigo:** | CU-511 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Funcionalidad que **extiende** opcionalmente a "Consultar incidencias (comun editores)" para modificar los datos de una incidencia. |
+| **Actores:** | Técnico, Operador, Administrador |
+| **Precondiciones:**| Se está ejecutando el caso de uso "Consultar incidencias (comun editores)". |
+| **Flujo Normal:** | 1.- El actor elige la opción para editar. <br>2.- El sistema presenta un formulario con los datos editables. <br>3.- El actor modifica los datos y guarda los cambios. |
+| **Flujo Alternativo:** | 3.A- El actor cancela la edición y los datos no se modifican. |
+| **Poscondiciones:**| Los datos de la incidencia han sido actualizados. |
+| **Artefactos relacionados:**| CU-510 |
+
+### ---
+
+| **Nombre:** | Consultar incidencias (Técnicos) |
+| :--- | :--- |
+| **Codigo:** | CU-512 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar incidencias" para el actor Técnico. |
+| **Actores:** | Técnico |
+| **Precondiciones:**| El actor debe estar autenticado como Técnico. |
+| **Flujo Normal:** | 1.- El técnico accede a la consulta de incidencias. <br>2.- El sistema muestra por defecto las incidencias asignadas al técnico. <br>3.- El técnico puede realizar búsquedas. |
+| **Flujo Alternativo:** | 3.A- Opcionalmente, el técnico puede editar la incidencia (CU-511). |
+| **Poscondiciones:**| El actor ha visualizado la información de la incidencia. |
+| **Artefactos relacionados:**| CU-510 |
+
+### ---
+
+| **Nombre:** | Consultar incidencias (Operadores) |
+| :--- | :--- |
+| **Codigo:** | CU-513 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar incidencias" para el actor Operador. |
+| **Actores:** | Operador |
+| **Precondiciones:**| El actor debe estar autenticado como Operador. |
+| **Flujo Normal:** | 1.- El operador accede a la consulta de incidencias. <br>2.- El sistema muestra un panel con filtros de búsqueda. <br>3.- El operador busca y visualiza las incidencias. |
+| **Flujo Alternativo:** | 3.A- Opcionalmente, el operador puede editar la incidencia (CU-511). |
+| **Poscondiciones:**| El actor ha visualizado la información de la incidencia. |
+| **Artefactos relacionados:**| CU-510 |
+
+### ---
+
+| **Nombre:** | Consultar incidencias (Administradores) |
+| :--- | :--- |
+| **Codigo:** | CU-514 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Versión del caso de uso "Consultar incidencias" para el actor Administrador. |
+| **Actores:** | Administrador |
+| **Precondiciones:**| El actor debe estar autenticado como Administrador. |
+| **Flujo Normal:** | 1.- El administrador accede a la consulta de incidencias. <br>2.- El sistema proporciona opciones de búsqueda avanzadas. <br>3.- El administrador busca y visualiza las incidencias. |
+| **Flujo Alternativo:** | 3.A- Opcionalmente, el administrador puede editar la incidencia (CU-511). |
+| **Poscondiciones:**| El actor ha visualizado la información de la incidencia. |
+| **Artefactos relacionados:**| CU-510 |
+
+### ---
+
+| **Nombre:** | Realizar informe |
+| :--- | :--- |
+| **Codigo:** | CU-515 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Permite a un técnico generar un informe detallado sobre una incidencia. |
+| **Actores:** | Técnico |
+| **Precondiciones:**| El actor debe estar autenticado como Técnico y la incidencia sobre la que se informa debe existir. |
+| **Flujo Normal:** | 1.- El técnico selecciona una incidencia para realizar un informe. <br>2.- El sistema presenta una plantilla para el informe. <br>3.- El técnico rellena los campos con el análisis, las acciones realizadas y las conclusiones. <br>4.- El técnico guarda el informe, que queda asociado a la incidencia. |
+| **Flujo Alternativo:** | 3.A- El técnico cancela la creación del informe. |
+| **Poscondiciones:**| Se ha generado y almacenado un nuevo informe en el sistema. |
+| **Artefactos relacionados:**| |
+
+### ---
+
+| **Nombre:** | Marcar incidencias como duplicada |
+| :--- | :--- |
+| **Codigo:** | CU-516 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Permite a un operador marcar una incidencia como duplicada de otra ya existente. |
+| **Actores:** | Operador |
+| **Precondiciones:**| El actor debe estar autenticado como Operador. Deben existir al menos dos incidencias que puedan ser relacionadas. |
+| **Flujo Normal:** | 1.- El operador selecciona la incidencia que quiere marcar como duplicada. <br>2.- El sistema solicita el identificador de la incidencia original. <br>3.- El operador lo introduce y el sistema vincula ambas incidencias. <br>4.- La incidencia duplicada cambia su estado a "cerrada" o "duplicada". |
+| **Flujo Alternativo:** | 3.A- Si el identificador de la incidencia original no es válido, el sistema muestra un error. |
+| **Poscondiciones:**| Una incidencia ha sido marcada como duplicada y vinculada a la original. |
+| **Artefactos relacionados:**| |
+
+### ---
+
+| **Nombre:** | Ordenan incidencias |
+| :--- | :--- |
+| **Codigo:** | CU-517 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Caso de uso general que permite a operadores y administradores ordenar las incidencias según diferentes criterios. |
+| **Actores:** | Operador, Administrador |
+| **Precondiciones:**| El actor debe estar autenticado. |
+| **Flujo Normal:** | 1.- El actor accede a la vista de listado de incidencias. <br>2.- El actor selecciona un criterio de ordenación (prioridad, fecha, estado, etc.). <br>3.- El sistema reorganiza el listado de incidencias según el criterio seleccionado. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| El listado de incidencias se muestra en el orden deseado. |
+| **Artefactos relacionados:**| CU-518, CU-519 |
+
+### ---
+
+| **Nombre:** | Ordenan incidencias (Operadores) |
+| :--- | :--- |
+| **Codigo:** | CU-518 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Versión del caso de uso "Ordenan incidencias" para el actor Operador. |
+| **Actores:** | Operador |
+| **Precondiciones:**| El actor debe estar autenticado como Operador. |
+| **Flujo Normal:** | 1.- El operador accede al listado de incidencias. <br>2.- El operador aplica un filtro de ordenación. <br>3.- El sistema actualiza la vista. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| Las incidencias se muestran ordenadas. |
+| **Artefactos relacionados:**| CU-517 |
+
+### ---
+
+| **Nombre:** | Ordenan incidencias (Administradores) |
+| :--- | :--- |
+| **Codigo:** | CU-519 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Versión de "Ordenan incidencias" para el Administrador, que **incluye** la funcionalidad de "Añadir comentario". |
+| **Actores:** | Administrador |
+| **Precondiciones:**| El actor debe estar autenticado como Administrador. |
+| **Flujo Normal:** | 1.- El administrador ordena las incidencias. <br>2.- Se ejecuta el caso de uso "Añadir comentario" (CU-520) para justificar la ordenación. <br>3.- El sistema guarda el orden y el comentario. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| Las incidencias se han ordenado y se ha añadido un comentario explicativo. |
+| **Artefactos relacionados:**| CU-517, CU-520 |
+
+### ---
+
+| **Nombre:** | Añadir comentario |
+| :--- | :--- |
+| **Codigo:** | CU-520 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Funcionalidad que se **incluye** en "Ordenan incidencias (Administradores)" para agregar un comentario. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando "Ordenan incidencias (Administradores)". |
+| **Flujo Normal:** | 1.- El sistema solicita al administrador que introduzca un comentario. <br>2.- El administrador escribe y guarda el comentario. <br>3.- El comentario queda registrado. |
+| **Flujo Alternativo:** | 2.A- El administrador decide no añadir un comentario y continúa. |
+| **Poscondiciones:**| Se ha añadido un comentario a la acción de ordenación. |
+| **Artefactos relacionados:**| CU-519 |
+
+### ---
+
+| **Nombre:** | Gestionar categorías incidencias |
+| :--- | :--- |
+| **Codigo:** | CU-521 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Permite al administrador crear, editar y eliminar las categorías de las incidencias. |
+| **Actores:** | Administrador |
+| **Precondiciones:**| El actor debe estar autenticado como Administrador. |
+| **Flujo Normal:** | 1.- El administrador accede a la sección de gestión de categorías. <br>2.- El sistema muestra las categorías existentes. <br>3.- El administrador puede crear una nueva, modificar o eliminar una existente. <br>4.- El sistema aplica los cambios en la base de datos. |
+| **Flujo Alternativo:** | 3.A- Si se intenta eliminar una categoría en uso, el sistema lo impide y muestra una notificación. |
+| **Poscondiciones:**| El listado de categorías de incidencias ha sido actualizado. |
+| **Artefactos relacionados:**| |
+
+### ---
+
+| **Nombre:** | Consultar incidencia (invitados) |
+| :--- | :--- |
+| **Codigo:** | CU-522 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Permite a los usuarios invitados consultar incidencias públicas con información limitada y sin opción a edición. |
+| **Actores:** | Invitado |
+| **Precondiciones:**| Ninguna. |
+| **Flujo Normal:** | 1.- El invitado accede al portal público de incidencias. <br>2.- El sistema muestra una lista de incidencias públicas. <br>3.- El invitado puede usar un buscador básico para filtrar los resultados. <br>4.- El invitado selecciona una incidencia para ver su estado y descripción general. |
+| **Flujo Alternativo:** | 3.A- Si la búsqueda no arroja resultados, el sistema lo indica. |
+| **Poscondiciones:**| El invitado ha consultado el estado de una incidencia pública. |
+| **Artefactos relacionados:**| |
+
+### ---
+
+| **Nombre:** | Informar incidencias |
+| :--- | :--- |
+| **Codigo:** | CU-523 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Permite a un usuario invitado informar sobre una posible incidencia. **Incluye** dar de alta la localización, añadir una explicación y subir una foto. |
+| **Actores:** | Invitado |
+| **Precondiciones:**| Ninguna. |
+| **Flujo Normal:** | 1.- El invitado selecciona la opción para informar de una incidencia. <br>2.- Se ejecuta "Dar de alta la localizacion de un mapa" (CU-524). <br>3.- Se ejecuta "Dar explicación completa en formato textual" (CU-525). <br>4.- Se ejecuta "Subir foto" (CU-526). <br>5.- El invitado envía el informe y el sistema crea un borrador de incidencia para su revisión. |
+| **Flujo Alternativo:** | 5.A- El invitado cancela el proceso. |
+| **Poscondiciones:**| Se ha enviado un informe de una posible incidencia para que sea validada por un operador. |
+| **Artefactos relacionados:**| CU-524, CU-525, CU-526 |
+
+### ---
+
+| **Nombre:** | Dar de alta la localizacion de un mapa |
+| :--- | :--- |
+| **Codigo:** | CU-524 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Funcionalidad **incluida** en "Informar incidencias" para especificar la ubicación del suceso. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando "Informar incidencias". |
+| **Flujo Normal:** | 1.- El sistema muestra un mapa interactivo. <br>2.- El invitado selecciona la ubicación exacta en el mapa. <br>3.- El sistema guarda las coordenadas. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| La localización de la incidencia ha sido registrada. |
+| **Artefactos relacionados:**| CU-523 |
+
+### ---
+
+| **Nombre:** | Dar explicación completa en formato textual |
+| :--- | :--- |
+| **Codigo:** | CU-525 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Funcionalidad **incluida** en "Informar incidencias" para detallar lo ocurrido. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando "Informar incidencias". |
+| **Flujo Normal:** | 1.- El sistema muestra un campo de texto. <br>2.- El invitado escribe la descripción de la incidencia. <br>3.- El sistema guarda el texto. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| La descripción de la incidencia ha sido registrada. |
+| **Artefactos relacionados:**| CU-523 |
+
+### ---
+
+| **Nombre:** | Subir foto |
+| :--- | :--- |
+| **Codigo:** | CU-526 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Funcionalidad **incluida** en "Informar incidencias" para adjuntar una imagen como evidencia. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando "Informar incidencias". |
+| **Flujo Normal:** | 1.- El sistema muestra un botón para seleccionar un archivo. <br>2.- El invitado selecciona una foto de su dispositivo. <br>3.- El sistema adjunta la foto al informe. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| Se ha adjuntado una foto al informe de la incidencia. |
+| **Artefactos relacionados:**| CU-523 |
+
+### ---
+
+| **Nombre:** | Registrarse |
+| :--- | :--- |
+| **Codigo:** | CU-527 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Permite a un invitado crear una cuenta de usuario en el sistema. **Incluye** la funcionalidad "Ver notificaciones". |
+| **Actores:** | Invitado |
+| **Precondiciones:**| Ninguna. |
+| **Flujo Normal:** | 1.- El invitado accede al formulario de registro. <br>2.- El invitado introduce sus datos personales y credenciales. <br>3.- El sistema valida los datos y crea la cuenta. <br>4.- El nuevo usuario puede ahora "Ver notificaciones" (CU-528). |
+| **Flujo Alternativo:** | 3.A- Si los datos no son válidos (ej. email ya existe), el sistema muestra un error. |
+| **Poscondiciones:**| El invitado se ha convertido en un usuario registrado del sistema. |
+| **Artefactos relacionados:**| CU-528 |
+
+### ---
+
+| **Nombre:** | Ver notificaciones |
+| :--- | :--- |
+| **Codigo:** | CU-528 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Funcionalidad **incluida** en "Registrarse", que permite a los usuarios ver las notificaciones de sus incidencias. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando el caso de uso "Registrarse" o el usuario ya está registrado. |
+| **Flujo Normal:** | 1.- El usuario accede a su panel personal. <br>2.- El sistema muestra una lista con las últimas notificaciones. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| El usuario ha visualizado sus notificaciones. |
+| **Artefactos relacionados:**| CU-527 |
+
+### ---
+
+| **Nombre:** | Acceder a listado historico de notificaciones |
+| :--- | :--- |
+| **Codigo:** | CU-529 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Permite a los usuarios registrados consultar el historial completo de sus notificaciones. |
+| **Actores:** | Invitado (ya registrado) |
+| **Precondiciones:**| El actor debe estar autenticado en el sistema. |
+| **Flujo Normal:** | 1.- El usuario accede a la sección de historial de notificaciones. <br>2.- El sistema muestra un listado completo y paginado de todas las notificaciones recibidas. <br>3.- El usuario puede navegar y buscar en su historial. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| El usuario ha consultado su historial de notificaciones. |
+| **Artefactos relacionados:**| |
+
+Entendido. Te refieres al caso de uso general del que parten tanto la consulta con privilegios de edición como la consulta para invitados. Aquí tienes la tabla para ese caso de uso general **Consultar Incidencias**.
+
+### ---
+
+| **Nombre:** | Consultar Incidencias |
+| :--- | :--- |
+| **Codigo:** | CU-530 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 16/10/2025 |
+| **Descripción:** | Caso de uso general que permite a los diferentes actores del sistema buscar y visualizar las incidencias según sus permisos. |
+| **Actores:** | Técnico, Operador, Administrador, Invitado |
+| **Precondiciones:**| El actor debe estar autenticado (excepto el Invitado). |
+| **Flujo Normal:** | 1.- El actor accede a la funcionalidad para consultar incidencias. <br>2.- El sistema muestra una interfaz de búsqueda. <br>3.- El actor introduce los criterios de búsqueda y el sistema muestra un listado de incidencias que coinciden. <br>4.- El actor selecciona una incidencia para ver sus detalles. |
+| **Flujo Alternativo:** | 3.A- Si la búsqueda no produce resultados, el sistema muestra un mensaje informativo. |
+| **Poscondiciones:**| El actor ha visualizado la información de las incidencias solicitadas. |
+| **Artefactos relacionados:**| CU-510, CU-522 |

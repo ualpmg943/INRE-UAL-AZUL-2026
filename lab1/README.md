@@ -182,26 +182,28 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
   <img src="supuesto2.jpg" alt="img_supuesto1" width="750">
 </p>
 
+### **Requisitos del diagrama de casos de uso**
+
 | **Nombre:** | Consultar productos |
 | :--- | :--- |
 | **Codigo:** | CU-201 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Permite a los compradores ver los productos disponibles en el sistema. Incluye la verificación de la disponibilidad del producto. |
 | **Actores:** | Comprador |
 | **Precondiciones:**| El actor debe haber iniciado sesión en el sistema. |
 | **Flujo Normal:** | 1.- El comprador selecciona la opción de consultar productos. <br>2.- El sistema muestra una lista de los productos. <br>3.- El comprador selecciona un producto para ver los detalles. <br>4.- El sistema muestra la información del producto y ejecuta "Verificar disponibilidad" (CU-215). |
 | **Flujo Alternativo:** | 2.A- Si no hay productos, el sistema muestra un mensaje indicándolo. |
 | **Poscondiciones:**| El comprador ha visto la información y disponibilidad de un producto. |
-| **Artefactos relacionados:**| CU-215 |
+| **Artefactos relacionados:**| CU-203, CU-219 |
 
-### ---
+### \---
 
 | **Nombre:** | Consultar precios |
 | :--- | :--- |
 | **Codigo:** | CU-202 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Caso de uso general para consultar los precios de los productos. Es utilizado por compradores, vendedores, proveedores y administradores. |
 | **Actores:** | Comprador, Vendedor, Proveedor, Administrador |
 | **Precondiciones:**| El actor debe estar autenticado en el sistema. |
@@ -210,28 +212,28 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Poscondiciones:**| El actor ha consultado el precio de un producto. |
 | **Artefactos relacionados:**| CU-203, CU-204, CU-205, CU-206 |
 
-### ---
+### \---
 
 | **Nombre:** | Consultar precios (comprador) |
 | :--- | :--- |
 | **Codigo:** | CU-203 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar precios" para el actor Comprador. |
 | **Actores:** | Comprador |
 | **Precondiciones:**| El comprador debe estar autenticado. |
 | **Flujo Normal:** | 1.- El comprador busca un producto. <br>2.- El sistema muestra el precio del producto. |
 | **Flujo Alternativo:** | 1.A- Si el producto no existe, se notifica al comprador. |
 | **Poscondiciones:**| El comprador conoce el precio de un producto. |
-| **Artefactos relacionados:**| CU-202 |
+| **Artefactos relacionados:**| CU-201, CU-202 |
 
-### ---
+### \---
 
 | **Nombre:** | Consultar precios (vendedor) |
 | :--- | :--- |
 | **Codigo:** | CU-204 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar precios" para el actor Vendedor. |
 | **Actores:** | Vendedor |
 | **Precondiciones:**| El vendedor debe estar autenticado. |
@@ -240,13 +242,13 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Poscondiciones:**| El vendedor conoce el precio de un producto. |
 | **Artefactos relacionados:**| CU-202 |
 
-### ---
+### \---
 
 | **Nombre:** | Consultar precios (proveedor) |
 | :--- | :--- |
 | **Codigo:** | CU-205 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar precios" para el actor Proveedor. |
 | **Actores:** | Proveedor |
 | **Precondiciones:**| El proveedor debe estar autenticado. |
@@ -255,28 +257,28 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Poscondiciones:**| El proveedor conoce el precio de un producto. |
 | **Artefactos relacionados:**| CU-202 |
 
-### ---
+### \---
 
 | **Nombre:** | Consultar precios (administrador) |
 | :--- | :--- |
 | **Codigo:** | CU-206 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar precios" para el actor Administrador, que **incluye** la funcionalidad de "Buscar productos". |
 | **Actores:** | Administrador |
 | **Precondiciones:**| El administrador debe estar autenticado. |
 | **Flujo Normal:** | 1.- El administrador ejecuta "Buscar productos" (CU-216). <br>2.- El sistema muestra el precio del producto encontrado. |
 | **Flujo Alternativo:** | 1.A- Si no se encuentra el producto, el sistema lo notifica. |
 | **Poscondiciones:**| El administrador conoce el precio de un producto. |
-| **Artefactos relacionados:**| CU-202, CU-216 |
+| **Artefactos relacionados:**| CU-202, CU-220 |
 
-### ---
+### \---
 
 | **Nombre:** | Consultar oferta |
 | :--- | :--- |
 | **Codigo:** | CU-207 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Caso de uso general para que los usuarios puedan consultar las ofertas disponibles. |
 | **Actores:** | Comprador, Vendedor, Proveedor, Administrador |
 | **Precondiciones:**| El actor debe estar autenticado en el sistema. |
@@ -285,13 +287,13 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Poscondiciones:**| El actor ha visto las ofertas disponibles. |
 | **Artefactos relacionados:**| CU-208, CU-209, CU-210, CU-211 |
 
-### ---
+### \---
 
 | **Nombre:** | Consultar oferta (comprador) |
 | :--- | :--- |
 | **Codigo:** | CU-208 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Comprador. |
 | **Actores:** | Comprador |
 | **Precondiciones:**| El comprador debe estar autenticado. |
@@ -300,13 +302,13 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Poscondiciones:**| El comprador conoce las ofertas. |
 | **Artefactos relacionados:**| CU-207 |
 
-### ---
+### \---
 
 | **Nombre:** | Consultar oferta (vendedor) |
 | :--- | :--- |
 | **Codigo:** | CU-209 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Vendedor. |
 | **Actores:** | Vendedor |
 | **Precondiciones:**| El vendedor debe estar autenticado. |
@@ -315,13 +317,13 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Poscondiciones:**| El vendedor conoce las ofertas. |
 | **Artefactos relacionados:**| CU-207 |
 
-### ---
+### \---
 
 | **Nombre:** | Consultar oferta (proveedor) |
 | :--- | :--- |
 | **Codigo:** | CU-210 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Proveedor. |
 | **Actores:** | Proveedor |
 | **Precondiciones:**| El proveedor debe estar autenticado. |
@@ -330,13 +332,13 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Poscondiciones:**| El proveedor conoce las ofertas. |
 | **Artefactos relacionados:**| CU-207 |
 
-### ---
+### \---
 
 | **Nombre:** | Consultar oferta (administrador) |
 | :--- | :--- |
 | **Codigo:** | CU-211 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Versión del caso de uso "Consultar oferta" para el actor Administrador. |
 | **Actores:** | Administrador |
 | **Precondiciones:**| El administrador debe estar autenticado. |
@@ -345,43 +347,43 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Poscondiciones:**| El administrador conoce las ofertas. |
 | **Artefactos relacionados:**| CU-207 |
 
-### ---
+### \---
 
 | **Nombre:** | Avisar de nuevos productos |
 | :--- | :--- |
 | **Codigo:** | CU-212 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Permite al proveedor notificar la llegada de nuevos productos. Opcionalmente, **extiende** la funcionalidad a "Incorporar oferta". **Incluye** el envío de una notificación. |
 | **Actores:** | Proveedor |
 | **Precondiciones:**| El proveedor debe estar autenticado. |
 | **Flujo Normal:** | 1.- El proveedor avisa de un nuevo producto. <br>2.- El sistema registra el nuevo producto. <br>3.- El sistema ejecuta "Enviar notificación" (CU-217). |
 | **Flujo Alternativo:** | 2.A- De forma excepcional, el proveedor puede ejecutar "Incorporar oferta" (CU-218). |
 | **Poscondiciones:**| Se ha notificado y registrado un nuevo producto. |
-| **Artefactos relacionados:**| CU-217, CU-218 |
+| **Artefactos relacionados:**| CU-221, CU-222 |
 
-### ---
+### \---
 
 | **Nombre:** | Avisar de fin de oferta |
 | :--- | :--- |
 | **Codigo:** | CU-213 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Permite al proveedor notificar el fin de una oferta. **Incluye** las funcionalidades "Eliminar oferta" y "Enviar notificación". |
 | **Actores:** | Proveedor |
 | **Precondiciones:**| El proveedor debe estar autenticado. |
 | **Flujo Normal:** | 1.- El proveedor avisa del fin de una oferta. <br>2.- El sistema ejecuta "Eliminar oferta" (CU-219). <br>3.- El sistema ejecuta "Enviar notificación" (CU-217). |
 | **Flujo Alternativo:** | 2.A- Si la oferta no existe, el sistema lo notifica. |
 | **Poscondiciones:**| La oferta ha sido eliminada y se ha enviado una notificación. |
-| **Artefactos relacionados:**| CU-217, CU-219 |
+| **Artefactos relacionados:**| CU-221, CU-223 |
 
-### ---
+### \---
 
 | **Nombre:** | Eliminar producto |
 | :--- | :--- |
 | **Codigo:** | CU-214 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Permite al administrador eliminar un producto del sistema. |
 | **Actores:** | Administrador |
 | **Precondiciones:**| El administrador debe estar autenticado. |
@@ -390,20 +392,170 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 | **Poscondiciones:**| El producto ya no está disponible en el sistema. |
 | **Artefactos relacionados:**| |
 
-### ---
+### \---
 
 | **Nombre:** | Realizar venta |
 | :--- | :--- |
-| **Codigo:** | CU-220 |
+| **Codigo:** | CU-215 |
 | **Autor:** | INRE Equipo Azul |
-| **Fecha:** | 15/10/2025 |
+| **Fecha:** | 23/09/2025 |
 | **Descripción:** | Gestiona el proceso de venta entre un comprador y un vendedor. **Incluye** "Acordar un precio" y, excepcionalmente, **extiende** a "Consultar el histórico de ventas". |
 | **Actores:** | Comprador, Vendedor |
 | **Precondiciones:**| Comprador y vendedor deben estar autenticados. |
 | **Flujo Normal:** | 1.- Comprador y vendedor inician la venta. <br>2.- Se ejecuta "Acordar un precio" (CU-221). <br>3.- Se confirma la transacción. |
 | **Flujo Alternativo:** | 2.A- Durante la negociación, se puede ejecutar "Consultar el histórico de ventas" (CU-222). |
 | **Poscondiciones:**| La venta se ha completado. |
-| **Artefactos relacionados:**| CU-221, CU-222 |
+| **Artefactos relacionados:**| CU-224, CU-225 |
+
+### \---
+
+| **Nombre:** | Agregar productos |
+| :--- | :--- |
+| **Codigo:** | CU-216 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 17/10/2025 |
+| **Descripción:** | Permite a un comprador añadir productos a su cesta de la compra. **Incluye** la funcionalidad de "Marcar productos como bloqueados". |
+| **Actores:** | Comprador |
+| **Precondiciones:**| El comprador debe estar autenticado en el sistema. |
+| **Flujo Normal:** | 1.- El comprador selecciona un producto y la cantidad que desea añadir. <br>2.- El comprador pulsa el botón para agregar a la cesta. <br>3.- El sistema ejecuta "Marcar productos como bloqueados" (CU-225) para asegurar la disponibilidad. <br>4.- El sistema confirma que el producto ha sido añadido a la cesta. |
+| **Flujo Alternativo:** | 3.A- Si el producto no tiene stock suficiente, el sistema informa al comprador y no permite añadirlo. |
+| **Poscondiciones:**| El producto seleccionado está en la cesta de la compra y su stock ha sido reservado temporalmente. |
+| **Artefactos relacionados:**| CU-218 |
+
+### \---
+
+| **Nombre:** | Finalizar compra |
+| :--- | :--- |
+| **Codigo:** | CU-217 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 17/10/2025 |
+| **Descripción:** | Permite al comprador completar el proceso de adquisición de los productos que tiene en su cesta. |
+| **Actores:** | Comprador |
+| **Precondiciones:**| El comprador debe estar autenticado y tener al menos un producto en la cesta. |
+| **Flujo Normal:** | 1.- El comprador accede a su cesta y selecciona la opción para finalizar la compra. <br>2.- El sistema muestra un resumen del pedido y solicita la confirmación. <br>3.- El comprador confirma y el sistema procesa el pago. <br>4.- El sistema confirma la compra y actualiza el estado del pedido a "completado". |
+| **Flujo Alternativo:** | 3.A- Si el proceso de pago falla, el sistema informa al comprador y le permite intentarlo de nuevo. |
+| **Poscondiciones:**| Los productos de la cesta han sido comprados y el stock se descuenta de forma definitiva. |
+| **Artefactos relacionados:**| |
+
+### \---
+
+| **Nombre:** | Marcar productos como bloqueados |
+| :--- | :--- |
+| **Codigo:** | CU-218 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 17/10/2025 |
+| **Descripción:** | Funcionalidad **incluida** en "Agregar productos" que reserva temporalmente el stock de un producto cuando se añade a la cesta. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando el caso de uso "Agregar productos". |
+| **Flujo Normal:** | 1.- El sistema recibe la solicitud de añadir un producto a la cesta. <br>2.- El sistema reduce el stock disponible de ese producto en la cantidad solicitada y lo marca como "bloqueado" o "reservado". |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| El stock del producto ha sido reservado para evitar que otro usuario lo compre. |
+| **Artefactos relacionados:**| CU-216 |
+
+### \---
+
+| **Nombre:** | Verificar disponibilidad |
+| :--- | :--- |
+| **Codigo:** | CU-219 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 17/10/2025 |
+| **Descripción:** | Funcionalidad que **extiende** a "Consultar productos" para comprobar si hay stock disponible. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando el caso de uso "Consultar productos". |
+| **Flujo Normal:** | 1.- El sistema comprueba el stock actual del producto consultado. <br>2.- El sistema muestra el estado de disponibilidad (Ej: "En stock", "Pocas unidades", "Agotado"). |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| El comprador conoce la disponibilidad del producto. |
+| **Artefactos relacionados:**| CU-201 |
+
+### \---
+
+| **Nombre:** | Buscar productos |
+| :--- | :--- |
+| **Codigo:** | CU-220 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 17/10/2025 |
+| **Descripción:** | Funcionalidad **incluida** en "Consultar precios (administrador)" para encontrar productos en el sistema. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando "Consultar precios (administrador)". |
+| **Flujo Normal:** | 1.- El sistema presenta al administrador una interfaz de búsqueda con filtros avanzados. <br>2.- El administrador introduce los criterios de búsqueda. <br>3.- El sistema devuelve una lista de productos que coinciden. |
+| **Flujo Alternativo:** | 3.A- Si no se encuentran productos, se muestra un mensaje. |
+| **Poscondiciones:**| Se ha obtenido un listado de productos según los criterios del administrador. |
+| **Artefactos relacionados:**| CU-206 |
+
+### \---
+
+| **Nombre:** | Enviar notificacion |
+| :--- | :--- |
+| **Codigo:** | CU-221 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 17/10/2025 |
+| **Descripción:** | Funcionalidad **incluida** en "Avisar de nuevos productos" y "Avisar de fin de oferta" para comunicar eventos. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando un caso de uso que lo incluye. |
+| **Flujo Normal:** | 1.- El sistema identifica a los usuarios que deben ser notificados. <br>2.- El sistema genera y envía una notificación (por email, push, etc.) sobre el nuevo producto o el fin de la oferta. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| Los usuarios correspondientes han sido notificados. |
+| **Artefactos relacionados:**| CU-212, CU-213 |
+
+### \---
+
+| **Nombre:** | Incorporar oferta |
+| :--- | :--- |
+| **Codigo:** | CU-222 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 17/10/2025 |
+| **Descripción:** | Funcionalidad que **extiende** de forma excepcional a "Avisar de nuevos productos" para crear una oferta de lanzamiento. |
+| **Actores:** | Proveedor |
+| **Precondiciones:**| Se está ejecutando el caso de uso "Avisar de nuevos productos". |
+| **Flujo Normal:** | 1.- Al avisar de un nuevo producto, el proveedor activa la opción de crear una oferta. <br>2.- El sistema solicita los detalles de la oferta (descuento, duración, etc.). <br>3.- El proveedor los introduce y el sistema crea y activa la oferta para el nuevo producto. |
+| **Flujo Alternativo:** | 3.A- El proveedor decide no crear una oferta y cancela la operación. |
+| **Poscondiciones:**| Se ha creado una nueva oferta asociada al nuevo producto. |
+| **Artefactos relacionados:**| CU-212 |
+
+### \---
+
+| **Nombre:** | Eliminar oferta |
+| :--- | :--- |
+| **Codigo:** | CU-223 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 17/10/2025 |
+| **Descripción:** | Funcionalidad **incluida** en "Avisar de fin de oferta" que desactiva o elimina una oferta del sistema. |
+| **Actores:** | (Sistema) |
+| **Precondiciones:**| Se está ejecutando "Avisar de fin de oferta". |
+| **Flujo Normal:** | 1.- El sistema recibe el identificador de la oferta que ha finalizado. <br>2.- El sistema cambia el estado de la oferta a "inactiva" o la elimina de la base de datos. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| La oferta ya no está visible ni aplicable para los compradores. |
+| **Artefactos relacionados:**| CU-213 |
+
+### \---
+
+| **Nombre:** | Acordar un precio |
+| :--- | :--- |
+| **Codigo:** | CU-224 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 17/10/2025 |
+| **Descripción:** | Funcionalidad **incluida** en "Realizar venta" donde el comprador y el vendedor negocian y fijan un precio final. |
+| **Actores:** | Comprador, Vendedor |
+| **Precondiciones:**| Se está ejecutando el caso de uso "Realizar venta". |
+| **Flujo Normal:** | 1.- El vendedor propone un precio inicial. <br>2.- El comprador puede aceptarlo o proponer una contraoferta. <br>3.- El proceso se repite hasta que ambas partes aceptan un precio. <br>4.- El precio acordado se fija para la transacción. |
+| **Flujo Alternativo:** | 3.A- Si no se llega a un acuerdo, la venta puede ser cancelada. |
+| **Poscondiciones:**| Se ha establecido un precio final para la venta. |
+| **Artefactos relacionados:**| CU-215 |
+
+### \---
+
+| **Nombre:** | Consultar el historico de ventas |
+| :--- | :--- |
+| **Codigo:** | CU-225 |
+| **Autor:** | INRE Equipo Azul |
+| **Fecha:** | 17/10/2025 |
+| **Descripción:** | Funcionalidad que **extiende** de forma excepcional a "Realizar venta" para consultar ventas anteriores del mismo producto o cliente. |
+| **Actores:** | Vendedor |
+| **Precondiciones:**| Se está ejecutando el caso de uso "Realizar venta". |
+| **Flujo Normal:** | 1.- Durante la negociación del precio, el vendedor decide consultar el histórico. <br>2.- El sistema muestra un listado de ventas previas, incluyendo fechas y precios. <br>3.- El vendedor utiliza esta información para ajustar su estrategia de negociación. |
+| **Flujo Alternativo:** | |
+| **Poscondiciones:**| El vendedor ha obtenido información sobre ventas pasadas para facilitar la negociación actual. |
+| **Artefactos relacionados:**| CU-215 |
 
 </br>
 

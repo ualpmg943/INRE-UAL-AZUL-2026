@@ -1337,8 +1337,6 @@ En un sistema de gestión de incidencias, los técnicos y los operadores pueden 
 | **Poscondiciones:**| El usuario ha consultado su historial de notificaciones. |
 | **Artefactos relacionados:**| |
 
-Entendido. Te refieres al caso de uso general del que parten tanto la consulta con privilegios de edición como la consulta para invitados. Aquí tienes la tabla para ese caso de uso general **Consultar Incidencias**.
-
 ### ---
 
 | **Nombre:** | Consultar Incidencias |

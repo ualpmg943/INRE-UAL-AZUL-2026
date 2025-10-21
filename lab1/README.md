@@ -891,6 +891,275 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 </p>
 
 #### Aqui los requisitos del diagrama
+#### Aqui los requisitos del diagrama
+
+| **Nombre:** | <span>Visualizar fotos</span> |
+| :--- | :--- |
+| **Código:** | <span> **CU_400**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite a Clientes y Vendedores ver las fotos disponibles en la aplicación.</span> |
+| **Actores:** | <span>Cliente, Vendedor</span> |
+| **Precondiciones:** | <span>El usuario debe estar autenticado en el sistema.</span> |
+| **Flujo Normal:** | <span>1.- El usuario accede a la sección de fotos.<br>2.- El sistema carga y muestra la galería de fotos.<br>3.- El usuario puede desplazarse o seleccionar una foto.</span> |
+| **Flujo Alternativo:** | <span>.Si el usuario selecciona una foto eliminada/no existente, el sistema muestra un mensaje de error.</span> |
+| **Poscondiciones:** | <span>El usuario ha visualizado el contenido de las fotos.</span> |
+| **Artefactos relacionados:** | <span>CU_401 (Extensión), CU_408 (Extensión)</span> |
+
+---
+
+| **Nombre:** | <span>**Consultar fotos**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_401**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite a los Clientes aplicar filtros o criterios de búsqueda avanzados sobre el listado de fotos. Es un caso particular de Visualizar fotos.</span> |
+| **Actores:** | <span>Cliente</span> |
+| **Precondiciones:** | <span>El sistema está ejecutando Visualizar fotos(CU_400).</span> |
+| **Flujo Normal:** | <span>1.- El Cliente selecciona una opción de consulta (ej. aplicar filtro por fecha o tags).<br>2.- El sistema aplica la consulta.<br>3.- El sistema muestra el resultado filtrado.</span> |
+| **Flujo Alternativo:** | <span>El sistema no encuentra fotos que coincidan con los criterios y notifica al Cliente.</span> |
+| **Poscondiciones:** | <span>El listado de fotos mostrado al Cliente ha sido filtrado según su criterio.</span> |
+| **Artefactos relacionados:** | <span>CU_400 (Base)</span> |
+
+---
+
+| **Nombre:** | <span>**Denunciar foto**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_402**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite a un Cliente reportar una foto. Esta acción requiere obligatoriamente introducir una explicación.</span> |
+| **Actores:** | <span>Cliente</span> |
+| **Precondiciones:** | <span>El Cliente está visualizando una foto.</span> |
+| **Flujo Normal:** | <span>1.- El Cliente selecciona "Denunciar foto".<br>2.- El sistema iniciala explicación de la denuncia.<br>3.- El Cliente envía la denuncia.<br>4.- El sistema registra la denuncia para su revisión por el Controlador.</span> |
+| **Flujo Alternativo:** | <span> El Cliente cancela el proceso antes de enviar el formulario; la denuncia no se registra.</span> |
+| **Poscondiciones:** | <span>Una nueva denuncia ha sido registrada en el sistema.</span> |
+| **Artefactos relacionados:** | <span>CU_403 (Inclusión), CU_404 </span> |
+
+---
+
+| **Nombre:** | <span>**Explicación Denuncia**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_403**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Proceso de introducción de una explicación textual detallando el motivo de la denuncia.</span> |
+| **Actores:** | <span>Cliente</span> |
+| **Precondiciones:** | <span>Se ha denunciado una foto.</span> |
+| **Flujo Normal:** | <span>1.- El sistema presenta el campo de texto para la explicación.<br>2.- El Cliente introduce la explicación.<br>3.- El sistema valida que el texto no esté vacío.</span> |
+| **Flujo Alternativo:** | <span> El texto de la explicación excede el límite de caracteres; el sistema pide acortar el texto.</span> |
+| **Poscondiciones:** | <span>Se ha capturado una explicación válida para la denuncia en curso.</span> |
+| **Artefactos relacionados:** | <span>CU_402 (Base)</span> |
+
+---
+
+| **Nombre:** | <span>**Indicar revisión**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_404**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Controlador marcar que una foto debe ser sometida a un proceso de revisión. **Denunciar foto** es un caso particular de este CU.</span> |
+| **Actores:** | <span>Controlador</span> |
+| **Precondiciones:** | <span>El Controlador ha iniciado sesión y tiene acceso a las herramientas de gestión de fotos.</span> |
+| **Flujo Normal:** | <span>1.- El Controlador selecciona una foto pendiente.<br>2.- El Controlador selecciona la opción "Indicar revisión".<br>3.- El sistema marca la foto con el estado "Pendiente de Revisión".</span> |
+| **Flujo Alternativo:** | <span> El Controlador intenta marcar una foto que ya tiene el estado "Revisión en curso"; el sistema muestra una advertencia.</span> |
+| **Poscondiciones:** | <span>El estado de la foto ha sido marcado como "Revisión Pendiente".</span> |
+| **Artefactos relacionados:** | <span>CU_402 (Especialización)</span> |
+
+---
+
+| **Nombre:** | <span>**Editar información**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_405**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Controlador modificar los metadatos o la información asociada a una foto.</span> |
+| **Actores:** | <span>Controlador</span> |
+| **Precondiciones:** | <span>El Controlador ha seleccionado la foto a editar.</span> |
+| **Flujo Normal:** | <span>1.- El Controlador accede al formulario de edición de metadatos de la foto.<br>2.- El Controlador modifica uno o más campos (ej. tags, descripción).<br>3.- El sistema guarda los cambios y actualiza la información de la foto.</span> |
+| **Flujo Alternativo:** | <span>El Controlador introduce un valor en un formato incorrecto (ej. texto en un campo numérico); el sistema rechaza el guardado y resalta el error.</span> |
+| **Poscondiciones:** | <span>La información de la foto ha sido actualizada en la base de datos.</span> |
+| **Artefactos relacionados:** | <span>Ninguno directo.</span> |
+
+---
+
+| **Nombre:** | <span>**Realizar oferta**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_406**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite a los Vendedores escribir a los Clientes para proponerles una oferta sobre los productos de la aplicación.</span> |
+| **Actores:** | <span>Vendedor</span> |
+| **Precondiciones:** | <span>El Vendedor tiene un producto asociado y un Cliente objetivo.</span> |
+| **Flujo Normal:** | <span>1.- El Vendedor inicia la creación de una oferta.<br>2.- El Vendedor introduce el producto, el precio y el Cliente.<br>3.- El sistema valida la información y registra la oferta.</span> |
+| **Flujo Alternativo:** | <span> El sistema detecta que el producto en oferta no tiene stock; el Vendedor debe modificar la oferta o cancelar.</span> |
+| **Poscondiciones:** | <span>La oferta ha sido registrada y notificada al Cliente.</span> |
+| **Artefactos relacionados:** | <span>CU_407 </span> |
+
+---
+
+| **Nombre:** | <span>**Reducir precio**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_407**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Funcionalidad excepcional que permite al Vendedor aplicar un descuento al precio estándar al realizar una oferta.</span> |
+| **Actores:** | <span>Vendedor</span> |
+| **Precondiciones:** | <span>El Vendedor está en el proceso de realizando una oferta.</span> |
+| **Flujo Normal:** | <span>1.- El Vendedor accede al punto de extensión 'reducir precio'.<br>2.- El Vendedor introduce un precio más bajo que el estándar.<br>3.- El sistema valida el precio (ej. debe ser positivo).</span> |
+| **Flujo Alternativo:** | <span> El precio introducido está por debajo del mínimo permitido (ej. costo); el sistema rechaza el precio.</span> |
+| **Poscondiciones:** | <span>El precio de la oferta se ha establecido con una reducción.</span> |
+| **Artefactos relacionados:** | <span>CU_406 (Base)</span> |
+
+---
+
+| **Nombre:** | <span>**Buscar detalles**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_408**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite a los Vendedores realizar una búsqueda avanzada de detalles dentro de una foto. Conlleva la verificación de los datos introducidos. Es un caso particular de Visualizar fotos.</span> |
+| **Actores:** | <span>Vendedor</span> |
+| **Precondiciones:** | <span>El Vendedor ha seleccionado una foto y el sistema inicia la verificación de datos.</span> |
+| **Flujo Normal:** | <span>1.- El Vendedor inicia la búsqueda detallada.<br>2.- El sistema inicia la verificación de datos.<br>3.- El sistema ejecuta la búsqueda y muestra los detalles encontrados.</span> |
+| **Flujo Alternativo:** | <span> No se encuentran los detalles buscados en la foto; el sistema notifica la ausencia de resultados.</span> |
+| **Poscondiciones:** | <span>Los detalles de la foto han sido presentados al Vendedor.</span> |
+| **Artefactos relacionados:** | <span>CU_400, CU_409 </span> |
+
+---
+
+| **Nombre:** | <span>**Verificar datos**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_409**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Proceso de comprobación de la validez y consistencia de los datos introducidos durante la búsqueda de detalles.</span> |
+| **Actores:** | <span>Vendedor</span> |
+| **Precondiciones:** | <span>Se han buscado detalles previamente</span> |
+| **Flujo Normal:** | <span>1.- El sistema recibe los parámetros de búsqueda.<br>2.- El sistema ejecuta las rutinas de validación.<br>3.- El sistema confirma que los datos son válidos.</span> |
+| **Flujo Alternativo:** | <span> Uno o más parámetros de búsqueda son inválidos; el sistema detiene la búsqueda y devuelve un error</span> |
+| **Poscondiciones:** | <span>Se ha confirmado la validez de los datos de búsqueda.</span> |
+| **Artefactos relacionados:** | <span>CU_408 (Base)</span> |
+
+---
+
+| **Nombre:** | <span>**Ver ofertas (Gestor)**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_410**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Gestor visualizar todas las ofertas activas, bloqueadas y finalizadas del sistema.</span> |
+| **Actores:** | <span>Gestor</span> |
+| **Precondiciones:** | <span>El Gestor ha iniciado sesión con el rol apropiado.</span> |
+| **Flujo Normal:** | <span>1.- El Gestor selecciona la opción "Ver ofertas".<br>2.- El sistema carga y muestra el listado completo de ofertas.<br>3.- El Gestor puede ordenar o filtrar el listado.</span> |
+| **Flujo Alternativo:** | <span> El Gestor no tiene los permisos para ver todas las ofertas; el sistema solo muestra un subconjunto o niega el acceso.</span> |
+| **Poscondiciones:** | <span>El Gestor ha visualizado la información de las ofertas del sistema.</span> |
+| **Artefactos relacionados:** | <span>CU_414 (Relación por funcionalidad común)</span> |
+
+---
+
+| **Nombre:** | <span>**Bloquear ofertas**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_411**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Gestor o Administrador inhabilitar o cancelar una oferta para que deje de ser visible o aceptable por el Cliente.</span> |
+| **Actores:** | <span>Gestor, Administrador</span> |
+| **Precondiciones:** | <span>El actor ha identificado una oferta activa.</span> |
+| **Flujo Normal:** | <span>1.- El actor selecciona la oferta y elige "Bloquear".<br>2.- El sistema solicita confirmación.<br>3.- El sistema cambia el estado de la oferta a "Bloqueada".</span> |
+| **Flujo Alternativo:** | <span> La oferta ya ha sido aceptada o expiró; el sistema niega la acción y sugiere anular la venta (si aplica).</span> |
+| **Poscondiciones:** | <span>La oferta seleccionada pasa al estado "Bloqueada".</span> |
+| **Artefactos relacionados:** | <span></span> |
+
+---
+
+| **Nombre:** | <span>**Emitir facturas**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_412**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Genera un documento de factura para una venta completada. Esta operación requiere la intervención de un sistema externo de facturación.</span> |
+| **Actores:** | <span>Gestor, Administrador, Software de facturación (actor externo)</span> |
+| **Precondiciones:** | <span>Existe una venta completada pendiente de facturar.</span> |
+| **Flujo Normal:** | <span>1.- El actor selecciona la venta y elige "Emitir factura".<br>2.- El sistema envía los datos de la venta al Software de facturación.<br>3.- El sistema recibe la factura generada y la asocia a la venta.</span> |
+| **Flujo Alternativo:** | <span> El software externo no responde o devuelve un error; el sistema notifica y permite reintentar.</span> |
+| **Poscondiciones:** | <span>Se ha generado una factura y se ha asociado a la venta.</span> |
+| **Artefactos relacionados:** | <span>CU\_418 (Asociación con actor externo)</span> |
+
+---
+
+| **Nombre:** | <span>**Editar facturas**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_413**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Gestor o Administrador modificar los datos de una factura ya emitida (ej. corrección de datos fiscales).</span> |
+| **Actores:** | <span>Gestor, Administrador</span> |
+| **Precondiciones:** | <span>El actor ha seleccionado una factura.</span> |
+| **Flujo Normal:** | <span>1.- El actor accede al formulario de edición de la factura.<br>2.- El actor realiza las modificaciones (ej. dirección, nombre).<br>3.- El sistema valida y guarda la factura editada.</span> |
+| **Flujo Alternativo:** | <span> La factura tiene un estado que impide la edición directa; el sistema requiere generar una nota de crédito/débito.</span> |
+| **Poscondiciones:** | <span>Los datos de la factura han sido actualizados.</span> |
+| **Artefactos relacionados:** | <span>CU_417 </span> |
+
+---
+
+| **Nombre:** | <span>**Ver ofertas**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_414**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Cliente y al Administrador visualizar las ofertas (las recibidas o todas, respectivamente).</span> |
+| **Actores:** | <span>Cliente, Administrador</span> |
+| **Precondiciones:** | <span>El usuario está autenticado en el sistema.</span> |
+| **Flujo Normal:** | <span>1.- El usuario accede a la sección de ofertas.<br>2.- El sistema muestra el listado de ofertas pertinentes (propias para el Cliente).<br>3.- El usuario puede seleccionar una oferta.</span> |
+| **Flujo Alternativo:** | <span> El sistema muestra un mensaje indicando que no hay ofertas disponibles para el usuario en ese momento.</span> |
+| **Poscondiciones:** | <span>El usuario ha revisado las ofertas disponibles.</span> |
+| **Artefactos relacionados:** | <span>CU_410 (Relación por funcionalidad común)</span> |
+
+---
+
+| **Nombre:** | <span>**Crear usuarios**</span> |
+| :--- | :--- |
+| **Código:** | <span>CU_415</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Administrador dar de alta un nuevo usuario en el sistema. Conlleva la notificación por correo electrónico.</span> |
+| **Actores:** | <span>Administrador</span> |
+| **Precondiciones:** | <span>El Administrador ha iniciado sesión.</span> |
+| **Flujo Normal:** | <span>1.- El Administrador introduce los datos del nuevo usuario.<br>2.- El sistema valida los datos y registra el usuario.<br>3.- El sistema inicia el envío de Email</span> |
+| **Flujo Alternativo:** | <span> Ya existe un usuario con el mismo email o DNI; el sistema rechaza la creación y notifica al Administrador.</span> |
+| **Poscondiciones:** | <span>Se ha creado un nuevo registro de usuario y se ha enviado un email de bienvenida.</span> |
+| **Artefactos relacionados:** | <span>CU_416 , CU_417 </span> |
+
+---
+
+| **Nombre:** | <span>**Enviar e-mail**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_416**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Proceso de envío de un correo electrónico (ej. bienvenida, confirmación de cuenta), utilizando un gestor de correo externo.</span> |
+| **Actores:** | <span>Gestor de correo (actor externo)</span> |
+| **Precondiciones:** | <span>Se ha creado un usuario.</span> |
+| **Flujo Normal:** | <span>1.- El sistema prepara el contenido del email.<br>2.- El sistema interactúa con el Gestor de correo externo.<br>3.- El sistema recibe la confirmación de envío.</span> |
+| **Flujo Alternativo:** | <span> La dirección de correo es incorrecta o el envío rebota; el sistema registra un estado de "email fallido" para el usuario.</span> |
+| **Poscondiciones:** | <span>Se ha intentado o completado el envío del correo electrónico al nuevo usuario.</span> |
+| **Artefactos relacionados:** | <span>CU_415 </span> |
+
+---
+
+| **Nombre:** | <span>**Editar usuarios**</span> |
+| :--- | :--- |
+| **Código:** | <span>**CU_417**</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Administrador modificar los datos de cualquier usuario (rol, información de contacto, etc.). Comparte características con Editar facturas.</span> |
+| **Actores:** | <span>Administrador</span> |
+| **Precondiciones:** | <span>El Administrador ha seleccionado un usuario existente.</span> |
+| **Flujo Normal:** | <span>1.- El Administrador accede al formulario de edición del usuario.<br>2.- El Administrador modifica los datos necesarios.<br>3.- El sistema valida y guarda los cambios en el perfil del usuario.</span> |
+| **Flujo Alternativo:** | <span>El Administrador intenta rebajar su propio rol a uno inferior; el sistema rechaza la operación por seguridad.</span> |
+| **Poscondiciones:** | <span>Los datos del usuario han sido actualizados.</span> |
+| **Artefactos relacionados:** | <span>CU_413 </span> |
 
 </br>
 

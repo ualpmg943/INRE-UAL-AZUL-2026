@@ -1050,7 +1050,7 @@ En un sistema de gestión de incidencias, los técnicos y los operadores pueden 
 | **Flujo Normal:** | 1.- El actor busca y selecciona una incidencia. <br>2.- El sistema muestra los detalles de la incidencia. |
 | **Flujo Alternativo:** | 2.A- De forma excepcional, el actor puede ejecutar el caso de uso "Editar datos de la incidencia" (CU-511). |
 | **Poscondiciones:**| El actor ha consultado la información de la incidencia. |
-| **Artefactos relacionados:**| CU-511, CU-512, CU-513, CU-514 |
+| **Artefactos relacionados:**| CU-511, CU-512, CU-513, CU-514, CU-530 |
 
 ### ---
 
@@ -1230,7 +1230,7 @@ En un sistema de gestión de incidencias, los técnicos y los operadores pueden 
 | **Flujo Normal:** | 1.- El invitado accede al portal público de incidencias. <br>2.- El sistema muestra una lista de incidencias públicas. <br>3.- El invitado puede usar un buscador básico para filtrar los resultados. <br>4.- El invitado selecciona una incidencia para ver su estado y descripción general. |
 | **Flujo Alternativo:** | 3.A- Si la búsqueda no arroja resultados, el sistema lo indica. |
 | **Poscondiciones:**| El invitado ha consultado el estado de una incidencia pública. |
-| **Artefactos relacionados:**| |
+| **Artefactos relacionados:**| CU-530 |
 
 ### ---
 

@@ -5,7 +5,7 @@
 Después de un incendio, por un lado se necesita obtener información de nuestra compañía de seguro. Por otro lado, es posible que necesitemos información adicional del departamento de bomberos, pero solo si los bomberos participaron durante el apagado del incendio. Cuando se tenga toda la información, se necesita escribir un informe consolidado.
 
 <p align="center">
-  <img src="supuesto1-lab2.jpg" alt="img_supuesto1" width="1000">
+  <img src="supuesto1-lab2.png" alt="Supuesto 1" width="1000">
 </p>
 
 </br>

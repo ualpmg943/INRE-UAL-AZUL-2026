@@ -559,6 +559,10 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
 
 </br>
 
+<p align="center">
+  <img src="supuesto_2_DB.png" alt="img_supuesto2_DB" width="750">
+</p>
+
 ## Supuesto 3: Compañia Hotelera
 
 En una compañía hotelera, el administrador y el comercial pueden consultar reservas. El comercial realiza ofertas y gestiona nuevas reservas. El administrador gestiona nuevas peticiones y también realiza ofertas. La realización de ofertas por parte del comercial conlleva un recálculo de precios. Además, dicha realización de ofertas conlleva opcionalmente el bloqueo temporal de una reserva. Los clientes, los administradores y los comerciales pueden consultar disponibilidades y visualizar ofertas. La consulta de disponibilidades y la consulta de reservas tienen la funcionalidad común de buscar elementos. Por su parte, la consulta de disponibilidades conlleva una funcionalidad que muestra un calendario.

@@ -942,7 +942,6 @@ En una compañía hotelera, el administrador y el comercial pueden consultar res
 
 ### ---
 
-### Realizar Oferta
 
 | **Nombre:** | <span>Realizar oferta</span> |
 | :--- | :--- |
@@ -1148,7 +1147,9 @@ En una compañía hotelera, el administrador y el comercial pueden consultar res
 <p align="center">
   <img src="supuesto_3_DB.jpg" alt="img_supuesto2_DB" width="750">
 </p>
-### 1. Tablas supuesto 3
+### ---
+
+### Otros Casos de Uso
 
 | **INF-301** | **Administrador** |
 | :--- | :--- |

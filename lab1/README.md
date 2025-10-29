@@ -178,6 +178,123 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
   <img src="supuesto_1_DB.jpg" alt="img_supuesto2_DB" width="750">
 </p>
 
+## 📄 Fichas de Requisitos de Información (INF) - Supuesto 1: Horarios
+
+### 1. Entidades de Actores y Roles
+
+| **INF-101** | **PDI** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 1 |
+| **Referencias** | <ul><li>Consultar horarios</li><li>Proponer cambios en los horarios (CU-101)</li><li>Dar de alta estudiante (CU-103)</li></ul> |
+| **Descripción** | Almacena los datos del Personal Docente e Investigador (PDI). |
+| **Datos específicos** | <ul><li>ID\_PDI INT (PK)</li><li>PDIID\_PDI INT (Atributo no clave)</li><li>PDIID\_PDI2 INT (Atributo no clave)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Actor clave en el sistema de gestión de horarios y listas de clase. |
+
+### ---
+
+| **INF-102** | **PAS** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 1 |
+| **Referencias** | <ul><li>Consultar horarios</li><li>Modificar horarios (CU-107)</li><li>Dar de alta estudiante (CU-104)</li></ul> |
+| **Descripción** | Almacena los datos del Personal de Administración y Servicios (PAS). |
+| **Datos específicos** | <ul><li>ID\_PAS INT (PK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Actor con permisos de modificación directa en horarios. |
+
+### ---
+
+| **INF-103** | **Estudiante** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 1 |
+| **Referencias** | <ul><li>Consultar horarios (CU-111)</li><li>Relacionado con Dar alta estudiante (CU-102, CU-103, CU-104)</li></ul> |
+| **Descripción** | Almacena la información de los estudiantes. |
+| **Datos específicos** | <ul><li>ID\_Estudiante INT (PK)</li><li>PDIID\_PDI INT (FK a PDI)</li><li>PASID\_PAS INT (FK a PAS)</li><li>Lista\_ClaseID\_Lista\_Clase INT (FK a Lista\_clase)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Sus claves foráneas modelan qué PDI o PAS le dio de alta. |
+
+### ---
+
+### 2. Entidades de Estructura Académica
+
+| **INF-104** | **Asignatura** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 1 |
+| **Referencias** | <ul><li>Horarios</li><li>Lista de clase</li></ul> |
+| **Descripción** | Representa una asignatura académica. |
+| **Datos específicos** | <ul><li>ID\_Asignatura INT (PK)</li><li>PDIID\_PDI INT (FK a PDI)</li></ul> |
+| **Importancia** | Crítica |
+| **Estado** | Aceptado |
+| **Comentarios** | Relaciona la asignatura con el PDI responsable. |
+
+### ---
+
+| **INF-105** | **Estudiante\_Asignatura** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 1 |
+| **Referencias** | <ul><li>El estudiante consulta su horario según sus asignaturas matriculadas (CU-111)</li></ul> |
+| **Descripción** | Tabla de asociación (resuelve la relación Many-to-Many) entre Estudiante y Asignatura. |
+| **Datos específicos** | <ul><li>EstudianteID\_Estudiante INT (PK, FK a Estudiante)</li><li>AsignaturaID\_Asignatura INT (PK, FK a Asignatura)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Modela la matrícula de un estudiante en una asignatura. |
+
+### ---
+
+| **INF-106** | **Lista\_clase** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 1 |
+| **Referencias** | <ul><li>El PDI puede buscar en las listas de clase de sus asignaturas (CU-103, CU-106)</li></ul> |
+| **Descripción** | Lista de estudiantes en una clase específica de una asignatura. |
+| **Datos específicos** | <ul><li>ID\_Lista\_clase INT (PK)</li><li>Lista\_ClaseID\_Lista\_Clase INT (Atributo no clave)</li><li>AsignaturaID\_Asignatura INT (FK a Asignatura)</li></ul> |
+| **Importancia** | Media |
+| **Estado** | Aceptado |
+| **Comentarios** | Relacionado con la funcionalidad de búsqueda del PDI para el alta de estudiantes. |
+
+### ---
+
+### 3. Entidades de Horarios y Modificación
+
+| **INF-107** | **Horario** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 1 |
+| **Referencias** | <ul><li>Consultar horarios (CU-108)</li><li>Modificar horarios (CU-107)</li></ul> |
+| **Descripción** | Almacena los registros de horarios (día, hora, aula). |
+| **Datos específicos** | <ul><li>ID\_Horario INT (PK)</li><li>PASID\_PAS INT (FK a PAS)</li><li>AsignaturaID\_Asignatura INT (FK a Asignatura)</li></ul> |
+| **Importancia** | Crítica |
+| **Estado** | Aceptado |
+| **Comentarios** | Es la entidad que el PAS puede modificar y todos los actores pueden consultar. |
+
+### ---
+
+| **INF-108** | **Propuesta\_cambio** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 1 |
+| **Referencias** | <ul><li>Proponer cambios en los horarios (CU-101)</li></ul> |
+| **Descripción** | Almacena las propuestas de cambio de horario realizadas por el PDI para su posterior revisión. |
+| **Datos específicos** | <ul><li>ID\_Propuesta\_cambio INT (PK)</li><li>PDIID\_PDI INT (FK a PDI)</li><li>HorarioID\_Horario INT (FK a Horario)</li></ul> |
+| **Importancia** | Media |
+| **Estado** | Aceptado |
+| **Comentarios** | Modela la relación entre un PDI, una propuesta y el horario afectado. |
 ## Supuesto 2: Sistema de compras
 
 En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, proveedor y administrador. Los compradores pueden agregar productos, consultar precios, finalizar la compra y consultar ofertas. Agregar productos implica marcar esos productos como bloqueados. Los vendedores también pueden consultar ofertas y consultar precios. Los proveedores pueden consultar precios, avisar de nuevos productos y consultar ofertas. Avisar de nuevos productos, de forma excepcional, realiza la incorporación de una oferta. Los proveedores también tienen una funcionalidad para avisar del fin de una oferta. Cuando se avisa del fin de una oferta, se ejecuta la funcionalidad de eliminar la oferta. Ambas funcionalidades de avisar del proveedor tienen en común que se encarga de enviar una notificación. Los administradores pueden consultar precios, consultar ofertas y eliminar productos. La funcionalidad de consultar precios incluye una funcionalidad de buscar productos que es similar a la funcionalidad de consultar productos de los compradores. Sin embargo, la funcionalidad de consultar productos añade una funcionalidad para verificar la disponibilidad. Para realizar una venta, un comprador y un vendedor participan de forma conjunta. En dicha operación, se lleva a cabo el acuerdo de un precio; excepcionalmente, durante la realización de la venta, se consultará el histórico de ventas.

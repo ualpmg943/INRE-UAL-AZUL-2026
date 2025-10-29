@@ -184,13 +184,13 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 | :--- | :--- |
 | **Versión** | 1.0 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Descripción del Supuesto 1 |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 1 |
 | **Referencias** | <ul><li>Consultar horarios</li><li>Proponer cambios en los horarios (CU-101)</li><li>Dar de alta estudiante (CU-103)</li></ul> |
 | **Descripción** | Almacena los datos del Personal Docente e Investigador (PDI). |
 | **Datos específicos** | <ul><li>ID\_PDI INT (PK)</li><li>PDIID\_PDI INT (Atributo no clave)</li><li>PDIID\_PDI2 INT (Atributo no clave)</li></ul> |
 | **Importancia** | Alta |
 | **Estado** | Aceptado |
-| **Comentarios** | Actor clave en el sistema de gestión de horarios y listas de clase. |
+| **Comentarios** | Actor clave en la gestión de horarios y listas de clase. |
 
 ### ---
 
@@ -198,7 +198,7 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 | :--- | :--- |
 | **Versión** | 1.0 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Descripción del Supuesto 1 |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 1 |
 | **Referencias** | <ul><li>Consultar horarios</li><li>Modificar horarios (CU-107)</li><li>Dar de alta estudiante (CU-104)</li></ul> |
 | **Descripción** | Almacena los datos del Personal de Administración y Servicios (PAS). |
 | **Datos específicos** | <ul><li>ID\_PAS INT (PK)</li></ul> |
@@ -212,13 +212,13 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 | :--- | :--- |
 | **Versión** | 1.0 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Descripción del Supuesto 1 |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 1 |
 | **Referencias** | <ul><li>Consultar horarios (CU-111)</li><li>Relacionado con Dar alta estudiante (CU-102, CU-103, CU-104)</li></ul> |
 | **Descripción** | Almacena la información de los estudiantes. |
 | **Datos específicos** | <ul><li>ID\_Estudiante INT (PK)</li><li>PDIID\_PDI INT (FK a PDI)</li><li>PASID\_PAS INT (FK a PAS)</li><li>Lista\_ClaseID\_Lista\_Clase INT (FK a Lista\_clase)</li></ul> |
 | **Importancia** | Alta |
 | **Estado** | Aceptado |
-| **Comentarios** | Sus claves foráneas modelan qué PDI o PAS le dio de alta. |
+| **Comentarios** | Sus claves foráneas indican qué PDI o PAS le dio de alta, y su lista de clase. |
 
 ### ---
 
@@ -228,7 +228,7 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 | :--- | :--- |
 | **Versión** | 1.0 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Descripción del Supuesto 1 |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 1 |
 | **Referencias** | <ul><li>Horarios</li><li>Lista de clase</li></ul> |
 | **Descripción** | Representa una asignatura académica. |
 | **Datos específicos** | <ul><li>ID\_Asignatura INT (PK)</li><li>PDIID\_PDI INT (FK a PDI)</li></ul> |
@@ -242,7 +242,7 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 | :--- | :--- |
 | **Versión** | 1.0 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Descripción del Supuesto 1 |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 1 |
 | **Referencias** | <ul><li>El estudiante consulta su horario según sus asignaturas matriculadas (CU-111)</li></ul> |
 | **Descripción** | Tabla de asociación (resuelve la relación Many-to-Many) entre Estudiante y Asignatura. |
 | **Datos específicos** | <ul><li>EstudianteID\_Estudiante INT (PK, FK a Estudiante)</li><li>AsignaturaID\_Asignatura INT (PK, FK a Asignatura)</li></ul> |
@@ -256,7 +256,7 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 | :--- | :--- |
 | **Versión** | 1.0 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Descripción del Supuesto 1 |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 1 |
 | **Referencias** | <ul><li>El PDI puede buscar en las listas de clase de sus asignaturas (CU-103, CU-106)</li></ul> |
 | **Descripción** | Lista de estudiantes en una clase específica de una asignatura. |
 | **Datos específicos** | <ul><li>ID\_Lista\_clase INT (PK)</li><li>Lista\_ClaseID\_Lista\_Clase INT (Atributo no clave)</li><li>AsignaturaID\_Asignatura INT (FK a Asignatura)</li></ul> |
@@ -272,7 +272,7 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 | :--- | :--- |
 | **Versión** | 1.0 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Descripción del Supuesto 1 |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 1 |
 | **Referencias** | <ul><li>Consultar horarios (CU-108)</li><li>Modificar horarios (CU-107)</li></ul> |
 | **Descripción** | Almacena los registros de horarios (día, hora, aula). |
 | **Datos específicos** | <ul><li>ID\_Horario INT (PK)</li><li>PASID\_PAS INT (FK a PAS)</li><li>AsignaturaID\_Asignatura INT (FK a Asignatura)</li></ul> |
@@ -286,7 +286,7 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
 | :--- | :--- |
 | **Versión** | 1.0 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Descripción del Supuesto 1 |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 1 |
 | **Referencias** | <ul><li>Proponer cambios en los horarios (CU-101)</li></ul> |
 | **Descripción** | Almacena las propuestas de cambio de horario realizadas por el PDI para su posterior revisión. |
 | **Datos específicos** | <ul><li>ID\_Propuesta\_cambio INT (PK)</li><li>PDIID\_PDI INT (FK a PDI)</li><li>HorarioID\_Horario INT (FK a Horario)</li></ul> |

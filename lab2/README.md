@@ -25,7 +25,7 @@ Después de un incendio, por un lado se necesita obtener información de nuestra
 9. Si el departamento de finanzas aprobó, el proceso finaliza enviando un mensaje al proceso cliente.
 
 <p align="center">
-  <img src="supuesto2.jpg" alt="img_supuesto1" width="1000">
+  <img src="supuesto2-lab2.jpg" alt="img_supuesto1" width="1000">
 </p>
 
 </br>

@@ -178,8 +178,6 @@ En una universidad, el personal del PDI, el personal del PAS y los estudiantes p
   <img src="supuesto_1_DB.jpg" alt="img_supuesto2_DB" width="750">
 </p>
 
-## 📄 Fichas de Requisitos de Información (INF) - Supuesto 1: Horarios
-
 ### 1. Entidades de Actores y Roles
 
 | **INF-101** | **PDI** |

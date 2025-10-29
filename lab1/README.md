@@ -563,6 +563,146 @@ En un sistema de compra, existen cuatro tipos de usuarios: comprador, vendedor, 
   <img src="supuesto_2_DB.png" alt="img_supuesto2_DB" width="750">
 </p>
 
+### ---
+
+| **INF-202** | **Usuario** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 2 |
+| **Referencias** | <ul><li>Autenticación de todos los actores</li></ul> |
+| **Descripción** | El sistema deberá almacenar la información base de autenticación y los datos comunes para todos los actores. |
+| **Datos específicos** | <ul><li>idUsuario INT</li><li>nombreUsuario VARCHAR(45)</li><li>correoElectronico VARCHAR(45)</li><li>contraseña VARCHAR(45)</li></ul> |
+| **Importancia** | Muy importante |
+| **Estado** | Aceptado |
+| **Comentarios** | Es la tabla "padre" de la que heredan los roles de Administrador, Proveedor, Vendedor y Comprador. |
+
+### ---
+
+| **INF-203** | **Administrador** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 2 |
+| **Referencias** | <ul><li>Consultar precios (administrador)</li><li>Consultar oferta (administrador)</li><li>Eliminar producto</li></ul> |
+| **Descripción** | El sistema deberá almacenar la referencia al rol de Administrador. |
+| **Datos específicos** | <ul><li>idAdministrador INT</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de especialización. El 'idAdministrador' es una Clave Foránea (FK) que referencia a 'Usuario.idUsuario'. |
+
+### ---
+
+| **INF-204** | **Proveedor** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 2 |
+| **Referencias** | <ul><li>Consultar precios (proveedor)</li\><li>Avisar de nuevos productos</li><li>Avisar de fin de oferta</li></ul> |
+| **Descripción** | El sistema deberá almacenar la referencia al rol de Proveedor. |
+| **Datos específicos** | <ul><li>idProveedor INT</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de especialización. El 'idProveedor' es una FK que referencia a 'Usuario.idUsuario'. Es el responsable de los productos y las ofertas. |
+
+### ---
+
+| **INF-205** | **Vendedor** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 2 |
+| **Referencias** | <ul><li>Consultar precios (vendedor)</li><li>Realizar venta</li></ul> |
+| **Descripción** | El sistema deberá almacenar la referencia al rol de Vendedor. |
+| **Datos específicos** | <ul><li>idVendedor INT</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de especialización. El 'idVendedor' es una FK que referencia a 'Usuario.idUsuario'. Participa en la 'Venta'. |
+
+### ---
+
+| **INF-206** | **Comprador** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 2 |
+| **Referencias** | <ul><li>Agregar productos</li><li>Finalizar compra</li><li>Realizar venta</li></ul> |
+| **Descripción** | El sistema deberá almacenar la referencia al rol de Comprador. |
+| **Datos específicos** | <ul><li>idComprador INT</li></ul> |
+| **Importancia** | Muy importante |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de especialización. El 'idComprador' es una FK que referencia a 'Usuario.idUsuario'. Participa en la 'Venta'. |
+
+### ---
+
+| **INF-201** | **Producto** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 2 |
+| **Referencias** | <ul><li>Agregar productos</li><li>Consultar productos</li><li>Consultar precios</li><li>Eliminar producto</li></ul> |
+| **Descripción** | El sistema deberá almacenar la información correspondiente a los productos que se gestionan en la tienda. |
+| **Datos específicos** | <ul><li>idProducto INT</li><li>idProveedor INT</li><li>precio INT</li><li>stock INT</li></ul> |
+| **Importancia** | Muy importante |
+| **Estado** | Aceptado |
+| **Comentarios** | Es la entidad principal sobre la que operan la mayoría de los casos de uso (comprar, consultar, gestionar). |
+
+### ---
+
+| **INF-207** | **Oferta** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 2 |
+| **Referencias** | <ul><li>Consultar oferta</li><li>Avisar de fin de oferta</li><li>Incorporar oferta</li></ul> |
+| **Descripción** | El sistema deberá almacenar la información de las ofertas o promociones creadas por los proveedores. |
+| **Datos específicos** | <ul><li>idOferta INT</li><li>idProveedor INT</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Se relaciona con los productos a los que aplica a través de la tabla 'OfertaProducto'. |
+
+### ---
+
+| **INF-208** | **OfertaProducto** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 2 |
+| **Referencias** | <ul><li>Consultar oferta</li><li>Incorporar oferta</li></ul> |
+| **Descripción** | El sistema deberá almacenar la relación entre las ofertas y los productos. |
+| **Datos específicos** | <ul><li>idOferta INT</li><li>idProducto INT</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla asociativa (N:N) que permite que una oferta aplique a muchos productos y un producto esté en muchas ofertas. |
+
+### ---
+
+| **INF-209** | **Venta** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 2 |
+| **Referencias** | <ul><li>Realizar venta</li><li>Finalizar compra</li><li>Consultar el historico de ventas</li></ul> |
+| **Descripción** | El sistema deberá almacenar la cabecera de una transacción de venta, identificando al comprador y al vendedor. |
+| **Datos específicos** | <ul><li>idVenta INT</li><li>idComprador INT</li><li>idVendedor INT</li></ul> |
+| **Importancia** | Muy importante |
+| **Estado** | Aceptado |
+| **Comentarios** | Representa el registro de la transacción. Se complementa con 'DetallesVenta'. |
+
+### ---
+
+| **INF-210** | **DetallesVenta** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 2 |
+| **Referencias** | <ul><li>Realizar venta</li><li>Consultar el historico de ventas</li></ul> |
+| **Descripción** | El sistema deberá almacenar el detalle de los productos (y sus cantidades) vendidos en una transacción. |
+| **Datos específicos** | <ul><li>idVenta INT</li><li>idProducto INT</li><li>cantidadVendida INT</li><li>precioTotal INT</li></ul> |
+| **Importancia** | Muy importante |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla asociativa (N:N) entre 'Venta' y 'Producto'. Esencial para el histórico de ventas. |
+
 ## Supuesto 3: Compañia Hotelera
 
 En una compañía hotelera, el administrador y el comercial pueden consultar reservas. El comercial realiza ofertas y gestiona nuevas reservas. El administrador gestiona nuevas peticiones y también realiza ofertas. La realización de ofertas por parte del comercial conlleva un recálculo de precios. Además, dicha realización de ofertas conlleva opcionalmente el bloqueo temporal de una reserva. Los clientes, los administradores y los comerciales pueden consultar disponibilidades y visualizar ofertas. La consulta de disponibilidades y la consulta de reservas tienen la funcionalidad común de buscar elementos. Por su parte, la consulta de disponibilidades conlleva una funcionalidad que muestra un calendario.

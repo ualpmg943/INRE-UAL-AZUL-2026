@@ -1157,6 +1157,105 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
   <img src="supuesto4.jpg" alt="img_supuesto1" width="1000">
 </p>
 
+### 1. Entidades de Actores y Roles
+
+| **INF-301** | **Administrador** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 3 |
+| **Referencias** | <ul><li>Consultar reservas</li><li>Realiza ofertas (CU-310)</li><li>Gestiona nuevas peticiones (CU-316)</li><li>Visualizar ofertas (CU-314)</li></ul> |
+| **Descripción** | Almacena los datos del actor Administrador. |
+| **Datos específicos** | <ul><li>ID\_Administrador INT (PK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de especialización. Actor con amplios permisos de gestión. |
+
+### ---
+
+| **INF-302** | **Comercial** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 3 |
+| **Referencias** | <ul><li>Consultar reservas</li><li>Realiza ofertas (CU-309)</li><li>Gestiona nuevas reservas (CU-315)</li><li>Visualizar ofertas (CU-313)</li></ul> |
+| **Descripción** | Almacena los datos del actor Comercial. |
+| **Datos específicos** | <ul><li>ID\_Comercial INT (PK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de especialización. Actor clave en la gestión de ofertas y reservas. |
+
+### ---
+
+| **INF-303** | **Cliente** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 3 |
+| **Referencias** | <ul><li>Consultar disponibilidades (CU-302)</li><li>Visualizar ofertas (CU-312)</li></ul> |
+| **Descripción** | Almacena la información de los clientes del hotel. |
+| **Datos específicos** | <ul><li>ID\_Cliente INT (PK)</li></ul> |
+| **Importancia** | Media |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de especialización. Central en las peticiones y reservas. |
+
+### ---
+
+### 2. Entidades de Gestión Hotelera
+
+| **INF-304** | **Peticion** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 3 |
+| **Referencias** | <ul><li>Gestionar nueva petición (CU-316)</li></ul> |
+| **Descripción** | Almacena las peticiones de los clientes que son gestionadas por el Administrador. |
+| **Datos específicos** | <ul><li>ID\_Peticion INT (PK)</li><li>ClienteID\_Cliente INT (FK a Cliente)</li><li>AdministradorID\_Administrador INT (FK a Administrador)</li></ul> |
+| **Importancia** | Media |
+| **Estado** | Aceptado |
+| **Comentarios** | Relaciona una petición con el cliente que la realiza y el administrador que la gestiona. |
+
+### ---
+
+| **INF-305** | **Oferta** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 3 |
+| **Referencias** | <ul><li>Realizar oferta (CU-308)</li><li>Visualizar oferta (CU-311)</li><li>Recalcular precios (CU-317)</li></ul> |
+| **Descripción** | Almacena los detalles de las ofertas realizadas por el Comercial o el Administrador. |
+| **Datos específicos** | <ul><li>ID\_Oferta INT (PK)</li><li>ComercialID\_Comercial INT (FK a Comercial)</li><li>AdministradorID\_Administrador INT (FK a Administrador)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | El ID de la oferta también se usa en la tabla Reserva para vincular la reserva a una oferta aplicada. |
+
+### ---
+
+| **INF-306** | **Habitacion** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 3 |
+| **Referencias** | <ul><li>Consultar disponibilidad (CU-301)</li><li>Gestionar nueva reserva (CU-315)</li><li>Bloquear temporalmente una reserva (CU-318)</li></ul> |
+| **Descripción** | Entidad de maestro que representa las unidades de reserva. |
+| **Datos específicos** | <ul><li>ID\_Habitacion INT (PK)</li></ul> |
+| **Importancia** | Crítica |
+| **Estado** | Aceptado |
+| **Comentarios** | Se relaciona con Reserva para indicar qué habitación se ocupa. |
+
+### ---
+
+| **INF-307** | **Reserva** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 3 |
+| **Referencias** | <ul><li>Consultar reservas (CU-305)</li><li>Gestionar nueva reserva (CU-315)</li><li>Bloquear temporalmente una reserva (CU-318)</li></ul> |
+| **Descripción** | Almacena los detalles de una reserva de hotel. |
+| **Datos específicos** | <ul><li>ID\_Reserva INT (PK)</li><li>ComercialID\_Comercial INT (FK a Comercial)</li><li>ClienteID\_Cliente INT (FK a Cliente)</li><li>HabitacionID\_Habitacion INT (FK a Habitacion)</li><li>OfertaID\_Oferta INT (FK a Oferta)</li></ul> |
+| **Importancia** | Crítica |
+| **Estado** | Aceptado |
+| **Comentarios** | Central en la gestión de ocupación. La FK a Oferta es para indicar si se aplicó una oferta al momento de la reserva. |
 #### Aqui los requisitos del diagrama
 #### Aqui los requisitos del diagrama
 

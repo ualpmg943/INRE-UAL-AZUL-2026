@@ -1148,16 +1148,7 @@ En una compañía hotelera, el administrador y el comercial pueden consultar res
 <p align="center">
   <img src="supuesto_3_DB.jpg" alt="img_supuesto2_DB" width="750">
 </p>
-
-## Supuesto 4: Fotografía Online
-
-En una aplicación de fotografía online, los clientes pueden visualizar las fotos, donde de forma excepcional se puede realizar una denuncia sobre la foto. Al denunciar una foto, se ha de introducir una explicación sobre la denuncia. Los clientes también pueden llevar a cabo consultas sobre las fotos, operación que es un caso particular de visualizar las fotos. Los controladores de fotos pueden indicar que una foto debe ser revisada. Esta funcionalidad es un caso general de la funcionalidad de denunciar foto. Además, los controladores también pueden editar la información de las fotos. En esta aplicación también participan usuarios de tipo vendedor. Los vendedores pueden escribir a los clientes para hacerles ofertas sobre los productos de la aplicación. De forma excepcional, al hacer una oferta pueden reducir el precio de un producto. Los vendedores también pueden buscar detalles en las fotos, operación que es un caso particular de visualizar fotos. Pero esa búsqueda conlleva la verificación de los datos introducidos. Por otro lado, los gestores de la aplicación pueden ver ofertas, bloquear ofertas, emitir facturas y editar facturas. La emisión de facturas requiere la participación de un software de facturación. El administrador de la tienda puede ver ofertas, emitir facturas, editar facturas, bloquear ofertas, crear usuarios y editar usuarios. Esta funcionalidad de ver ofertas también la pueden realizar los clientes. Editar usuarios tiene características en común con editar facturas. Crear usuarios conlleva el envío de un email en el que es necesario el uso de un gestor de correo.
-
-<p align="center">
-  <img src="supuesto4.jpg" alt="img_supuesto1" width="1000">
-</p>
-
-### 1. Entidades de Actores y Roles
+### 1. Tablas supuesto 3
 
 | **INF-301** | **Administrador** |
 | :--- | :--- |
@@ -1201,7 +1192,6 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 
 ### ---
 
-### 2. Entidades de Gestión Hotelera
 
 | **INF-304** | **Peticion** |
 | :--- | :--- |
@@ -1256,7 +1246,17 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 | **Importancia** | Crítica |
 | **Estado** | Aceptado |
 | **Comentarios** | Central en la gestión de ocupación. La FK a Oferta es para indicar si se aplicó una oferta al momento de la reserva. |
-#### Aqui los requisitos del diagrama
+
+
+## Supuesto 4: Fotografía Online
+
+En una aplicación de fotografía online, los clientes pueden visualizar las fotos, donde de forma excepcional se puede realizar una denuncia sobre la foto. Al denunciar una foto, se ha de introducir una explicación sobre la denuncia. Los clientes también pueden llevar a cabo consultas sobre las fotos, operación que es un caso particular de visualizar las fotos. Los controladores de fotos pueden indicar que una foto debe ser revisada. Esta funcionalidad es un caso general de la funcionalidad de denunciar foto. Además, los controladores también pueden editar la información de las fotos. En esta aplicación también participan usuarios de tipo vendedor. Los vendedores pueden escribir a los clientes para hacerles ofertas sobre los productos de la aplicación. De forma excepcional, al hacer una oferta pueden reducir el precio de un producto. Los vendedores también pueden buscar detalles en las fotos, operación que es un caso particular de visualizar fotos. Pero esa búsqueda conlleva la verificación de los datos introducidos. Por otro lado, los gestores de la aplicación pueden ver ofertas, bloquear ofertas, emitir facturas y editar facturas. La emisión de facturas requiere la participación de un software de facturación. El administrador de la tienda puede ver ofertas, emitir facturas, editar facturas, bloquear ofertas, crear usuarios y editar usuarios. Esta funcionalidad de ver ofertas también la pueden realizar los clientes. Editar usuarios tiene características en común con editar facturas. Crear usuarios conlleva el envío de un email en el que es necesario el uso de un gestor de correo.
+
+<p align="center">
+  <img src="supuesto4.jpg" alt="img_supuesto1" width="1000">
+</p>
+
+
 #### Aqui los requisitos del diagrama
 
 | **Nombre:** | <span>Visualizar fotos</span> |

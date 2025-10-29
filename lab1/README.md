@@ -2157,3 +2157,144 @@ En un sistema de gestión de incidencias, los técnicos y los operadores pueden 
 | **Flujo Alternativo:** | 3.A- Si la búsqueda no produce resultados, el sistema muestra un mensaje informativo. |
 | **Poscondiciones:**| El actor ha visualizado la información de las incidencias solicitadas. |
 | **Artefactos relacionados:**| CU-510, CU-522 |
+
+
+### 1. Tablas BD supuesto 5
+
+| **INF-501** | **Usuario** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 5 |
+| **Referencias** | <ul><li>Base para la autenticación de todos los actores</li></ul> |
+| **Descripción** | La entidad padre que almacena la información base y común a todos los actores del sistema. |
+| **Datos específicos** | <ul><li>idUsuario INT (PK)</li><li>nombre VARCHAR(45)</li><li>apellidos VARCHAR(45)</li><li>correoElectronico VARCHAR(45)</li></ul> |
+| **Importancia** | Crítica |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla general de la que heredan los roles especializados. |
+
+### ---
+
+| **INF-502** | **UsuarioRegistrado** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 5 |
+| **Referencias** | <ul><li>Registrarse (CU-527)</li><li>Acceder a listado historico de notificaciones (CU-529)</li></ul> |
+| **Descripción** | Representa al usuario que se registra en el sistema (el antiguo Invitado). |
+| **Datos específicos** | <ul><li>idUsuarioRegistrado INT (PK)</li><li>fechaRegistro DATE</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Entidad de especialización. `idUsuarioRegistrado` es una FK que referencia a `Usuario.idUsuario`. |
+
+### ---
+
+| **INF-503** | **Tecnico** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 5 |
+| **Referencias** | <ul><li>Dar de Alta Incidencia</li><li>Atender llamadas</li><li>Realizar informe (CU-515)</li></ul> |
+| **Descripción** | Almacena los datos específicos del actor Técnico. |
+| **Datos específicos** | <ul><li>idTecnico INT (PK)</li><li>nivelEspecialidad VARCHAR(45)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Entidad de especialización. `idTecnico` es una FK que referencia a `Usuario.idUsuario`. |
+
+### ---
+
+| **INF-504** | **Operador** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 5 |
+| **Referencias** | <ul><li>Dar de Alta Incidencia</li><li>Atender llamadas</li><li>Marcar incidencias como duplicadas (CU-516)</li></ul> |
+| **Descripción** | Almacena los datos específicos del actor Operador. |
+| **Datos específicos** | <ul><li>idOperador INT (PK)</li><li>turno VARCHAR(45)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Entidad de especialización. `idOperador` es una FK que referencia a `Usuario.idUsuario`. |
+
+### ---
+
+| **INF-505** | **Administrador** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 5 |
+| **Referencias** | <ul><li>Gestionar categorías incidencias (CU-521)</li><li>Ordenan incidencias (CU-519)</li></ul> |
+| **Descripción** | Almacena los datos específicos del actor Administrador. |
+| **Datos específicos** | <ul><li>idAdministracion INT (PK)</li><li>permisos TINYINT</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Entidad de especialización. `idAdministracion` es una FK que referencia a `Usuario.idUsuario`. |
+
+### ---
+
+| **INF-506** | **Categoria** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 5 |
+| **Referencias** | <ul><li>Gestionar categorías incidencias (CU-521)</li></ul> |
+| **Descripción** | Almacena las categorías de incidencia. |
+| **Datos específicos** | <ul><li>idCategoria INT (PK)</li><li>nombre VARCHAR(45)</li><li>descripcion VARCHAR(45)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Mantenida por el Administrador. |
+
+### ---
+
+| **INF-507** | **Incidencia** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 5 |
+| **Referencias** | <ul><li>Dar de Alta Incidencia (CU-501)</li><li>Consultar Incidencias (CU-530)</li><li>Marcar incidencias como duplicada (CU-516)</li></ul> |
+| **Descripción** | La entidad central que almacena todos los detalles del incidente reportado. |
+| **Datos específicos** | <ul><li>idIncidencia INT (PK)</li><li>idCategoria INT (FK a Categoria)</li><li>idUsuarioCreador INT (FK a Usuario)</li><li>idUsuarioAsignado INT (FK a Usuario)</li><li>idIncidenciaOriginal INT (FK reflexiva a Incidencia)</li><li>estado VARCHAR(45)</li></ul> |
+| **Importancia** | Crítica |
+| **Estado** | Aceptado |
+| **Comentarios** | Contiene FK reflexiva para duplicados (CU-516) y FK para el asignado. |
+
+### ---
+
+| **INF-508** | **Informe** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 5 |
+| **Referencias** | <ul><li>Realizar informe (CU-515)</li></ul> |
+| **Descripción** | Documento de análisis y resolución generado por un Técnico (CU-515). |
+| **Datos específicos** | <ul><li>idInforme INT (PK)</li><li>idIncidencia INT (FK a Incidencia)</li><li>idTecnico INT (FK a Tecnico)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Mantiene la relación entre el Técnico y la Incidencia. |
+
+### ---
+
+| **INF-509** | **ComentarioOrdenacion** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 5 |
+| **Referencias** | <ul><li>Ordenan incidencias (Administradores) (CU-519)</li><li>Añadir comentario (CU-520)</li></ul> |
+| **Descripción** | Almacena el comentario obligatorio del Administrador al ordenar incidencias (CU-520). |
+| **Datos específicos** | <ul><li>idComentarioOrdenacion INT (PK)</li><li>idAdministrador INT (FK a Administrador)</li><li>idIncidencia INT (FK a Incidencia)</li></ul> |
+| **Importancia** | Media |
+| **Estado** | Aceptado |
+| **Comentarios** | Resuelve la relación M:N entre Administrador e Incidencia para la acción de ordenar. |
+
+### ---
+
+| **INF-510** | **Notificacion** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Diagrama E-R y Descripción del Supuesto 5 |
+| **Referencias** | <ul><li>Ver notificaciones (CU-528)</li><li>Acceder a listado historico de notificaciones (CU-529)</li></ul> |
+| **Descripción** | Historial de mensajes y alertas enviados a los usuarios registrados. |
+| **Datos específicos** | <ul><li>idNotificacion INT (PK)</li><li>idUsuarioRegistrado INT (FK a UsuarioRegistrado)</li><li>idIncidencia INT (FK a Incidencia)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Permite al `UsuarioRegistrado` consultar su histórico de notificaciones. |

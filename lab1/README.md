@@ -1528,6 +1528,177 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 | **Artefactos relacionados:** | <span>CU_414 </span> |
 
 </br>
+<p align="center">
+  <img src="supuesto_4_DB.png" alt="img_supuesto4DB" width="750">
+</p>
+
+| **INF-400** | **Usuario** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Gestión de perfiles de usuario</li><li>Autenticación</li></ul> |
+| **Descripción** | Almacena la información base de todos los usuarios del sistema. Actúa como tabla de generalización. |
+| **Datos específicos** | <ul><li>`idUsuario` INT (PK)</li><li>`nombreUsuario` VARCHAR(45)</li><li>`correoElectronico` VARCHAR(45)</li><li>`UsuarioCol` VARCHAR(45)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de generalización. Su clave primaria (`idUsuario`) es referenciada por las tablas de especialización: `Controlador`, `Cliente` y `Administrador`. |
+
+| **INF-401** | **Controlador** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Moderar contenido</li><li>Gestionar denuncias</li></ul> |
+| **Descripción** | El sistema deberá almacenar la referencia al rol de Controlador. |
+| **Datos específicos** | <ul><li>`idControlador` INT (PK, FK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de especialización. El `idControlador` es una Clave Primaria (PK) y a su vez una Clave Foránea (FK) que referencia a `Usuario.idUsuario`. |
+
+| **INF-402** | **Cliente** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Realizar denuncias</li><li>Visualizar fotos</li><li>Recibir facturas</li></ul> |
+| **Descripción** | El sistema deberá almacenar la referencia al rol de Cliente. |
+| **Datos específicos** | <ul><li>`idCliente` INT (PK, FK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de especialización. El `idCliente` es una Clave Primaria (PK) y a su vez una Clave Foránea (FK) que referencia a `Usuario.idUsuario`. |
+
+| **INF-403** | **Administrador** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Consultar precios (administrador)</li><li>Consultar oferta (administrador)</li><li>Eliminar producto</li><li>Crear usuarios</li></ul> |
+| **Descripción** | El sistema deberá almacenar la referencia al rol de Administrador. |
+| **Datos específicos** | <ul><li>`idAdministrador` INT (PK, FK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla de especialización. El `idAdministrador` es una Clave Primaria (PK) y a su vez una Clave Foránea (FK) que referencia a `Usuario.idUsuario`. |
+
+| **INF-404** | **Denuncia** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Registrar incidencia</li><li>Adjuntar prueba (foto)</li></ul> |
+| **Descripción** | Almacena la información de las denuncias realizadas por clientes, gestionadas por controladores y asociadas a una foto. |
+| **Datos específicos** | <ul><li>`idDenuncia` INT (PK)</li><li>`fechaDenuncia` VARCHAR(45)</li><li>`motivoDenuncia` VARCHAR(45)</li><li>`Cliente_idCliente` INT (FK)</li><li>`Foto_idFoto` INT (FK)</li><li>`Controlador_idControlador` INT (FK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Contiene Claves Foráneas (FK) que referencian a `Cliente.idCliente`, `Foto.idFoto` y `Controlador.idControlador`. |
+
+| **INF-405** | **Foto** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Subir imagen</li><li>Consultar imagen</li></ul> |
+| **Descripción** | Almacena los metadatos de las fotos subidas al sistema. |
+| **Datos específicos** | <ul><li>`idFoto` INT (PK)</li><li>`titulo` VARCHAR(45)</li><li>`descripcion` VARCHAR(45)</li><li>`estado` VARCHAR(45)</li><li>`url` VARCHAR(45)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Es referenciada por las tablas `Denuncia` y `Visualizacion`. |
+
+| **INF-406** | **CreaUsuario** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Registrar creación de usuario por un administrador</li></ul> |
+| **Descripción** | Tabla asociativa que registra qué administrador crea qué usuario. |
+| **Datos específicos** | <ul><li>`Administrador_idAdministrador` INT (PK, FK)</li><li>`Usuario_idUsuario` INT (PK, FK)</li><li>`email` VARCHAR(45)</li></ul> |
+| **Importancia** | Media |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla asociativa (muchos a muchos) entre `Administrador` y `Usuario`. La clave primaria es compuesta por (`Administrador_idAdministrador`, `Usuario_idUsuario`). |
+
+| **INF-407** | **Visualizacion** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Registrar vista de foto por un cliente</li></ul> |
+| **Descripción** | Tabla asociativa que registra qué cliente ha visualizado qué foto. |
+| **Datos específicos** | <ul><li>`Cliente_idCliente` INT (PK, FK)</li><li>`Foto_idFoto` INT (PK, FK)</li></ul> |
+| **Importancia** | Media |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla asociativa (muchos a muchos) entre `Cliente` y `Foto`. La clave primaria es compuesta por (`Cliente_idCliente`, `Foto_idFoto`). |
+
+| **INF-408** | **Vendedor** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Crear ofertas</li><li>Gestionar perfil de vendedor</li></ul> |
+| **Descripción** | Almacena la información de los vendedores que publican ofertas. |
+| **Datos específicos** | <ul><li>`idVendedor` INT (PK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Es referenciado por `Oferta`. Tiene una relación 1 a 1 con `Gestor`. |
+
+| **INF-409** | **Gestor** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Aprobar ofertas</li><li>Gestionar facturas</li></ul> |
+| **Descripción** | Almacena la información de los gestores, que administran ofertas y facturas. |
+| **Datos específicos** | <ul><li>`idGestor` INT (PK)</li><li>`Vendedor_idVendedor` INT (FK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Es referenciado por `Factura` y `Oferta`. La FK `Vendedor_idVendedor` se deduce de la relación 1:1. |
+
+| **INF-410** | **Factura** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Generar cobro</li><li>Consultar historial de pagos</li></ul> |
+| **Descripción** | Almacena la información de las facturas generadas, asociadas a un cliente, un gestor y un administrador. |
+| **Datos específicos** | <ul><li>`idFactura` INT (PK)</li><li>`fechaEmision` VARCHAR(45)</li><li>`totalPrecio` VARCHAR(45)</li><li>`Administrador_idAdministrador` INT (FK)</li><li>`Gestor_idGestor` INT (FK)</li><li>`Cliente_idCliente` INT (FK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Contiene FKs a `Administrador`, `Gestor` y `Cliente`. La FK `Cliente_idCliente` se deduce de la relación 1:N. |
+
+| **INF-411** | **Oferta** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Publicar oferta</li><li>Consultar ofertas</li></ul> |
+| **Descripción** | Almacena la información de las ofertas creadas por vendedores y gestionadas por gestores. |
+| **Datos específicos** | <ul><li>`idOferta` INT (PK)</li><li>`precio_oferta` VARCHAR(45)</li><li>`fecha` VARCHAR(45)</li><li>`estado` VARCHAR(45)</li><li>`Vendedor_idVendedor` INT (FK)</li><li>`Gestor_idGestor` INT (FK)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Contiene FKs a `Vendedor` y `Gestor`. Es la tabla "maestra" de la relación N:M con `Producto`. |
+
+| **INF-412** | **Producto** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Gestionar catálogo de productos</li></ul> |
+| **Descripción** | Almacena la información de los productos base que pueden ser incluidos en las ofertas. |
+| **Datos específicos** | <ul><li>`idProducto` INT (PK)</li><li>`nombre` VARCHAR(45)</li><li>`precio` VARCHAR(45)</li><li>`descripcion` VARCHAR(45)</li></ul> |
+| **Importancia** | Alta |
+| **Estado** | Aceptado |
+| **Comentarios** | Es la tabla "maestra" de la relación N:M con `Oferta`. |
+
+| **INF-413** | **OfertaProducto** |
+| :--- | :--- |
+| **Versión** | 1.0 (Octubre-2025) |
+| **Autores** | INRE Equipo Azul |
+| **Fuentes** | Descripción del Supuesto 4 |
+| **Referencias** | <ul><li>Añadir producto a una oferta</li></ul> |
+| **Descripción** | Tabla asociativa que vincula qué productos están incluidos en qué ofertas. |
+| **Datos específicos** | <ul><li>`Oferta_idOferta` INT (PK, FK)</li><li>`Producto_idProducto` INT (PK, FK)</li></ul> |
+| **Importancia** | Media |
+| **Estado** | Aceptado |
+| **Comentarios** | Tabla asociativa (muchos a muchos) entre `Oferta` y `Producto`. La clave primaria es compuesta por (`Oferta_idOferta`, `Producto_idProducto`). |
 
 ## Supuesto 5: Gestión de Incidencias
 

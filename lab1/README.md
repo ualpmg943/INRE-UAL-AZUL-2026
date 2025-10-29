@@ -2158,6 +2158,9 @@ En un sistema de gestión de incidencias, los técnicos y los operadores pueden 
 | **Poscondiciones:**| El actor ha visualizado la información de las incidencias solicitadas. |
 | **Artefactos relacionados:**| CU-510, CU-522 |
 
+<p align="center">
+  <img src="supuesto_5_DB.png" alt="img_supuesto5_db" width="750">
+</p>
 
 ### 1. Tablas BD supuesto 5
 

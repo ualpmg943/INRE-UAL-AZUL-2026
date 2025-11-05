@@ -1407,12 +1407,41 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 | **Flujo Alternativo:** | <span> Uno o más parámetros de búsqueda son inválidos; el sistema detiene la búsqueda y devuelve un error</span> |
 | **Poscondiciones:** | <span>Se ha confirmado la validez de los datos de búsqueda.</span> |
 | **Artefactos relacionados:** | <span>CU_409</span> |
+---
+| **Nombre:** | <span>**Ver ofertas**</span> |
+| :--- | :--- |
+| **Código:** | <span>CU_411</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Cliente y al Administrador visualizar las ofertas (las recibidas o todas, respectivamente).</span> |
+| **Actores:** | <span>Cliente, Administrador</span> |
+| **Precondiciones:** | <span>El usuario está autenticado en el sistema.</span> |
+| **Flujo Normal:** | <span>1.- El usuario accede a la sección de ofertas.<br>2.- El sistema muestra el listado de ofertas pertinentes (propias para el Cliente).<br>3.- El usuario puede seleccionar una oferta.</span> |
+| **Flujo Alternativo:** | <span> El sistema muestra un mensaje indicando que no hay ofertas disponibles para el usuario en ese momento.</span> |
+| **Poscondiciones:** | <span>El usuario ha revisado las ofertas disponibles.</span> |
+| **Artefactos relacionados:** | <span>CU_412,CU_413 </span> |
 
 ---
 
+| **Nombre:** | <span>**Ver ofertas (Cliente)**</span> |
+| :--- | :--- |
+| **Código:** | <span>CU_412</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Cliente visualizar todas las ofertas activas, bloqueadas y finalizadas del sistema.</span> |
+| **Actores:** | <span>Gestor</span> |
+| **Precondiciones:** | <span>El Cliente ha iniciado sesión con el rol apropiado.</span> |
+| **Flujo Normal:** | <span>1.- El Cliente selecciona la opción "Ver ofertas".<br>2.- El sistema carga y muestra el listado completo de ofertas.<br>3.- El Cliente puede ordenar o filtrar el listado.</span> |
+| **Flujo Alternativo:** | <span> El Cliente no tiene los permisos para ver todas las ofertas; el sistema solo muestra un subconjunto o niega el acceso.</span> |
+| **Poscondiciones:** | <span>El Cliente ha visualizado la información de las ofertas del sistema.</span> |
+| **Artefactos relacionados:** | <span>CU_411 </span> |
+---
+
+
 | **Nombre:** | <span>**Ver ofertas (Gestor)**</span> |
 | :--- | :--- |
-| **Código:** | <span>CU_411</span> |
+| **Código:** | <span>CU_412
+</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>15/10/25</span> |
 | **Descripción:** | <span>Permite al Gestor visualizar todas las ofertas activas, bloqueadas y finalizadas del sistema.</span> |
@@ -1421,13 +1450,13 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 | **Flujo Normal:** | <span>1.- El Gestor selecciona la opción "Ver ofertas".<br>2.- El sistema carga y muestra el listado completo de ofertas.<br>3.- El Gestor puede ordenar o filtrar el listado.</span> |
 | **Flujo Alternativo:** | <span> El Gestor no tiene los permisos para ver todas las ofertas; el sistema solo muestra un subconjunto o niega el acceso.</span> |
 | **Poscondiciones:** | <span>El Gestor ha visualizado la información de las ofertas del sistema.</span> |
-| **Artefactos relacionados:** | <span>CU_415 </span> |
+| **Artefactos relacionados:** | <span>CU_411 </span> |
 
 ---
 
 | **Nombre:** | <span>**Bloquear ofertas**</span> |
 | :--- | :--- |
-| **Código:** | <span>CU_412</span> |
+| **Código:** | <span>CU_413</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>15/10/25</span> |
 | **Descripción:** | <span>Permite al Gestor o Administrador inhabilitar o cancelar una oferta para que deje de ser visible o aceptable por el Cliente.</span> |
@@ -1436,13 +1465,41 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 | **Flujo Normal:** | <span>1.- El actor selecciona la oferta y elige "Bloquear".<br>2.- El sistema solicita confirmación.<br>3.- El sistema cambia el estado de la oferta a "Bloqueada".</span> |
 | **Flujo Alternativo:** | <span> La oferta ya ha sido aceptada o expiró; el sistema niega la acción y sugiere anular la venta (si aplica).</span> |
 | **Poscondiciones:** | <span>La oferta seleccionada pasa al estado "Bloqueada".</span> |
-| **Artefactos relacionados:** | <span></span> |
+| **Artefactos relacionados:** | <span>CU_414,CU_415</span> |
+
+---
+| **Nombre:** | <span>**Bloquear ofertas(admin)**</span> |
+| :--- | :--- |
+| **Código:** | <span>CU_414</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>La vista para el Administrador del CU Bloquear ofertas.</span> |
+| **Actores:** | <span>Administrador</span> |
+| **Precondiciones:** | <span>El actor ha identificado una oferta activa.</span> |
+| **Flujo Normal:** | <span>1.- El actor selecciona la oferta y elige "Bloquear".<br>2.- El sistema solicita confirmación.<br>3.- El sistema cambia el estado de la oferta a "Bloqueada".</span> |
+| **Flujo Alternativo:** | <span> La oferta ya ha sido aceptada o expiró; el sistema niega la acción y sugiere anular la venta (si aplica).</span> |
+| **Poscondiciones:** | <span>La oferta seleccionada pasa al estado "Bloqueada".</span> |
+| **Artefactos relacionados:** | <span>CU_413</span> |
+
+---
+| **Nombre:** | <span>**Bloquear ofertas(gestor)**</span> |
+| :--- | :--- |
+| **Código:** | <span>CU_415</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>PLa vista para el Gestor del CU Bloquear ofertas.</span> |
+| **Actores:** | <span>Gestor</span> |
+| **Precondiciones:** | <span>El actor ha identificado una oferta activa.</span> |
+| **Flujo Normal:** | <span>1.- El actor selecciona la oferta y elige "Bloquear".<br>2.- El sistema solicita confirmación.<br>3.- El sistema cambia el estado de la oferta a "Bloqueada".</span> |
+| **Flujo Alternativo:** | <span> La oferta ya ha sido aceptada o expiró; el sistema niega la acción y sugiere anular la venta (si aplica).</span> |
+| **Poscondiciones:** | <span>La oferta seleccionada pasa al estado "Bloqueada".</span> |
+| **Artefactos relacionados:** | <span>CU_413</span> |
 
 ---
 
 | **Nombre:** | <span>**Emitir facturas**</span> |
 | :--- | :--- |
-| **Código:** | <span>CU_413</span> |
+| **Código:** | <span>CU_416</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>15/10/25</span> |
 | **Descripción:** | <span>Genera un documento de factura para una venta completada. Esta operación requiere la intervención de un sistema externo de facturación.</span> |
@@ -1451,13 +1508,43 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 | **Flujo Normal:** | <span>1.- El actor selecciona la venta y elige "Emitir factura".<br>2.- El sistema envía los datos de la venta al Software de facturación.<br>3.- El sistema recibe la factura generada y la asocia a la venta.</span> |
 | **Flujo Alternativo:** | <span> El software externo no responde o devuelve un error; el sistema notifica y permite reintentar.</span> |
 | **Poscondiciones:** | <span>Se ha generado una factura y se ha asociado a la venta.</span> |
-| **Artefactos relacionados:** | <span></span> |
+| **Artefactos relacionados:** | <span>CU_417,CU_418</span> |
+
+---
+| **Nombre:** | <span>**Emitir facturas (admin)**</span> |
+| :--- | :--- |
+| **Código:** | <span>CU_417</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>La vista para el Gestor del CU Emitir facturas.</span> |
+| **Actores:** | <span>Administrador, Software de facturación (actor externo)</span> |
+| **Precondiciones:** | <span>Existe una venta completada pendiente de facturar.</span> |
+| **Flujo Normal:** | <span>1.- El actor selecciona la venta y elige "Emitir factura".<br>2.- El sistema envía los datos de la venta al Software de facturación.<br>3.- El sistema recibe la factura generada y la asocia a la venta.</span> |
+| **Flujo Alternativo:** | <span> El software externo no responde o devuelve un error; el sistema notifica y permite reintentar.</span> |
+| **Poscondiciones:** | <span>Se ha generado una factura y se ha asociado a la venta.</span> |
+| **Artefactos relacionados:** | <span>CU_416</span> |
+
+---
+| **Nombre:** | <span>**Emitir facturas(gestor)**</span> |
+| :--- | :--- |
+| **Código:** | <span>CU_418</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>La vista para el Gestor del CU Emitir facturas.</span> |
+| **Actores:** | <span>Gestor, Software de facturación (actor externo)</span> |
+| **Precondiciones:** | <span>Existe una venta completada pendiente de facturar.</span> |
+| **Flujo Normal:** | <span>1.- El actor selecciona la venta y elige "Emitir factura".<br>2.- El sistema envía los datos de la venta al Software de facturación.<br>3.- El sistema recibe la factura generada y la asocia a la venta.</span> |
+| **Flujo Alternativo:** | <span> El software externo no responde o devuelve un error; el sistema notifica y permite reintentar.</span> |
+| **Poscondiciones:** | <span>Se ha generado una factura y se ha asociado a la venta.</span> |
+| **Artefactos relacionados:** | <span>CU_416</span> |
 
 ---
 
+
+
 | **Nombre:** | <span>**Editar facturas**</span> |
 | :--- | :--- |
-| **Código:** | <span>CU_414</span> |
+| **Código:** | <span>CU_419</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>15/10/25</span> |
 | **Descripción:** | <span>Permite al Gestor o Administrador modificar los datos de una factura ya emitida (ej. corrección de datos fiscales).</span> |
@@ -1469,25 +1556,38 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 | **Artefactos relacionados:** | <span>CU_418 </span> |
 
 ---
-
-| **Nombre:** | <span>**Ver ofertas**</span> |
+| **Nombre:** | <span>**Editar facturas(admin)**</span> |
 | :--- | :--- |
-| **Código:** | <span>CU_415</span> |
+| **Código:** | <span>CU_420</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>15/10/25</span> |
-| **Descripción:** | <span>Permite al Cliente y al Administrador visualizar las ofertas (las recibidas o todas, respectivamente).</span> |
-| **Actores:** | <span>Cliente, Administrador</span> |
-| **Precondiciones:** | <span>El usuario está autenticado en el sistema.</span> |
-| **Flujo Normal:** | <span>1.- El usuario accede a la sección de ofertas.<br>2.- El sistema muestra el listado de ofertas pertinentes (propias para el Cliente).<br>3.- El usuario puede seleccionar una oferta.</span> |
-| **Flujo Alternativo:** | <span> El sistema muestra un mensaje indicando que no hay ofertas disponibles para el usuario en ese momento.</span> |
-| **Poscondiciones:** | <span>El usuario ha revisado las ofertas disponibles.</span> |
-| **Artefactos relacionados:** | <span>CU_411 </span> |
+| **Descripción:** | <span>La vista de administrador del CU Editar facturas.</span> |
+| **Actores:** | <span> Administrador</span> |
+| **Precondiciones:** | <span>El actor ha seleccionado una factura.</span> |
+| **Flujo Normal:** | <span>1.- El actor accede al formulario de edición de la factura.<br>2.- El actor realiza las modificaciones (ej. dirección, nombre).<br>3.- El sistema valida y guarda la factura editada.</span> |
+| **Flujo Alternativo:** | <span> La factura tiene un estado que impide la edición directa; el sistema requiere generar una nota de crédito/débito.</span> |
+| **Poscondiciones:** | <span>Los datos de la factura han sido actualizados.</span> |
+| **Artefactos relacionados:** | <span>CU_419 </span> |
+
+---
+| **Nombre:** | <span>**Editar facturas(gestor)**</span> |
+| :--- | :--- |
+| **Código:** | <span>CU_421</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>15/10/25</span> |
+| **Descripción:** | <span>Permite al Gestor o Administrador modificar los datos de una factura ya emitida (ej. corrección de datos fiscales).</span> |
+| **Actores:** | <span>Gestor</span> |
+| **Precondiciones:** | <span>El actor ha seleccionado una factura.</span> |
+| **Flujo Normal:** | <span>1.- El actor accede al formulario de edición de la factura.<br>2.- El actor realiza las modificaciones (ej. dirección, nombre).<br>3.- El sistema valida y guarda la factura editada.</span> |
+| **Flujo Alternativo:** | <span> La factura tiene un estado que impide la edición directa; el sistema requiere generar una nota de crédito/débito.</span> |
+| **Poscondiciones:** | <span>Los datos de la factura han sido actualizados.</span> |
+| **Artefactos relacionados:** | <span>CU_419 </span> |
 
 ---
 
 | **Nombre:** | <span>**Crear usuarios**</span> |
 | :--- | :--- |
-| **Código:** | <span>CU_416</span> |
+| **Código:** | <span>CU_422</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>15/10/25</span> |
 | **Descripción:** | <span>Permite al Administrador dar de alta un nuevo usuario en el sistema. Conlleva la notificación por correo electrónico.</span> |
@@ -1496,13 +1596,13 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 | **Flujo Normal:** | <span>1.- El Administrador introduce los datos del nuevo usuario.<br>2.- El sistema valida los datos y registra el usuario.<br>3.- El sistema inicia el envío de Email</span> |
 | **Flujo Alternativo:** | <span> Ya existe un usuario con el mismo email o DNI; el sistema rechaza la creación y notifica al Administrador.</span> |
 | **Poscondiciones:** | <span>Se ha creado un nuevo registro de usuario y se ha enviado un email de bienvenida.</span> |
-| **Artefactos relacionados:** | <span>CU_417 , CU_418 </span> |
+| **Artefactos relacionados:** | <span>CU_423 </span> |
 
 ---
 
 | **Nombre:** | <span>**Enviar e-mail**</span> |
 | :--- | :--- |
-| **Código:** | <span>CU_417</span> |
+| **Código:** | <span>CU_423</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>15/10/25</span> |
 | **Descripción:** | <span>Proceso de envío de un correo electrónico (ej. bienvenida, confirmación de cuenta), utilizando un gestor de correo externo.</span> |
@@ -1511,13 +1611,13 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 | **Flujo Normal:** | <span>1.- El sistema prepara el contenido del email.<br>2.- El sistema interactúa con el Gestor de correo externo.<br>3.- El sistema recibe la confirmación de envío.</span> |
 | **Flujo Alternativo:** | <span> La dirección de correo es incorrecta o el envío rebota; el sistema registra un estado de "email fallido" para el usuario.</span> |
 | **Poscondiciones:** | <span>Se ha intentado o completado el envío del correo electrónico al nuevo usuario.</span> |
-| **Artefactos relacionados:** | <span>CU_416 </span> |
+| **Artefactos relacionados:** | <span>CU_422</span> |
 
 ---
 
 | **Nombre:** | <span>**Editar usuarios**</span> |
 | :--- | :--- |
-| **Código:** | <span>CU_418</span> |
+| **Código:** | <span>CU_424</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>15/10/25</span> |
 | **Descripción:** | <span>Permite al Administrador modificar los datos de cualquier usuario (rol, información de contacto, etc.). Comparte características con Editar facturas.</span> |
@@ -1526,7 +1626,7 @@ En una aplicación de fotografía online, los clientes pueden visualizar las fot
 | **Flujo Normal:** | <span>1.- El Administrador accede al formulario de edición del usuario.<br>2.- El Administrador modifica los datos necesarios.<br>3.- El sistema valida y guarda los cambios en el perfil del usuario.</span> |
 | **Flujo Alternativo:** | <span>El Administrador intenta rebajar su propio rol a uno inferior; el sistema rechaza la operación por seguridad.</span> |
 | **Poscondiciones:** | <span>Los datos del usuario han sido actualizados.</span> |
-| **Artefactos relacionados:** | <span>CU_414 </span> |
+| **Artefactos relacionados:** | <span></span> |
 
 </br>
 <p align="center">

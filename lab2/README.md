@@ -5,7 +5,7 @@
 Después de un incendio, por un lado se necesita obtener información de nuestra compañía de seguro. Por otro lado, es posible que necesitemos información adicional del departamento de bomberos, pero solo si los bomberos participaron durante el apagado del incendio. Cuando se tenga toda la información, se necesita escribir un informe consolidado.
 
 <p align="center">
-  <img src="supuesto1_lab2.drawio.svg" alt="SVG del diagrama BPMN supuesto 1" width="1000">
+  <img src="supuesto1_lab2.drawio.s" alt="SVG del diagrama BPMN supuesto 1" width="1000">
 </p>
 
 </br>
@@ -25,7 +25,7 @@ Después de un incendio, por un lado se necesita obtener información de nuestra
 9. Si el departamento de finanzas aprobó, el proceso finaliza enviando un mensaje al proceso cliente.
 
 <p align="center">
-  <img src="supuesto2_lab2.drawio.svg" alt="SVG del diagrama BPMN del supuesto 2 del lab2" width="1000">
+  <img src="supuesto2_lab2.drawio.s" alt="SVG del diagrama BPMN del supuesto 2 del lab2" width="1000">
 </p>
 
 </br>
@@ -34,6 +34,6 @@ Después de un incendio, por un lado se necesita obtener información de nuestra
 Un empleado envía una información para ser revisada. A un gerente se le envía la información para su revisión, quien tiene la potestad de aprobarla o rechazarla. Si se aprueba, el empleado recibe una notificación y el proceso culmina. De lo contrario al empleado se le envía la información para su corrección. El empleado procede a realizar los cambios y a enviar la información de vuelta. Luego se envía una notificación al gerente y el proceso culmina.
 
 <p align="center">
-  <img src="supuesto3_lab2.drawio.svg" alt="SVG del diagrama del supuesto 3" width="1000">
+  <img src="supuesto3_lab2.drawio.s" alt="SVG del diagrama del supuesto 3" width="1000">
 </p>
 

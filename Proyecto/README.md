@@ -37,3 +37,14 @@ A continuación, se detallan estos artefactos de análisis para sentar las bases
 <p align="center">
   <img src="bpmn2_inre_proyecto.drawio.svg" alt="img_bpmn_2" width="750">
 </p>
+
+
+| *Código de tarea* | *Nombre* | *Descripción* |
+| :--- | :--- | :--- |
+| *T-01* | **Adjunta los datos necesarios para hacer la reserva** | Completa el formulario de reserva y se envía al sistema con la información requerida. |
+| *T-02* | **Recibe la solicitud de reserva** | El sistema o el validador recepciona la petición enviada por la asociación para su gestión. |
+| *T-03* | **Rechazar la solicitud de reserva y enviar sugerencias disponibles** | En caso de conflicto o incumplimiento, el responsable deniega la petición y propone alternativas. |
+| *T-04* | **Recibir rechazo y sugerencias disponibles** | La asociación es notificada de la no aceptación de su reserva y visualiza las opciones sugeridas. |
+| *T-05* | **Bloquear franja horaria seleccionada** | Si la solicitud es válida, el responsable marca el espacio como ocupado en la agenda oficial. |
+| *T-06* | **Mandar datos de la reserva** | El sistema genera y envía la confirmación con los detalles finales de la reserva aceptada. |
+| *T-07* | **Recibir datos de la reserva** | La asociación recibe el comprobante y la información definitiva de su reserva confirmada. |

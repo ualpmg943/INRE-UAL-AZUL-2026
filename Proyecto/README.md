@@ -32,6 +32,11 @@ A continuación, se detallan estos artefactos de análisis para sentar las bases
 | *T-09* | **Relena y manda los datos soicitados** | El usuario introduce su información personal y bancaria y confirma el envío. |
 | *T-10* | **Recibe la entrada y el recibo de la compra** | El usuario obtiene en su correo o pantalla los tickets y el justificante de pago. |
 | *T-11* | **Es devuelto al portal web** | En caso de rechazo o finalización, el usuario es redirigido de vuelta a la página de turismo. |
+
+<p align="center">
+  <img src="BPMN_1_2_inre.drawio.svg" alt="img_bpmn_2" width="750">
+</p>
+
 ## BPMN 2:
 
 <p align="center">

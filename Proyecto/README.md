@@ -19,6 +19,10 @@ A continuación, se detallan estos artefactos de análisis para sentar las bases
   <img src="BPMN_1_proyecto.drawio.svg" alt="img_bpmn_1" width="750">
 </p>
 
+| *Código de tarea*    | *Nombre* | *Descripción* |
+|---------|------------|--------------------------------|
+| *T-01* | Nombre Tarea | Descripcion tarea |
+
 ## BPMN 2:
 
 <p align="center">

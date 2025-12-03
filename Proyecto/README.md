@@ -21,17 +21,17 @@ A continuación, se detallan estos artefactos de análisis para sentar las bases
 
 | *Código de tarea* | *Nombre* | *Descripción* |
 | :--- | :--- | :--- |
-| *T-01* | **El administrativo da de alta el evento en la agenda** | El responsable de turismo inicia el proceso de creación de un nuevo registro en el calendario. |
+| *T-01* | **El administrativo da de alta el evento en la agenda** | El administrativo del departamento de turismo inicia el proceso de creación de un nuevo registro en la agenda. |
 | *T-02* | **Introduce la información del evento** | Se completan los detalles necesarios como fecha, hora, sinopsis y cartel promocional. |
 | *T-03* | **Pone un enlace externo a la pasarela de pago** | Al ser un evento de pago, se configura la redirección hacia la plataforma de venta. |
-| *T-04* | **Cuando un turista entra, la pasarela le personales y bancarios** | El sistema externo solicita al usuario la información necesaria para la transacción. |
-| *T-05* | **Recibe los datos del comprador** | La pasarela de pago recepciona la información introducida por el usuario. |
-| *T-06* | **Procesa el pago** | El sistema bancario valida la operación y confirma si es aceptada o rechazada. |
-| *T-07* | **Envia la información de la entrada y al recibo al comprador** | Tras el pago exitoso, la pasarela emite y manda los documentos al usuario. |
-| *T-08* | **Recibe la solicitud de datos** | El usuario visualiza el formulario donde se le requieren sus datos para la compra. |
-| *T-09* | **Relena y manda los datos soicitados** | El usuario introduce su información personal y bancaria y confirma el envío. |
-| *T-10* | **Recibe la entrada y el recibo de la compra** | El usuario obtiene en su correo o pantalla los tickets y el justificante de pago. |
-| *T-11* | **Es devuelto al portal web** | En caso de rechazo o finalización, el usuario es redirigido de vuelta a la página de turismo. |
+| *T-04* | **Cuando un turista entra, la pasarela le solicita sus datos personales y bancarios** | El sistema externo solicita al usuario la información necesaria para la transacción. |
+| *T-05* | **Recibe la solicitud de datos** | El usuario visualiza el formulario donde se le requieren sus datos para la compra. |
+| *T-06* | **Es devuelto al portal web** | En caso de no querer aceptar el pago, el usuario es redirigido de vuelta a la página de turismo. |
+| *T-07* | **Relena y manda los datos soicitados** | En caso de estar dispuesto a realizar el pago, el usuario introduce su información personal y bancaria y confirma la compra. |
+| *T-08* | **Recibe los datos del comprador** | La pasarela de pago recepciona la información introducida por el usuario. |
+| *T-09* | **Procesa el pago** | El sistema bancario valida la operación y confirma si es aceptada o rechazada. |
+| *T-10* | **Envia la información de la entrada y el recibo al comprador** | Tras el pago exitoso, la pasarela emite y manda los documentos al usuario. |
+| *T-11* | **Recibe la entrada y el recibo de la compra** | El usuario obtiene en su correo o pantalla los tickets y el justificante de pago. |
 
 <p align="center">
   <img src="BPMN_1_2_inre.drawio.svg" alt="img_bpmn_2" width="750">

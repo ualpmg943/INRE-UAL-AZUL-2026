@@ -9,5 +9,5 @@
 ## BPMN 2:
 
 <p align="center">
-  <img src="bpmn_2_inre_proyecto.drawio.svg" alt="img_bpmn_2" width="750">
+  <img src="bpmn2_inre_proyecto.drawio.svg" alt="img_bpmn_2" width="750">
 </p>

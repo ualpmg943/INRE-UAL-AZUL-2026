@@ -65,3 +65,38 @@ Las asociaciones locales solicitan reservas mediante un formulario en el portal 
 | *T-06* | **Bloquear franja horaria seleccionada** | Si no hay ningún problema de disponibilidad, el sistema marca el espacio seleccionado por la asociación como ocupado en la agenda oficial. |
 | *T-07* | **Mandar datos de la reserva** | El sistema genera y envía la confirmación con los detalles finales de la reserva aceptada. |
 | *T-08* | **Recibir datos de la reserva** | La asociación recibe la información definitiva de su reserva confirmada. |
+
+## 2. Requisitos del sistema a desarrollar
+
+$ Descripción generica del apartado de requisitos$
+
+## 2.1 Requisitos
+
+$ Foto del diagrama de requisitos aqui (diagrama de bases de datos)$
+
+### 2.2 Casos de uso
+
+#### Lista de diagramas de casos de uso del modelo
+
+$ Nombrar los 3 diagramas de casos de uso:
+  $ DCU del portal principal del ayuntamiento.
+  $ DCU del portal de turismo del ayuntamiento.
+  $ DCU del CMS que hostea los portales del ayuntamiento.
+
+#### Diagramas de casos de uso
+
+$ Foto de los diagramas de casos de uso$
+
+#### Lista general de casos de uso y actores del proyecto
+
+$ Tablas de los casos de uso y los actores de cada diagrama$
+
+#### Detalles de los casos de uso
+
+$ Aqui no se que habria que poner$
+
+### 2.3 Diagramas de clases asociados a los requisitos de información
+
+$ Diagramas de clases?$
+
+## Apéndices

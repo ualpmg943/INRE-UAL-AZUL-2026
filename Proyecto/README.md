@@ -37,6 +37,10 @@ A continuación, se detallan estos artefactos de análisis para sentar las bases
   <img src="BPMN_1_2_inre.drawio.svg" alt="img_bpmn_2" width="750">
 </p>
 
+| *Código de tarea* | *Nombre* | *Descripción* |
+| :--- | :--- | :--- |
+| *T-01* | **Elimina el evento de la agenda** | Una vez que este proceso se activa al haber finalizado el evento, y transcurren 5 días desde su finalización, el sistema elimina dicho evento de la agenda turística. |
+
 ## BPMN 2:
 
 <p align="center">

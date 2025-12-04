@@ -1,11 +1,16 @@
 ## **Init Proyecto**
-## Introducción:
+## 1. Introducción:
 El presente documento especifica la solución técnica y funcional para la transformación digital del ecosistema turístico de Benavente, un proyecto estratégico impulsado por el Plan de Sostenibilidad Turística en Destino y los fondos Next Generation EU. El propósito fundamental no es solo la renovación estética de los portales web, sino la implantación de una arquitectura de información centralizada que dinamice la promoción del destino y agilice la gestión interna de sus recursos culturales.
 
 El núcleo de la intervención reside en el desarrollo del nuevo Portal de Turismo y Cultura, concebido como una plataforma de servicios interactivos para el visitante y no como un mero escaparate estático. Esta herramienta permitirá la geolocalización de recursos, la planificación de visitas y la gestión integral de la agenda cultural, integrando capacidades transaccionales para la venta de entradas mediante pasarelas externas. De forma paralela, se digitalizan procesos críticos para el tejido social del municipio, como la gestión de solicitudes y reservas de espacios por parte de las asociaciones locales, automatizando flujos que actualmente requieren intervención manual.
 
 Para sostener este ecosistema, la solución abarca también la actualización tecnológica del Portal Web Oficial y la normalización de la Identidad Corporativa. Aunque el foco prioritario es la proyección turística, el portal institucional actuará como garante de la unicidad del dato, asegurando que la información de eventos y noticias se sincronice bidireccionalmente entre departamentos, evitando duplicidades y garantizando el cumplimiento de los esquemas de seguridad y accesibilidad vigentes.
+
 ## 2.	Información del Dominio del problema:
+
+### 2.1 Organigrama
+### 2.2 Glosario de terminos
+
 El desarrollo de software para la gestión de un destino turístico requiere una alineación precisa entre los procesos administrativos del Ayuntamiento y la lógica técnica de la plataforma. Para garantizar que la solución responda a la realidad operativa del área de Turismo, se ha modelado el dominio del problema atendiendo a dos dimensiones críticas: la estructura de roles y la semántica del negocio.
 
 En primer lugar, la definición del Modelo Organizativo es indispensable para trasladar la jerarquía administrativa al sistema de permisos del software. A través de la representación visual de los actores, se delimitan las fronteras de responsabilidad entre los distintos perfiles intervinientes: desde los administrativos encargados de la redacción y carga de eventos, pasando por los responsables de validación que autorizan la publicación, hasta las entidades externas (asociaciones) que interactúan con el sistema para gestionar recursos. Este mapeo es vital para configurar los flujos de trabajo (workflows) de aprobación y publicación de contenidos.
@@ -14,15 +19,29 @@ Complementariamente, se establece un Diccionario de Conceptos (Glosario) que uni
 
 A continuación, se detallan estos artefactos de análisis para sentar las bases del diseño funcional.
 
-## Diagrama BPMN 1:
+## 3. Necesidades del negocio
+### 3.1 Objetivos del negocio
+### 3.2 Modelos de Proceso de Negocio
+#### 3.2.1 Procesos
+##### Diagrama BPMN 1:
 
-### Parte 1: Proceso de creación y contratación de eventos
-El administrativo da de alta un evento en la agenda turistica, con la informacion del evento (fecha, hora, sinopsis, lugar, descripcion, mapa, foto). Si el evento es de pago, el administrativo pone un enlace externo a una pasarela de pago para comprar los tickets. La pasarela pide los datos bancarios y personales. Si el usuario rechaza el pago se le devuelve al portal web, si acepta el pago, la pasarela manda al usuario los datos del ticket y el recibo, y tambien los envia a la base de datos de la pagina de turismo.
-
+###### Parte 1: Proceso de creación y contratación de eventos
 <p align="center">
   <img src="BPMN_1_proyecto.drawio.svg" alt="img_bpmn_1" width="750">
 </p>
 
+###### Parte 2: Proceso de eliminación de eventos finalizados
+<p align="center">
+  <img src="BPMN_1_2_inre.drawio.svg" alt="img_bpmn_2" width="750">
+</p>
+
+###### Diagrma BPMN 2: Gestion de reservas para asociaciones.
+<p align="center">
+  <img src="bpmn2_inre_proyecto.drawio.svg" alt="img_bpmn_2" width="750">
+</p>
+
+#### 3.2.2 Tareas
+##### Tareas de la parte 1 del diagrama 1: Proceso de creación y contratación de eventos:
 | *Código de tarea* | *Nombre* | *Descripción* |
 | :--- | :--- | :--- |
 | *T-01* | **El administrativo da de alta el evento en la agenda** | El administrativo del departamento de turismo inicia el proceso de creación de un nuevo registro en la agenda. |
@@ -37,24 +56,12 @@ El administrativo da de alta un evento en la agenda turistica, con la informacio
 | *T-10* | **Envia la información de la entrada y el recibo al comprador** | Tras el pago exitoso, la pasarela emite y manda los documentos al usuario. |
 | *T-11* | **Recibe la entrada y el recibo de la compra** | El usuario obtiene en su correo o pantalla los tickets y el justificante de pago. |
 
-### Parte 2: Proceso de eliminación de eventos finalizados
-Si el evento ha finalizado, hay otro proceso que elimina el evento de la agenda cuando pasen 5 dias de su finalizacion.
-
-<p align="center">
-  <img src="BPMN_1_2_inre.drawio.svg" alt="img_bpmn_2" width="750">
-</p>
-
+##### Tareas de la parte 2 del diagrama 2: Proceso de eliminación de eventos finalizados
 | *Código de tarea* | *Nombre* | *Descripción* |
 | :--- | :--- | :--- |
 | *T-01* | **Elimina el evento de la agenda** | Una vez que este proceso se activa al haber finalizado el evento, y transcurren 5 días desde su finalización, el sistema elimina dicho evento de la agenda turística. |
 
-## Diagrma BPMN 2: Gestion de reservas para asociaciones.
-Las asociaciones locales solicitan reservas mediante un formulario en el portal web de turismo adjuntando su correo electrónico con la fecha en la que quieren reservar un lugar. La reserva llega al sistema, se puede rechazar por problemas de disponibilidad y se le envian sugerencias a la asociación con otros lugares disponibles. Si la reserva se acepta, se bloquea la franja horaria reservada.
-
-<p align="center">
-  <img src="bpmn2_inre_proyecto.drawio.svg" alt="img_bpmn_2" width="750">
-</p>
-
+##### Tareas del diagrma 2: Gestion de reservas para asociaciones.
 | *Código de tarea* | *Nombre* | *Descripción* |
 | :--- | :--- | :--- |
 | *T-01* | **Adjunta los datos necesarios para hacer la reserva** | El personal correspondiente de una asociación local, desde el formulario de la página de turismo del ayuntamiento, adjunta un correo electrónico y la fecha de reserva de un lugar determinado. |
@@ -66,37 +73,32 @@ Las asociaciones locales solicitan reservas mediante un formulario en el portal 
 | *T-07* | **Mandar datos de la reserva** | El sistema genera y envía la confirmación con los detalles finales de la reserva aceptada. |
 | *T-08* | **Recibir datos de la reserva** | La asociación recibe la información definitiva de su reserva confirmada. |
 
-## 2. Requisitos del sistema a desarrollar
+## 4. Requisitos del sistema a desarrollar
 
 $ Descripción generica del apartado de requisitos$
 
-## 2.1 Requisitos
+## 4.1 Requisitos
 
 $ Foto del diagrama de requisitos aqui (diagrama de bases de datos)$
 
-### 2.2 Casos de uso
+## 4.2 Casos de Uso
 
-#### Lista de diagramas de casos de uso del modelo
+### 4.2.1 Lista de diagramas de casos de uso del modelo
 
-$ Nombrar los 3 diagramas de casos de uso:
-  $ DCU del portal principal del ayuntamiento.
-  $ DCU del portal de turismo del ayuntamiento.
-  $ DCU del CMS que hostea los portales del ayuntamiento.
+Fotos de los diagramas de casos de uso
 
-#### Diagramas de casos de uso
+#### 4.2.2 Lista general de casos de uso
 
-$ Foto de los diagramas de casos de uso$
+Tabla solo de los nombres y codigo de cada caso de uso
 
-#### Lista general de casos de uso y actores del proyecto
+#### 4.2.3 Detalles de los casos de uso
 
-$ Tablas de los casos de uso y los actores de cada diagrama$
+Tablas grandes de cada caso de uso
 
-#### Detalles de los casos de uso
+### 4.3 Diagramas de clases asociados a los requisitos de información
 
-$ Aqui no se que habria que poner$
+Foto base de datos y sus tablas
 
-### 2.3 Diagramas de clases asociados a los requisitos de información
+## 5. Apéndices
 
-$ Diagramas de clases?$
-
-## Apéndices
+Preguntas y respuestas de la entrevista.

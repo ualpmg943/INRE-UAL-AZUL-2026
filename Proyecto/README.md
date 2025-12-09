@@ -607,8 +607,6 @@ Tablas grandes de cada caso de uso
 
 ---
 
-### **Casos de Uso Adicionales Identificados (CU-331 a CU-340)**
-
 ### Acceder a la agenda de eventos
 
 | Nombre: | <span>Acceder a la agenda de eventos</span> |

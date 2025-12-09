@@ -83,7 +83,17 @@ $ Descripción generica del apartado de requisitos$
 
 ### 4.2.1 Lista de diagramas de casos de uso del modelo
 
-Fotos de los diagramas de casos de uso
+<p align="center">
+  <img src="Portal_principal.jpg" alt="Imagen del DCU del portal general" width="750">
+</p>
+
+<p align="center">
+  <img src="Portal_turismo.jpg" alt="Imagen del DCU del portal de turismo" width="750">
+</p>
+
+<p align="center">
+  <img src="CMS.jpg" alt="Imagen del DCU del CMS" width="750">
+</p>
 
 #### 4.2.2 Lista general de casos de uso
 

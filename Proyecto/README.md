@@ -1963,4 +1963,26 @@ Foto base de datos
 
 ## 5. Apéndices
 
-Preguntas y respuestas de la entrevista.
+Entrevistador: Quería empezar aclarando los diferentes usuarios que interactuan con el sistema. En el pliego no queda claro si debemos distinguir entre "Ciudadano" y "Turista", o si permitiremos un registro de usuarios para guardar favoritos o recibir alertas. ¿El usuario visitante es anónimo o permitiremos registro?
+
+Concejal de Turismo: Mira, para la parte pública no hace falta registrarse. No vamos a tener usuario "registrado" ni "no registrado" de cara al público; la interacción es 100% anónima. Eso sí, necesitamos un portal de acceso restringido, pero eso es solo para los trabajadores.
+
+Entrevistador: Entendido. Si no se registran, ¿qué valor añadido le damos al turista? ¿Existe alguna funcionalidad avanzada para ellos?
+
+Concejal de Turismo: Sí, queremos incluir una agenda de eventos. La idea es una agenda donde el turista filtre por categorias o dias y el sistema le genere una lista con los eventos en esas fechas.
+
+Entrevistador: Pasando a la gestión interna. ¿Existe un único Administrador que lo hace todo, o necesitamos diferenciar roles? Por ejemplo, ¿alguien que escribe la noticia y otro que la aprueba?
+
+Concejal de Turismo: Hay que diferenciar. Tenemos varios trabajadores (personal de turismo, por ejemplo) que se encargan de subir las noticias.
+
+Entrevistador: Hablemos de la Agenda. ¿Cuál es el ciclo de vida de un evento desde que se crea hasta que desaparece de la web? Y, ¿qué campos son obligatorios al darlo de alta?
+
+Concejal de Turismo: Te explico el proceso cuando terminamos de cerrar una obra o evento. El administrativo da de alta el evento. Debe poner: fecha, hora, sinopsis y el cartel (imagen). Si es gratuito, se publica tal cual. Si es de pago, el administrativo debe poner un link externo. Nosotros no cobramos directamente; redirigimos a la pasarela de pago externa que gestiona la venta. Si el usuario rechaza pagar allí, lo devolvemos al portal web. Si acepta y paga, esa pasarela externa es la que le manda la entrada y el recibo al usuario. Sobre cuándo desaparece: Una vez ha pasado el evento, el sistema debe esperar 5 días desde la finalización y entonces se elimina automáticamente de la agenda de eventos.
+
+Entrevistador: Respecto a los lugares turísticos (museos, monumentos) vinculados a esos eventos o rutas. ¿Qué datos exactos necesitamos gestionar?
+
+Concejal de Turismo: Lo estándar: Nombre, descripción, foto... y sí, es fundamental incluir el mapa (coordenadas para geolocalización) y el lugar físico.
+
+Entrevistador: Por último, sobre los formularios. ¿Cómo gestionamos las peticiones de las asociaciones locales? ¿Se integran con algún sistema de tickets?
+
+Concejal de Turismo: Funciona así: Las asociaciones locales rellenan un formulario específico en el portal de turismo, adjuntando obligatoriamente el correo de la asociación. Nos llega la solicitud y podemos Aceptar o Rechazar la reserva del espacio. Si rechazamos (porque ya está reservado o hay otro evento), el sistema debe enviar un correo a la asociación sugiriendo otras franjas horarias o lugares disponibles. Si aceptamos, el sistema debe bloquear esa franja horaria en la agenda interna para que nadie más pueda reservarla.

@@ -567,7 +567,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Flujo Normal:** | <span>1.- El turista selecciona el menú de información de la ciudad. <br>2.- El turista visualiza la página de bienvenida y datos generales.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El turista obtiene la información general.</span> |
-| **Artefactos relacionados:**| <span>CU-202, CU-203, CU-204</span> |
+| **Artefactos relacionados:**| <span>CU-202, CU-203, CU-204, CU-206</span> |
 
 ---
 
@@ -652,7 +652,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Flujo Normal:** | <span>1.- El turista entra en la sección de la Ruta de la Plata. <br>2.- El turista consulta mapas y etapas que pasan por la ciudad.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El turista obtiene información de la ruta.</span> |
-| **Artefactos relacionados:**| <span>CU-207</span> |
+| **Artefactos relacionados:**| <span>CU-207, CU-201</span> |
 
 ---
 
@@ -673,9 +673,9 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 
 ---
 
-### Buscar informacion turismo
+### Buscar informacion (turismo)
 
-| **Nombre:** | <span>Buscar informacion turismo</span> |
+| **Nombre:** | <span>Buscar informacion (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-208</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -690,9 +690,9 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 
 ---
 
-### Acceder a las redes sociales turismo
+### Acceder a las redes sociales (turismo)
 
-| **Nombre:** | <span>Acceder a las redes sociales turismo</span> |
+| **Nombre:** | <span>Acceder a las redes sociales (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-209</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -707,9 +707,9 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 
 ---
 
-### Ver informacion util turismo
+### Ver informacion util (turismo)
 
-| **Nombre:** | <span>Ver informacion util turismo</span> |
+| **Nombre:** | <span>Ver informacion util (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-210</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -724,9 +724,9 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 
 ---
 
-### Ver rutas por Benavente
+### Ver rutas por benavente
 
-| **Nombre:** | <span>Ver rutas por Benavente</span> |
+| **Nombre:** | <span>Ver rutas por benavente</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-211</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -752,9 +752,9 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Actores:** | <span>Turista, Cliente</span> |
 | **Precondiciones:**| <span>El evento debe tener entradas a la venta.</span> |
 | **Flujo Normal:** | <span>1.- El turista selecciona las butacas y confirma la compra. <br>2.- El turista realiza el pago. <br>3.- El sistema envía las entradas.</span> |
-| **Flujo Alternativo:** | <span>1A.- Si no está registrado, se le solicita registro o inicio de sesión.</span> |
+| **Flujo Alternativo:** | <span>1.- El turista introduce sus datos personales y contraseña. <br>2.- El sistema crea la cuenta de usuario. <br><br>1.- El turista introduce email y contraseña. <br>2.- El sistema valida el acceso.</span> |
 | **Poscondiciones:**| <span>El turista obtiene sus entradas.</span> |
-| **Artefactos relacionados:**| <span>CU-213, CU-214, CU-215, CU-216, CU-217</span> |
+| **Artefactos relacionados:**| <span>CU-213, CU-214, CU-215</span> |
 
 ---
 
@@ -771,7 +771,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Flujo Normal:** | <span>1.- El turista introduce sus datos personales y contraseña. <br>2.- El sistema crea la cuenta de usuario.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El turista es ahora un cliente registrado.</span> |
-| **Artefactos relacionados:**| <span>CU-212, CU-214</span> |
+| **Artefactos relacionados:**| <span>CU-212</span> |
 
 ---
 
@@ -788,7 +788,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Flujo Normal:** | <span>1.- El turista introduce email y contraseña. <br>2.- El sistema valida el acceso.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El turista está logueado.</span> |
-| **Artefactos relacionados:**| <span>CU-212, CU-213</span> |
+| **Artefactos relacionados:**| <span>CU-212</span> |
 
 ---
 
@@ -803,26 +803,25 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Actores:** | <span>Turista, Cliente</span> |
 | **Precondiciones:**| <span>N/A</span> |
 | **Flujo Normal:** | <span>1.- El turista entra en la sección de teatro. <br>2.- El turista visualiza la lista de obras.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
+| **Flujo Alternativo:** | <span>1.- El turista clica en un cartel de obra. <br>2.- El turista lee la ficha técnica y artística. <br><br>1.- El turista selecciona las butacas y confirma la compra. <br>2.- El turista realiza el pago. <br>3.- El sistema envía las entradas. <br><br>1.- El turista consulta la ubicación del teatro. <br>2.- El turista ve el pin en el mapa.</span> |
 | **Poscondiciones:**| <span>El turista conoce la programación.</span> |
-| **Artefactos relacionados:**| <span>CU-212, CU-217</span> |
+| **Artefactos relacionados:**| <span>CU-212, CU-217, CU-219</span> |
 
 ---
 
-### Añadir evento al calendario turismo
+### Añadir evento al calendario (turismo)
 
-| **Nombre:** | <span>Añadir evento al calendario turismo</span> |
+| **Nombre:** | <span>Añadir evento al calendario (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-216</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>07/12/2025</span> |
 | **Descripción:** | <span>Exportar cita a la agenda personal.</span> |
-| **Actores:** | <span>N/A (Caso de uso incluido)</span> |
+| **Actores:** | <span>N/A (Caso de uso extendido)</span> |
 | **Precondiciones:**| <span>N/A</span> |
 | **Flujo Normal:** | <span>1.- El turista selecciona guardar en calendario. <br>2.- El sistema descarga el archivo .ics.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El evento queda agendado en el dispositivo del usuario.</span> |
-
 | **Artefactos relacionados:**| <span>CU-222</span> |
 
 ---
@@ -840,24 +839,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Flujo Normal:** | <span>1.- El turista clica en un cartel de obra. <br>2.- El turista lee la ficha técnica y artística.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El turista tiene detalles para decidir la compra.</span> |
-| **Artefactos relacionados:**| <span>CU-212</span> |
-
----
-
-### Abrir mapa en google maps
-
-| **Nombre:** | <span>Abrir mapa en google maps</span> |
-| :--- | :--- |
-| **Codigo:** | <span>CU-218</span> |
-| **Autor:** | <span>INRE Equipo Azul</span> |
-| **Fecha:** | <span>07/12/2025</span> |
-| **Descripción:** | <span>Lanzar la aplicación externa de mapas.</span> |
-| **Actores:** | <span>Turista, Cliente</span> |
-| **Precondiciones:**| <span>N/A</span> |
-| **Flujo Normal:** | <span>1.- El turista pulsa en cómo llegar. <br>2.- El sistema abre Google Maps con la ruta.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
-| **Poscondiciones:**| <span>El turista navega con el GPS.</span> |
-| **Artefactos relacionados:**| <span>CU-212, CU-220</span> |
+| **Artefactos relacionados:**| <span>CU-215</span> |
 
 ---
 
@@ -874,13 +856,13 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Flujo Normal:** | <span>1.- El turista consulta la ubicación del teatro. <br>2.- El turista ve el pin en el mapa.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El turista sabe dónde está el teatro.</span> |
-| **Artefactos relacionados:**| <span>CU-212, CU-218</span> |
+| **Artefactos relacionados:**| <span>CU-215</span> |
 
 ---
 
-### Acceder a la agenda de eventos turismo
+### Acceder a la agenda de eventos (turismo)
 
-| **Nombre:** | <span>Acceder a la agenda de eventos turismo</span> |
+| **Nombre:** | <span>Acceder a la agenda de eventos (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-220</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -888,16 +870,16 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Descripción:** | <span>Calendario general de actividades turísticas.</span> |
 | **Actores:** | <span>Turista</span> |
 | **Precondiciones:**| <span>N/A</span> |
-| **Flujo Normal:** | <span>1.- El turista abre la agenda. <br>2.- El turista ve los eventos del mes.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
-| **Poscondiciones:**| <span>El turista consulta la oferta de ocio.</span> |
-| **Artefactos relacionados:**| <span>CU-224, CU-225</span> |
+| **Flujo Normal:** | <span>1.- El turista abre la agenda. <br>2.- El turista ve los eventos del mes. <br>3.- El turista elige un día específico. <br>4.- El sistema muestra solo eventos de ese día. <br>5.- El turista selecciona una actividad. <br>6.- El turista revisa toda la información asociada.</span> |
+| **Flujo Alternativo:** | <span>1.- El turista escribe el nombre del evento. <br>2.- El sistema devuelve coincidencias. <br><br>1.- El turista marca una categoría. <br>2.- El sistema actualiza la lista. <br><br>1.- El turista inicia el tour virtual. <br>2.- El turista navega interactivamente por las imágenes.</span> |
+| **Poscondiciones:**| <span>El turista consulta la oferta de ocio y detalla un evento.</span> |
+| **Artefactos relacionados:**| <span>CU-224, CU-225, CU-221, CU-223</span> |
 
 ---
 
-### Seleccionar dia del evento turismo
+### Seleccionar dia del evento (turismo)
 
-| **Nombre:** | <span>Seleccionar dia del evento turismo</span> |
+| **Nombre:** | <span>Seleccionar dia del evento (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-221</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -905,16 +887,16 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Descripción:** | <span>Filtrado de agenda por fecha.</span> |
 | **Actores:** | <span>Turista</span> |
 | **Precondiciones:**| <span>N/A</span> |
-| **Flujo Normal:** | <span>1.- El turista elige un día específico. <br>2.- El sistema muestra solo eventos de ese día.</span> |
+| **Flujo Normal:** | <span>1.- El turista elige un día específico. <br>2.- El sistema muestra solo eventos de ese día. <br>3.- El turista selecciona una actividad. <br>4.- El turista revisa toda la información asociada.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
-| **Poscondiciones:**| <span>El turista filtra los resultados.</span> |
-| **Artefactos relacionados:**| <span>CU-224, CU-223</span> |
+| **Poscondiciones:**| <span>El turista filtra los resultados y ve el detalle.</span> |
+| **Artefactos relacionados:**| <span>CU-220, CU-222</span> |
 
 ---
 
-### Ver evento turismo
+### Ver evento (turismo)
 
-| **Nombre:** | <span>Ver evento turismo</span> |
+| **Nombre:** | <span>Ver evento (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-222</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -923,15 +905,15 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Actores:** | <span>Turista</span> |
 | **Precondiciones:**| <span>N/A</span> |
 | **Flujo Normal:** | <span>1.- El turista selecciona una actividad. <br>2.- El turista revisa toda la información asociada.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
+| **Flujo Alternativo:** | <span>1.- El turista selecciona guardar en calendario. <br>2.- El sistema descarga el archivo .ics. <br><br>1.- El turista clica en la web del organizador. <br>2.- El navegador abre el sitio externo. <br><br>1.- El turista pulsa el botón de compartir. <br>2.- El turista elige la red social. <br>3.- El sistema prepara la publicación.</span> |
 | **Poscondiciones:**| <span>El turista se informa del evento.</span> |
-| **Artefactos relacionados:**| <span>CU-216, CU-227, CU-228</span> |
+| **Artefactos relacionados:**| <span>CU-216, CU-227, CU-226, CU-221</span> |
 
 ---
 
-### Buscar nombre del evento turismo
+### Buscar nombre del evento (turismo)
 
-| **Nombre:** | <span>Buscar nombre del evento turismo</span> |
+| **Nombre:** | <span>Buscar nombre del evento (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-223</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -942,13 +924,13 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Flujo Normal:** | <span>1.- El turista escribe el nombre del evento. <br>2.- El sistema devuelve coincidencias.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El turista encuentra el evento específico.</span> |
-| **Artefactos relacionados:**| <span>CU-224, CU-221</span> |
+| **Artefactos relacionados:**| <span>CU-220</span> |
 
 ---
 
-### Seleccionar categoria de evento turismo
+### Seleccionar categoria de evento (turismo)
 
-| **Nombre:** | <span>Seleccionar categoria de evento turismo</span> |
+| **Nombre:** | <span>Seleccionar categoria de evento (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-224</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -959,13 +941,13 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | **Flujo Normal:** | <span>1.- El turista marca una categoría. <br>2.- El sistema actualiza la lista.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El turista ve eventos temáticos.</span> |
-| **Artefactos relacionados:**| <span>CU-220, CU-223, CU-221</span> |
+| **Artefactos relacionados:**| <span>CU-220</span> |
 
 ---
 
-### Ver tour virtual turismo
+### Ver tour virtual (turismo)
 
-| **Nombre:** | <span>Ver tour virtual turismo</span> |
+| **Nombre:** | <span>Ver tour virtual (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-225</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -980,9 +962,9 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 
 ---
 
-### Acceder al portal del organizador del evento turismo
+### Acceder al portal del organizador del evento (turismo)
 
-| **Nombre:** | <span>Acceder al portal del organizador del evento turismo</span> |
+| **Nombre:** | <span>Acceder al portal del organizador del evento (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-226</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -997,9 +979,9 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 
 ---
 
-### Compartir evento en redes sociales turismo
+### Compartir evento en redes sociales (turismo)
 
-| **Nombre:** | <span>Compartir evento en redes sociales turismo</span> |
+| **Nombre:** | <span>Compartir evento en redes sociales (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-227</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |

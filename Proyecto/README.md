@@ -1697,8 +1697,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R (Visual Paradigm) |
-| **Referencias** | <ul><li>Gestión de Usuarios</li><li>Autenticación en el sistema</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-101</li><li>CU-102</li></ul> |
 | **Descripción** | Representa a los usuarios registrados en el sistema. |
 | **Datos específicos** | <ul><li>id_usuario INT (PK)</li><li>nombre VARCHAR(255)</li><li>AuthIdAuth INT (FK a Auth)</li></ul> |
 | **Importancia** | Alta |
@@ -1711,8 +1711,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Login / Logout</li><li>Gestión de sesiones</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-213</li><li>CU-214</li></ul> |
 | **Descripción** | Almacena las credenciales y tokens de sesión de los usuarios. |
 | **Datos específicos** | <ul><li>idAuth INT (PK)</li><li>token INT</li><li>tokenRen INT</li><li>tiempo_expiracion INT</li></ul> |
 | **Importancia** | Alta |
@@ -1725,8 +1725,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Gestión de permisos</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-101</li><li>CU-102</li></ul> |
 | **Descripción** | Define los tipos de roles disponibles (Administrador, Ciudadano, Gestor). |
 | **Datos específicos** | <ul><li>id_rol INT (PK)</li><li>nombre VARCHAR(255)</li></ul> |
 | **Importancia** | Media |
@@ -1739,8 +1739,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Asignación de roles</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-101</li><li>CU-102</li></ul> |
 | **Descripción** | Tabla intermedia para la relación N:M entre Usuarios y Roles. |
 | **Datos específicos** | <ul><li>Usuarioid_usuario INT (FK)</li><li>RolidRol INT (FK)</li></ul> |
 | **Importancia** | Media |
@@ -1753,8 +1753,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Auditoría del sistema</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-115</li></ul> |
 | **Descripción** | Registra las acciones CRUD realizadas por los usuarios. |
 | **Datos específicos** | <ul><li>id_log INT (PK)</li><li>entidad_modificada VARCHAR(255)</li><li>id_entidad_modificada INT</li><li>tipo_operacion VARCHAR(255)</li><li>fecha_hora TIMESTAMP</li><li>detalle_cambio VARCHAR(255)</li><li>Usuarioid_usuario INT (FK)</li></ul> |
 | **Importancia** | Baja |
@@ -1767,8 +1767,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Publicación de eventos culturales</li><li>Consultar Agenda</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-215</li><li>CU-216</li><li>CU-217</li><li>CU-221</li><li>CU-222</li><li>CU-223</li><li>CU-332</li><li>CU-335</li><li>CU-336</li><li>CU-338</li></ul> |
 | **Descripción** | Almacena la información principal de los eventos de la ciudad. |
 | **Datos específicos** | <ul><li>id_evento INT (PK)</li><li>titulo VARCHAR(255)</li><li>sinopsis VARCHAR(255)</li><li>fecha_hora_inicio TIME</li><li>fecha_hora_fin TIME</li><li>es_pago BIT</li><li>url_pasarela_pago VARCHAR(255)</li><li>url_organizador VARCHAR(255)</li><li>estado VARCHAR(255)</li><li>Usuarioid_usuario INT (FK)</li><li>Categoriaid_categoria INT (FK)</li><li>RecursoTuristicoid_recurso INT (FK)</li></ul> |
 | **Importancia** | Alta |
@@ -1781,8 +1781,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Configuración del Frontend</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-116</li></ul> |
 | **Descripción** | Define los diferentes portales web vinculados a la base de datos. |
 | **Datos específicos** | <ul><li>id_portal INT (PK)</li><li>nombre VARCHAR(255)</li><li>url VARCHAR(255)</li></ul> |
 | **Importancia** | Media |
@@ -1795,8 +1795,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Distribución de contenidos por portal</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-332</li></ul> |
 | **Descripción** | Tabla intermedia que vincula eventos con portales específicos. |
 | **Datos específicos** | <ul><li>Portalid_portal INT (FK)</li><li>Eventoid_evento INT (FK)</li><li>orden INT</li></ul> |
 | **Importancia** | Baja |
@@ -1809,8 +1809,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Taxonomía del sistema</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-320</li><li>CU-224</li><li>CU-336</li></ul> |
 | **Descripción** | Clasificación transversal recursiva (categorías y subcategorías). |
 | **Datos específicos** | <ul><li>id_categoria INT (PK)</li><li>nombre VARCHAR(255)</li><li>texto VARCHAR(255)</li><li>orden VARCHAR(255)</li><li>Categoriaid_categoria INT (FK recursiva)</li><li>Usuarioid_usuario INT (FK Creador)</li></ul> |
 | **Importancia** | Media |
@@ -1823,8 +1823,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Reporte de daños</li><li>Seguimiento de reparaciones</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-325</li><li>CU-324</li><li>CU-322</li><li>CU-321</li><li>CU-320</li></ul> |
 | **Descripción** | Reportes de ciudadanos sobre mobiliario o servicios públicos. |
 | **Datos específicos** | <ul><li>id_incidencia INT (PK)</li><li>descripcion VARCHAR(255)</li><li>ubicacion_texto VARCHAR(255)</li><li>latitud DOUBLE</li><li>longitud DOUBLE</li><li>nombre_contacto VARCHAR(255)</li><li>email_contacto VARCHAR(255)</li><li>estado VARCHAR(255)</li><li>fecha_creacion TIME</li><li>Categoriaid_categoria INT (FK)</li></ul> |
 | **Importancia** | Alta |
@@ -1837,8 +1837,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Mapa turístico</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-203</li><li>CU-204</li><li>CU-205</li><li>CU-206</li><li>CU-207</li><li>CU-208</li></ul> |
 | **Descripción** | Información de monumentos, parques y puntos de interés. |
 | **Datos específicos** | <ul><li>id_recurso INT (PK)</li><li>nombre VARCHAR(255)</li><li>descripcion VARCHAR(255)</li><li>direccion VARCHAR(255)</li><li>latitud DOUBLE</li><li>longitud DOUBLE</li><li>horario VARCHAR(255)</li><li>url_tour_virtual VARCHAR(255)</li><li>Categoriaid_categoria INT (FK)</li></ul> |
 | **Importancia** | Media |
@@ -1851,8 +1851,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Registro de Asociaciones</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>Registro de Asociaciones (BPMN)</li></ul> |
 | **Descripción** | Entidades vecinales o culturales que solicitan espacios municipales. |
 | **Datos específicos** | <ul><li>id_asociacion INT (PK)</li><li>nombre VARCHAR(255)</li><li>descripcion VARCHAR(255)</li><li>aforo INT</li></ul> |
 | **Importancia** | Media |
@@ -1865,8 +1865,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Inventario de centros municipales</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>Reserva de centro (BPMN)</li></ul> |
 | **Descripción** | Salas, centros o recintos disponibles para reserva. |
 | **Datos específicos** | <ul><li>id_espacio INT (PK)</li><li>nombre VARCHAR(255)</li><li>descripcion VARCHAR(255)</li><li>aforo INT</li></ul> |
 | **Importancia** | Media |
@@ -1879,8 +1879,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Gestión de alquileres</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>Reserva de centro (BPMN)</li></ul> |
 | **Descripción** | Gestiona el calendario de uso de los espacios reservables. |
 | **Datos específicos** | <ul><li>id_reserva INT (PK)</li><li>fecha_hora_inicio TIME</li><li>fecha_hora_fin TIME</li><li>estado VARCHAR(255)</li><li>motivo_rechazo VARCHAR(255)</li><li>fecha_solicitud VARCHAR(255)</li><li>Asociacionid_asociacion INT (FK)</li><li>EspacioReservableid_reserva INT (FK)</li></ul> |
 | **Importancia** | Alta |
@@ -1893,8 +1893,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Repositorio Multimedia</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-323</li><li>CU-114</li></ul> |
 | **Descripción** | Entidad central para el almacenamiento de rutas de imágenes. |
 | **Datos específicos** | <ul><li>id_foto INT (PK)</li><li>nombre VARCHAR(255)</li><li>ruta VARCHAR(255)</li></ul> |
 | **Importancia** | Media |
@@ -1907,8 +1907,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Publicación de boletines</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-106</li><li>CU-304</li><li>CU-303</li></ul> |
 | **Descripción** | Artículos de actualidad municipal. |
 | **Datos específicos** | <ul><li>id_noticia INT (PK)</li><li>texto VARCHAR(255)</li><li>Usuarioid_usuario INT (FK Autor)</li></ul> |
 | **Importancia** | Media |
@@ -1921,8 +1921,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Tablón de anuncios</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-107</li><li>CU-305</li><li>CU-306</li></ul> |
 | **Descripción** | Comunicaciones breves de ciudadanos o la administración. |
 | **Datos específicos** | <ul><li>id_anuncio INT (PK)</li><li>texto VARCHAR(255)</li><li>desc VARCHAR(255)</li><li>Usuarioid_usuario INT (FK)</li><li>Categoriaid_categoria INT (FK)</li></ul> |
 | **Importancia** | Baja |
@@ -1935,8 +1935,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Social Media Feed</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-209</li><li>CU-227</li><li>CU-339</li></ul> |
 | **Descripción** | Almacena enlaces a redes sociales vinculados a eventos o noticias. |
 | **Datos específicos** | <ul><li>id_RRSS INT (PK)</li><li>URL VARCHAR(255)</li><li>texto VARCHAR(255)</li><li>Noticiaid_noticia INT (FK)</li><li>Eventoid_evento INT (FK)</li><li>Anuncioid_anuncio INT (FK)</li></ul> |
 | **Importancia** | Baja |
@@ -1949,8 +1949,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Generador de Forms</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-315</li><li>CU-316</li><li>CU-104</li></ul> |
 | **Descripción** | Define la cabecera de formularios de captura de datos dinámicos. |
 | **Datos específicos** | <ul><li>id_formulario INT (PK)</li><li>nombre VARCHAR(255)</li><li>PostURL VARCHAR(255)</li></ul> |
 | **Importancia** | Baja |
@@ -1963,8 +1963,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Definición de inputs</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-315</li><li>CU-316</li><li>CU-104</li></ul> |
 | **Descripción** | Define los campos individuales, su tipo y posición en un formulario. |
 | **Datos específicos** | <ul><li>id_campos INT (PK)</li><li>tipo VARCHAR(255)</li><li>orden INT</li><li>PosX INT</li><li>PosY INT</li><li>Formularioid_formulario INT (FK)</li></ul> |
 | **Importancia** | Baja |
@@ -1977,7 +1977,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
+| **Fuentes** | Pliego de condiciones |
 | **Referencias** | <ul><li>Organización departamental</li></ul> |
 | **Descripción** | Define las áreas o departamentos (con icono y color para UI). |
 | **Datos específicos** | <ul><li>id_area INT (PK)</li><li>nombre VARCHAR(255)</li><li>icono VARCHAR(255)</li><li>ordenamiento VARCHAR(255)</li><li>color VARCHAR(255)</li><li>Usuarioid_usuario INT (FK)</li></ul> |
@@ -1991,8 +1991,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Gestión documental</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-323</li></ul> |
 | **Descripción** | Almacena archivos generales asociados a categorías. |
 | **Datos específicos** | <ul><li>nombre VARCHAR(255)</li><li>ruta VARCHAR(255)</li><li>Categoriaid_categoria INT (FK)</li></ul> |
 | **Importancia** | Baja |
@@ -2005,8 +2005,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Relación Usuario-Noticia</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-106</li><li>CU-304</li><li>CU-303</li></ul> |
 | **Descripción** | Tabla intermedia para vincular usuarios con noticias. |
 | **Datos específicos** | <ul><li>Usuarioid_usuario INT (FK)</li><li>Noticiaid_noticia INT (FK)</li></ul> |
 | **Importancia** | Baja |
@@ -2019,8 +2019,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Galería de eventos</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-323</li><li>CU-114</li><li>CU-215</li><li>CU-216</li><li>CU-217</li><li>CU-221</li><li>CU-222</li><li>CU-223</li><li>CU-332</li><li>CU-335</li><li>CU-336</li><li>CU-338</li></ul> |
 | **Descripción** | Vincula múltiples fotos a un evento específico. |
 | **Datos específicos** | <ul><li>orden INT</li><li>Eventoid_evento INT (FK)</li><li>Fotoid_foto INT (FK)</li></ul> |
 | **Importancia** | Baja |
@@ -2033,8 +2033,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Galería de noticias</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-323</li><li>CU-114</li><li>CU-106</li><li>CU-304</li><li>CU-303</li></ul> |
 | **Descripción** | Vincula múltiples fotos a una noticia específica. |
 | **Datos específicos** | <ul><li>orden VARCHAR(255)</li><li>Noticiaid_noticia INT (FK)</li><li>Fotoid_foto INT (FK)</li></ul> |
 | **Importancia** | Baja |
@@ -2047,8 +2047,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | :--- | :--- |
 | **Versión** | 1.1 (Octubre-2025) |
 | **Autores** | INRE Equipo Azul |
-| **Fuentes** | Diagrama E-R |
-| **Referencias** | <ul><li>Pruebas gráficas de incidencias</li></ul> |
+| **Fuentes** | Pliego de condiciones |
+| **Referencias** | <ul><li>CU-323</li><li>CU-114</li><li>CU-325</li><li>CU-324</li><li>CU-322</li><li>CU-321</li><li>CU-320</li></ul> |
 | **Descripción** | Vincula fotos a un reporte de incidencia ciudadana. |
 | **Datos específicos** | <ul><li>Fotoid_foto INT (FK)</li><li>IncidenciaCiudadanaid_incidencia INT (FK)</li></ul> |
 | **Importancia** | Baja |

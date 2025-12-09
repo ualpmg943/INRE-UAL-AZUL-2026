@@ -115,6 +115,9 @@ $ Descripción generica del apartado de requisitos$
 | <span>CU-114</span> | <span>Subir multimedia</span> |
 | <span>CU-115</span> | <span>Registrar detalles</span> |
 | <span>CU-116</span> | <span>Crear portal</span> |
+| <span>CU-117</span> | <span>Eliminar contenido (general)</span> |
+| <span>CU-118</span> | <span>Eliminar contenido</span> |
+| <span>CU-119</span> | <span>Realizar un cambio en el contenido turismo</span> |
 | <span>CU-201</span> | <span>Ver informacion sobre la ciudad</span> |
 | <span>CU-202</span> | <span>Ver informacion sobre la historia de la ciudad</span> |
 | <span>CU-203</span> | <span>Ver recursos naturales</span> |

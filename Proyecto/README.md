@@ -19,6 +19,17 @@ Complementariamente, se establece un Diccionario de Conceptos (Glosario) que uni
 
 ## 3. Necesidades del negocio
 ### 3.1 Objetivos del negocio
+
+| Código | Nombre del Objetivo | Descripción |
+| :--- | :--- | :--- |
+| OBJ-01 | Modernización de la Identidad Corporativa | Renovar y unificar la imagen digital del Ayuntamiento mediante un "Restyling" y la creación de un Manual de Identidad Corporativa, proyectando una visión más moderna, fluida y adaptada a la sociedad actual, superando la obsolescencia de los portales creados en 2009. |
+| OBJ-02 | Impulso y Competitividad Turística | Transformar el modelo turístico hacia la sostenibilidad y mejorar la competitividad del destino "Benavente" mediante un portal unificado de Turismo y Cultura que integre recursos, rutas y patrimonio, alineado con el Plan de Recuperación "Next Generation EU". |
+| OBJ-03 | Gestión Descentralizada y Ágil | Dotar a la entidad de autonomía tecnológica mediante un Gestor de Contenidos (CMS) que permita al personal municipal (diferentes departamentos) crear, editar y publicar contenidos de forma distribuida sin depender de personal técnico especializado para cada cambio. |
+| OBJ-04 | Centralización de la Información (Agenda Única) | Eliminar la dispersión de la información mediante la creación de una Agenda Cultural y de Eventos única y sincronizada, que centralice las actividades de todas las áreas (Cultura, Deportes, Juventud, Fiestas) evitando duplicidades y esfuerzos de mantenimiento redundantes. |
+| OBJ-05 | Mejora de la Experiencia Ciudadana (Accesibilidad) | Garantizar el acceso universal a la información pública cumpliendo con los estándares de Accesibilidad (UNE-EN 301549:2022) y Usabilidad, asegurando un diseño responsive (adaptable a móviles/tablets) y una navegación intuitiva para cualquier perfil de usuario. |
+| OBJ-06 | Toma de Decisiones Basada en Datos | Implementar herramientas de analítica y medición (mapas de calor, estadísticas de acceso) que permitan a la administración evaluar el comportamiento de los usuarios y la efectividad de los contenidos para realizar mejoras continuas en la comunicación digital. |
+| OBJ-07 | Seguridad y Cumplimiento Normativo | Asegurar la integridad, confidencialidad y disponibilidad de la información mediante el cumplimiento del Esquema Nacional de Seguridad (ENS - Nivel Medio) y la normativa de Protección de Datos (RGPD), protegiendo tanto la infraestructura como los datos de los ciudadanos. |
+
 ### 3.2 Modelos de Proceso de Negocio
 #### 3.2.1 Procesos
 ##### Diagrama BPMN 1:

@@ -1046,7 +1046,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Flujo Normal: | <span>1.- El visitante selecciona el apartado de actualidad en la página de inicio. <br>2.- El sistema muestra un resumen visual de las últimas noticias, bandos e informaciones de interés.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>El ciudadano accede al resumen informativo del día.</span> |
-| Artefactos relacionados: | <span>CU-303, CU-304, CU-305, CU-306, CU-307</span> |
+| Artefactos relacionados: | <span></span> |
 
 ---
 
@@ -1063,7 +1063,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Flujo Normal: | <span>1.- El visitante clica sobre el enlace de ver archivo de noticias. <br>2.- El sistema lista de forma cronológica los titulares y entradillas de toda la hemeroteca.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>El visitante visualiza el listado completo de prensa municipal.</span> |
-| Artefactos relacionados: | <span>CU-302, CU-304</span> |
+| Artefactos relacionados: | <span></span> |
 
 ---
 
@@ -1080,7 +1080,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Flujo Normal: | <span>1.- El visitante pulsa en un titular específico de la lista. <br>2.- El sistema abre el artículo mostrando texto, autor, fecha y fotos asociadas.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>El usuario lee el artículo informativo completo.</span> |
-| Artefactos relacionados: | <span>CU-303</span> |
+| Artefactos relacionados: | <span></span> |
 
 ---
 
@@ -1097,7 +1097,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Flujo Normal: | <span>1.- El usuario selecciona la opción de ver anuncios oficiales. <br>2.- El sistema muestra un listado de comunicados breves ordenados por relevancia.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>El ciudadano consulta los avisos municipales.</span> |
-| Artefactos relacionados: | <span>CU-302, CU-306</span> |
+| Artefactos relacionados: | <span></span> |
 
 ---
 
@@ -1114,7 +1114,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Flujo Normal: | <span>1.- El visitante elige un anuncio específico. <br>2.- El sistema presenta el texto íntegro del aviso en pantalla.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Consulta terminada del contenido del anuncio.</span> |
-| Artefactos relacionados: | <span>CU-305</span> |
+| Artefactos relacionados: | <span></span> |
 
 ---
 
@@ -1131,7 +1131,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Flujo Normal: | <span>1.- El visitante accede al apartado de teléfonos y servicios de interés. <br>2.- El sistema organiza visualmente los datos de contacto y horarios de servicio público.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>El ciudadano obtiene la información de primera necesidad municipal.</span> |
-| Artefactos relacionados: | <span>CU-302</span> |
+| Artefactos relacionados: | <span></span> |
 
 ---
 
@@ -1144,10 +1144,10 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Fecha: | <span>08/12/2025</span> |
 | Descripción: | <span>Visualización digital de edictos y avisos oficiales con validez legal.</span> |
 | Actores: | <span>Visitante</span> |
-| Precondiciones: | <span>Haber accedido a la sede electrónica.</span> |
-| Flujo Normal: | <span>1.- El ciudadano abre el tablón virtual de edictos. <br>2.- El sistema permite navegar por los PDF de edictos firmados digitalmente por el ayuntamiento.</span> |
+| Precondiciones: | <span></span> |
+| Flujo Normal: | <span>1.- El ciudadano abre el tablón virtual. <br>2.- El sistema permite navegar por los PDF de edictos firmados digitalmente por el ayuntamiento.</span> |
 | Flujo Alternativo: | <span></span> |
-| Poscondiciones: | <span>El usuario consulta los documentos oficiales de interés público.</span> |
+| Poscondiciones: | <span></span> |
 | Artefactos relacionados: | <span>N/A</span> |
 
 ---
@@ -1264,10 +1264,10 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Punto de entrada general para trámites administrativos del ciudadano.</span> |
 | Actores: | <span>Visitante</span> |
 | Precondiciones: | <span>Uso de identificación digital según el trámite.</span> |
-| Flujo Normal: | <span>1.- El ciudadano entra en su área de gestión personal. <br>2.- El sistema lista las incidencias, solicitudes o contratos asociados a su perfil.</span> |
-| Flujo Alternativo: | <span></span> |
+| Flujo Normal: | <span>1.- El ciudadano gestiona sus tramites. <br>2.- .</span> |
+| Flujo Alternativo: | <span>1a. Ver solicitudes: <br>1.- El visitante accede a sus solicitudes pendientes o finalizadas. <br> 1b. Ver contratos: <br>1.- El visitante accede a sus contratos. <br>1c. Ver factura electronica: <br>1.- El visitante accede sus facturas electronicas. <br>1d. Acceder a los pagos de tributos online: <br>1.- El visitante accede a sus pagos de tributos online. <br>2.- El sistema redirige a la pasarela bancaria oficial para la introducción de tarjeta. <br>1e. Acceder a la sede electronica: <br>1.- El visitante accede a la sede electronica.</span> |
 | Poscondiciones: | <span>Gestión centralizada de trámites efectuada.</span> |
-| Artefactos relacionados: | <span>CU-316, CU-317, CU-318, CU-319</span> |
+| Artefactos relacionados: | <span>CU-327, CU-328, CU-319, CU-318, CU-317</span> |
 
 ---
 
@@ -1279,12 +1279,12 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Autor: | <span>INRE Equipo Azul</span> |
 | Fecha: | <span>08/12/2025</span> |
 | Descripción: | <span>Arranque del flujo guiado para notificar desperfectos públicos.</span> |
-| Actores: | <span>Visitante (Iniciado por CU-315)</span> |
+| Actores: | <span>Visitante</span> |
 | Precondiciones: | <span>El ciudadano desea reportar un desperfecto urbano.</span> |
-| Flujo Normal: | <span>1.- El usuario pulsa en enviar nueva queja o incidencia. <br>2.- El sistema abre el asistente para capturar los datos del problema.</span> |
-| Flujo Alternativo: | <span></span> |
+| Flujo Normal: | <span>1.- El visitante selecciona la opcion de "Nueva incidencia". <br>2.- El visitante selecciona la categoria a la que pertenece la incidencia. <br>3.- El visitante selecciona el lugar donde ocurre la incidencia. <br>4.- El visitante describe la incidencia a reportar. <br>5.- El visitante introduce sus datos personales. <br>6.- El visitante manda la incidencia. <br>7.- El sistema guarda los datos y entrega un número de registro al ciudadano.</span> |
+| Flujo Alternativo: | <span>4a. Adjuntar imagenes: <br>1.- El usuario decide si adjuntar imagenes o no. <br>2.- El flujo de ejecucion retorna al flujo principal.</span> |
 | Poscondiciones: | <span>Registro inicial de incidencia abierto.</span> |
-| Artefactos relacionados: | <span>CU-315, CU-320</span> |
+| Artefactos relacionados: | <span>CU-320</span> |
 
 ---
 
@@ -1298,7 +1298,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Permite comprobar el estado y las respuestas a escritos realizados.</span> |
 | Actores: | <span>Visitante (Vía CU-315)</span> |
 | Precondiciones: | <span>Sesión administrativa iniciada.</span> |
-| Flujo Normal: | <span>1.- El ciudadano abre el historial de sus solicitudes administrativas. <br>2.- El sistema muestra el estado de trámite de cada petición.</span> |
+| Flujo Normal: | <span>1.- El visitante accede a sus solicitudes pendientes o finalizadas.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Consulta de expedientes administrativos terminada.</span> |
 | Artefactos relacionados: | <span>CU-315</span> |
@@ -1315,7 +1315,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Acceso a documentos contractuales públicos asociados al perfil.</span> |
 | Actores: | <span>Visitante (Vía CU-315)</span> |
 | Precondiciones: | <span>Ser poseedor de un contrato firmado con el ayuntamiento.</span> |
-| Flujo Normal: | <span>1.- El usuario solicita ver la lista de sus contratos registrados. <br>2.- El sistema permite descargar o visualizar los documentos en formato digital.</span> |
+| Flujo Normal: | <span>1.- El visitante accede a sus contratos.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>El ciudadano accede a sus contratos municipales.</span> |
 | Artefactos relacionados: | <span>CU-315</span> |
@@ -1332,7 +1332,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Consulta de justificantes de pago internos de gestiones.</span> |
 | Actores: | <span>Visitante (Vía CU-315)</span> |
 | Precondiciones: | <span>Existencia de facturas emitidas al ciudadano.</span> |
-| Flujo Normal: | <span>1.- El ciudadano accede a la lista de sus facturas de trámites. <br>2.- El sistema muestra los datos de facturación e importes liquidados.</span> |
+| Flujo Normal: | <span>1.- El visitante accede sus facturas electronicas.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Información de facturación municipal consultada.</span> |
 | Artefactos relacionados: | <span>CU-315</span> |
@@ -1349,7 +1349,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Clasificación del desperfecto (limpieza, vías, alumbrado).</span> |
 | Actores: | <span>Visitante (Iniciado por CU-316)</span> |
 | Precondiciones: | <span>Estar dentro del proceso de reporte.</span> |
-| Flujo Normal: | <span>1.- El sistema muestra un catálogo de categorías. <br>2.- El ciudadano elige la que mejor define el desperfecto.</span> |
+| Flujo Normal: | <span>1.- El visitante selecciona la categoria a la que pertenece la incidencia.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Categoría vinculada al reporte.</span> |
 | Artefactos relacionados: | <span>CU-316, CU-321</span> |
@@ -1366,7 +1366,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Indicar mediante mapa o dirección física la localización del problema.</span> |
 | Actores: | <span>Visitante (Iniciado por CU-320)</span> |
 | Precondiciones: | <span>Tener categoría seleccionada.</span> |
-| Flujo Normal: | <span>1.- El visitante marca sobre el plano de la ciudad el lugar exacto. <br>2.- El sistema registra las coordenadas GPS para los operarios.</span> |
+| Flujo Normal: | <span>1.- El visitante selecciona el lugar donde ocurre la incidencia.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Ubicación geográfica asignada a la queja.</span> |
 | Artefactos relacionados: | <span>CU-320, CU-322</span> |
@@ -1383,8 +1383,8 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Explicación textual y gráfica del problema reportado.</span> |
 | Actores: | <span>Visitante (Iniciado por CU-321)</span> |
 | Precondiciones: | <span>Haber situado la incidencia.</span> |
-| Flujo Normal: | <span>1.- El ciudadano escribe los detalles del incidente en el campo de texto. <br>2.- El ciudadano añade fotos opcionales del estado real de la incidencia.</span> |
-| Flujo Alternativo: | <span></span> |
+| Flujo Normal: | <span>1.- El visitante describe la incidencia a reportar.</span> |
+| Flujo Alternativo: | <span>1a. Adjuntar imagenes: <br>1.- El usuario decide si adjuntar imagenes o no. <br>2.- El flujo de ejecucion retorna al flujo principal.</span> |
 | Poscondiciones: | <span>El reporte cuenta con una descripción detallada.</span> |
 | Artefactos relacionados: | <span>CU-321, CU-323, CU-324</span> |
 
@@ -1400,7 +1400,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Funcionalidad para subir fotografías desde el dispositivo personal.</span> |
 | Actores: | <span>Visitante (Vía CU-322)</span> |
 | Precondiciones: | <span>Permisos de cámara o acceso a archivos concedidos.</span> |
-| Flujo Normal: | <span>1.- El usuario selecciona archivos de imagen de su galería. <br>2.- El sistema sube los archivos y los vincula a la incidencia.</span> |
+| Flujo Normal: | <span>1.- El usuario decide si adjuntar imagenes o no.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Imágenes incorporadas al trámite administrativo.</span> |
 | Artefactos relacionados: | <span>CU-322</span> |
@@ -1417,7 +1417,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Recopilación de información de contacto para informar al ciudadano.</span> |
 | Actores: | <span>Visitante (Iniciado por CU-322)</span> |
 | Precondiciones: | <span>Descripción de queja finalizada.</span> |
-| Flujo Normal: | <span>1.- El visitante rellena su nombre, email y teléfono en el formulario. <br>2.- El sistema valida que los campos sean correctos antes de proceder.</span> |
+| Flujo Normal: | <span>1.- El visitante introduce sus datos personales. <br>2.- El visitante manda la incidencia. <br>3.- El sistema guarda los datos y entrega un número de registro al ciudadano.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>El ciudadano ha aportado su identificación para el seguimiento.</span> |
 | Artefactos relacionados: | <span>CU-322, CU-325</span> |
@@ -1434,7 +1434,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Acción que transmite la información del ciudadano al servidor municipal.</span> |
 | Actores: | <span>Visitante (Iniciado por CU-324)</span> |
 | Precondiciones: | <span>Haber cumplimentado todos los pasos guiados.</span> |
-| Flujo Normal: | <span>1.- El usuario confirma el envío definitivo del reporte. <br>2.- El sistema guarda los datos y entrega un número de registro al ciudadano.</span> |
+| Flujo Normal: | <span>1.- El visitante manda la incidencia. <br>2.- El sistema guarda los datos y entrega un número de registro al ciudadano.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Trámite de incidencia enviado satisfactoriamente.</span> |
 | Artefactos relacionados: | <span>CU-324</span> |
@@ -1451,7 +1451,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Entrada segura al módulo de transacciones económicas bancarias.</span> |
 | Actores: | <span>Visitante</span> |
 | Precondiciones: | <span>Acceso al servidor bancario disponible.</span> |
-| Flujo Normal: | <span>1.- El ciudadano elige pagar una tasa o impuesto online. <br>2.- El sistema redirige a la pasarela bancaria oficial para la introducción de tarjeta.</span> |
+| Flujo Normal: | <span>1.- El sistema redirige a la pasarela bancaria oficial para la introducción de tarjeta.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>El usuario entra en el entorno seguro de pagos.</span> |
 | Artefactos relacionados: | <span>CU-327</span> |
@@ -1468,10 +1468,10 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Liquidación específica de impuestos locales (IBI, circulación).</span> |
 | Actores: | <span>Visitante (Vía CU-326)</span> |
 | Precondiciones: | <span>Tener tributos pendientes de pago asociados al perfil.</span> |
-| Flujo Normal: | <span>1.- El usuario introduce su referencia catastral o DNI. <br>2.- El sistema localiza los impuestos adeudados y permite iniciar el ingreso.</span> |
-| Flujo Alternativo: | <span></span> |
+| Flujo Normal: | <span>1.- El visitante accede a sus pagos de tributos online. </span> |
+| Flujo Alternativo: | <span>1a. Acceder a la pasarela de pago: <br>1.- El sistema redirige a la pasarela bancaria oficial para la introducción de tarjeta.</span> |
 | Poscondiciones: | <span>Tributo municipal pagado telemáticamente.</span> |
-| Artefactos relacionados: | <span>CU-326</span> |
+| Artefactos relacionados: | <span>CU-315, CU-326</span> |
 
 ---
 
@@ -1485,10 +1485,10 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Navegación al entorno de trámites oficiales certificados.</span> |
 | Actores: | <span>Visitante</span> |
 | Precondiciones: | <span>Disponer de medios de identificación digital opcionalmente.</span> |
-| Flujo Normal: | <span>1.- El ciudadano clica sobre el banner de Sede Electrónica. <br>2.- El sistema carga el portal oficial de gestiones burocráticas certificadas.</span> |
+| Flujo Normal: | <span>1.- El visitante accede a la sede electronica.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Navegación efectuada a la sede del ayuntamiento.</span> |
-| Artefactos relacionados: | <span>N/A</span> |
+| Artefactos relacionados: | <span>CU-315</span> |
 
 ---
 
@@ -1536,10 +1536,10 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Visualización del calendario institucional de actividades.</span> |
 | Actores: | <span>Visitante</span> |
 | Precondiciones: | <span>Agenda publicada.</span> |
-| Flujo Normal: | <span>1.- El ciudadano abre el calendario municipal. <br>2.- El sistema lista los eventos próximos por fecha y categoría.</span> |
-| Flujo Alternativo: | <span></span> |
+| Flujo Normal: | <span>1.- El ciudadano abre la agenda de eventos. <br>2.- El sistema lista los eventos próximos por fecha y categoría. <br>3.- El visitante selecciona un dia de la agenda para ver los eventos. <br>4.- El visitante clica sobre un evento para observar sus detalles.</span> |
+| Flujo Alternativo: | <span>2a. Ver tour virtual: <br>1.- El visitante clica en el banner de ver tour virtual. <br>2.- Se le muestra al visitante un tour virtual por los puntos de interes de Benavente. <br>1b. Seleccionar la categoria del evento> <br>1.- El visitante filtra los eventos seleccionando una categoria. <br>1c. Buscar nombre del evento: <br>1.- El visitante filtra los eventos buscando por el nombre de uno en especifico. <br>4a. Añadir evento al calendario: <br>1.- El visitante decide añadir el evento seleccionado a su calendario. <br>2.- El sistema interactua con la API de google calendar y le añade un recordatorio al visitane. <br>4b. Compartir evento en redes sociales: <br>1.- El visitante decide compartir el evento en sus redes sociales. <br>2.- La pagina interactua con la API de las redes sociales seleccionadas por el visitante y publica un post sobre el evento. <br>4c. Acceder al portal del organizador del evento: <br>1.- El visitante clica en el enlace externo para ver el organizador del evento. <br>2.- El visitante es redirigido al portal web del organizador.</span> |
 | Poscondiciones: | <span>El usuario conoce la programación cultural local.</span> |
-| Artefactos relacionados: | <span>CU-332, CU-333, CU-334</span> |
+| Artefactos relacionados: | <span>CU-334, CU-335, CU-336, CU-337</span> |
 
 ---
 
@@ -1553,10 +1553,10 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Ficha de detalle de una actividad específica de la agenda.</span> |
 | Actores: | <span>Visitante (Vía CU-331)</span> |
 | Precondiciones: | <span>Evento seleccionado de la lista.</span> |
-| Flujo Normal: | <span>1.- El usuario pulsa en el titular del evento. <br>2.- El sistema abre la ficha técnica (horarios, lugar, descripción).</span> |
-| Flujo Alternativo: | <span></span> |
+| Flujo Normal: | <span>1.- El visitante clica sobre un evento para observar sus detalles.</span> |
+| Flujo Alternativo: | <span>1a. Añadir evento al calendario: <br>1.- El visitante decide añadir el evento seleccionado a su calendario. <br>2.- El sistema interactua con la API de google calendar y le añade un recordatorio al visitane. <br>1b. Compartir evento en redes sociales: <br>1.- El visitante decide compartir el evento en sus redes sociales. <br>2.- La pagina interactua con la API de las redes sociales seleccionadas por el visitante y publica un post sobre el evento. <br>1c. Acceder al portal del organizador del evento: <br>1.- El visitante clica en el enlace externo para ver el organizador del evento. <br>2.- El visitante es redirigido al portal web del organizador.</span> |
 | Poscondiciones: | <span>Información detallada del evento obtenida.</span> |
-| Artefactos relacionados: | <span>CU-331</span> |
+| Artefactos relacionados: | <span>CU-340, CU-339, CU-338</span> |
 
 ---
 
@@ -1587,10 +1587,10 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Experiencia inmersiva en monumentos o museos digitales.</span> |
 | Actores: | <span>Visitante (Vía CU-313)</span> |
 | Precondiciones: | <span>Navegador compatible con 360 grados.</span> |
-| Flujo Normal: | <span>1.- El turista elige visitar virtualmente un monumento. <br>2.- El sistema carga el visor panorámico interactivo.</span> |
+| Flujo Normal: | <span>1.- El visitante clica en el banner de ver tour virtual. <br>2.- Se le muestra al visitante un tour virtual por los puntos de interes de Benavente.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Interacción digital con el patrimonio local terminada.</span> |
-| Artefactos relacionados: | <span>CU-313</span> |
+| Artefactos relacionados: | <span>CU-331</span> |
 
 ---
 
@@ -1604,7 +1604,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Filtrado de la agenda municipal por fechas concretas.</span> |
 | Actores: | <span>Visitante (Vía CU-331)</span> |
 | Precondiciones: | <span>Agenda cargada.</span> |
-| Flujo Normal: | <span>1.- El usuario selecciona un día en el calendario interactivo. <br>2.- El sistema actualiza la lista solo con eventos para ese día.</span> |
+| Flujo Normal: | <span>1.- El visitante selecciona un dia de la agenda para ver los eventos. <br>2.- El visitante clica sobre un evento para observar sus detalles.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Agenda filtrada cronológicamente.</span> |
 | Artefactos relacionados: | <span>CU-331</span> |
@@ -1621,14 +1621,14 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Filtrado de la agenda municipal por temáticas.</span> |
 | Actores: | <span>Visitante (Vía CU-331)</span> |
 | Precondiciones: | <span>Agenda cargada.</span> |
-| Flujo Normal: | <span>1.- El usuario elige una temática (deportes, cultura) del menú lateral. <br>2.- El sistema actualiza la lista con eventos que coincidan.</span> |
+| Flujo Normal: | <span>1.- El visitante filtra los eventos seleccionando una categoria.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Agenda filtrada temáticamente.</span> |
 | Artefactos relacionados: | <span>CU-331</span> |
 
 ---
 
-### Buscar nombre del evento (Filtro)
+### Buscar nombre del evento
 
 | Nombre: | <span>Buscar nombre del evento</span> |
 | :--- | :--- |
@@ -1638,14 +1638,14 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Búsqueda directa por título dentro de la agenda.</span> |
 | Actores: | <span>Visitante (Vía CU-331)</span> |
 | Precondiciones: | <span>Agenda cargada.</span> |
-| Flujo Normal: | <span>1.- El usuario escribe el nombre de la actividad en el filtro. <br>2.- El sistema busca coincidencias en tiempo real sobre el listado.</span> |
+| Flujo Normal: | <span>1.- El visitante filtra los eventos buscando por el nombre de uno en especifico.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Actividad localizada dentro de la agenda.</span> |
 | Artefactos relacionados: | <span>CU-331</span> |
 
 ---
 
-### Añadir evento al calendario (Personal)
+### Añadir evento al calendario
 
 | Nombre: | <span>Añadir evento al calendario</span> |
 | :--- | :--- |
@@ -1655,14 +1655,14 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Exportar cita a Google Calendar o Outlook.</span> |
 | Actores: | <span>Visitante (Vía CU-332)</span> |
 | Precondiciones: | <span>Ficha de evento abierta.</span> |
-| Flujo Normal: | <span>1.- El ciudadano pulsa en añadir a mi calendario personal. <br>2.- El sistema genera un archivo .ics para la descarga.</span> |
+| Flujo Normal: | <span>1.- El visitante decide añadir el evento seleccionado a su calendario. <br>2.- El sistema interactua con la API de google calendar y le añade un recordatorio al visitane.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Actividad guardada en el dispositivo personal.</span> |
 | Artefactos relacionados: | <span>CU-332</span> |
 
 ---
 
-### Compartir evento en redes sociales (Post)
+### Compartir evento en redes sociales
 
 | Nombre: | <span>Compartir evento en redes sociales</span> |
 | :--- | :--- |
@@ -1672,7 +1672,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Difusión de una actividad concreta en perfiles sociales personales.</span> |
 | Actores: | <span>Visitante (Vía CU-332)</span> |
 | Precondiciones: | <span>Ficha de evento abierta.</span> |
-| Flujo Normal: | <span>1.- El ciudadano elige compartir en WhatsApp o Twitter. <br>2.- El sistema genera el enlace directo con un mensaje predefinido.</span> |
+| Flujo Normal: | <span>1.- 1.- El visitante decide compartir el evento en sus redes sociales. <br>2.- La pagina interactua con la API de las redes sociales seleccionadas por el visitante y publica un post sobre el evento.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Enlace difundido públicamente.</span> |
 | Artefactos relacionados: | <span>CU-332</span> |
@@ -1689,7 +1689,7 @@ El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpr
 | Descripción: | <span>Navegación al sitio externo del promotor o club deportivo.</span> |
 | Actores: | <span>Visitante (Vía CU-332)</span> |
 | Precondiciones: | <span>Enlace externo vinculado en la ficha.</span> |
-| Flujo Normal: | <span>1.- El usuario clica en el nombre del organizador. <br>2.- El navegador abre la web del organizador en ventana nueva.</span> |
+| Flujo Normal: | <span>1.- El visitante clica en el enlace externo para ver el organizador del evento. <br>2.- El visitante es redirigido al portal web del organizador.</span> |
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>El usuario se informa en la fuente directa del evento.</span> |
 | Artefactos relacionados: | <span>CU-332</span> |

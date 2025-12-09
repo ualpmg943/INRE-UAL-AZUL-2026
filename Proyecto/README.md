@@ -194,13 +194,13 @@ $ Descripción generica del apartado de requisitos$
 | **Codigo:** | <span>CU-101</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
-| **Descripción:** | <span>Permite al Administrador gestionar los permisos de los diferentes usuarios o roles dentro del sistema.</span> |
+| **Descripción:** | <span>Permite definir qué acciones pueden realizar los diferentes roles dentro del sistema.</span> |
 | **Actores:** | <span>Administrador</span> |
 | **Precondiciones:**| <span>El Administrador debe estar autenticado en el sistema con privilegios de superusuario.</span> |
-| **Flujo Normal:** | <span>1.- El Administrador accede al panel de gestión de usuarios. <br>2.- El Administrador busca y selecciona el usuario o rol a modificar. <br>3.- El Administrador marca o desmarca las casillas de permisos correspondientes. <br>4.- El Administrador guarda los cambios realizados.</span> |
+| **Flujo Normal:** | <span>1.- El Administrador accede al panel de gestión de permisos. <br>2.- El Administrador busca y selecciona el rol a modificar. <br>3.- El Administrador marca o desmarca las casillas de permisos correspondientes. <br>4.- El Administrador guarda los cambios realizados.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>Los permisos del usuario o rol quedan actualizados en la base de datos.</span> |
-| **Artefactos relacionados:**| <span>CU-102</span> |
+| **Artefactos relacionados:**| <span>N/A</span> |
 
 ---
 
@@ -217,7 +217,7 @@ $ Descripción generica del apartado de requisitos$
 | **Flujo Normal:** | <span>1.- El Administrador entra en la configuración de cuentas de usuario. <br>2.- El Administrador selecciona una cuenta de la lista. <br>3.- El Administrador asigna un nuevo rol desplegando la lista de roles disponibles. <br>4.- El Administrador confirma la operación.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El usuario tiene asignado su nuevo rol y las capacidades asociadas al mismo.</span> |
-| **Artefactos relacionados:**| <span>CU-101</span> |
+| **Artefactos relacionados:**| <span>N/A</span> |
 
 ---
 
@@ -234,7 +234,7 @@ $ Descripción generica del apartado de requisitos$
 | **Flujo Normal:** | <span>1.- El administrativo accede al gestor de contenidos de la página principal. <br>2.- El administrativo selecciona la zona de banners. <br>3.- El administrativo sube la imagen y asigna un enlace de destino. <br>4.- El administrativo publica los cambios.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El banner aparece visible para todos los visitantes de la página principal.</span> |
-| **Artefactos relacionados:**| <span>CU-104, CU-105</span> |
+| **Artefactos relacionados:**| <span>N/A</span> |
 
 ---
 
@@ -245,13 +245,13 @@ $ Descripción generica del apartado de requisitos$
 | **Codigo:** | <span>CU-104</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
-| **Descripción:** | <span>Herramienta para diseñar formularios de recogida de datos.</span> |
+| **Descripción:** | <span>Herramienta para generar formularios de contacto o encuestas dinámicas.</span> |
 | **Actores:** | <span>Administrativo del portal general</span> |
 | **Precondiciones:**| <span>El actor debe estar autenticado.</span> |
 | **Flujo Normal:** | <span>1.- El administrativo inicia el constructor de formularios. <br>2.- El administrativo arrastra y suelta los campos necesarios (texto, fecha, selección). <br>3.- El administrativo configura el correo de recepción de datos. <br>4.- El administrativo guarda y obtiene el código para insertar el formulario.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El formulario queda guardado y listo para usarse en una página.</span> |
-| **Artefactos relacionados:**| <span>CU-103</span> |
+| **Artefactos relacionados:**| <span>N/A</span> |
 
 ---
 
@@ -263,12 +263,12 @@ $ Descripción generica del apartado de requisitos$
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
 | **Descripción:** | <span>Permite redactar y lanzar una noticia en el portal.</span> |
-| **Actores:** | <span>Administrativo del portal general, Administrador</span> |
-| **Precondiciones:**| <span>El actor debe tener el texto de la noticia redactado.</span> |
-| **Flujo Normal:** | <span>1.- El actor accede al editor de noticias. <br>2.- El actor escribe el titular, entradilla y cuerpo. <br>3.- El actor extiende el proceso para subir multimedia si es necesario. <br>4.- El actor pulsa el botón de publicar.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
+| **Actores:** | <span>Administrativo del portal general</span> |
+| **Precondiciones:**| <span>El usuario está en el dashboard de noticias.</span> |
+| **Flujo Normal:** | <span>1.- El actor accede al editor de noticias. <br>2.- El actor escribe el titular, entradilla y cuerpo. <br>3.- El actor extiende el proceso para subir multimedia si es necesario. <br>4.- El actor pulsa el botón de publicar. <br>5.- El sistema valida los campos obligatorios. <br>6.- La noticia se hace visible inmediatamente.</span> |
+| **Flujo Alternativo:** | <span>3a. Subir multimedia: <br>1.- El actor selecciona "Adjuntar imagen/video". <br>2.- El sistema abre el explorador de archivos. <br>3.- El actor selecciona el archivo y el sistema lo carga al servidor. <br>4.- El archivo se asocia a la noticia. <br>5.- Retorna al paso 4 del flujo normal. <br>4a. Programar publicación: <br>1.- En lugar de "Publicar", el actor selecciona "Programar". <br>2.- El sistema solicita la fecha de publicación. <br>3.- El actor introduce la fecha futura. <br>4.- El sistema guarda la noticia en estado "Pendiente".</span> |
 | **Poscondiciones:**| <span>La noticia es pública en el listado de actualidad.</span> |
-| **Artefactos relacionados:**| <span>CU-109, CU-110, CU-106</span> |
+| **Artefactos relacionados:**| <span>CU-110, CU-114</span> |
 
 ---
 
@@ -279,13 +279,13 @@ $ Descripción generica del apartado de requisitos$
 | **Codigo:** | <span>CU-106</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
-| **Descripción:** | <span>Permite crear un comunicado oficial o anuncio destacado.</span> |
-| **Actores:** | <span>Administrativo del portal general, Administrativo del portal de turismo</span> |
-| **Precondiciones:**| <span>El actor debe estar autenticado.</span> |
-| **Flujo Normal:** | <span>1.- El actor selecciona crear nuevo anuncio. <br>2.- El actor introduce la información relevante. <br>3.- El actor puede adjuntar archivos mediante la extensión subir multimedia. <br>4.- El actor confirma la publicación.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
-| **Poscondiciones:**| <span>El anuncio aparece en la sección de avisos del portal.</span> |
-| **Artefactos relacionados:**| <span>CU-109, CU-110, CU-105, CU-107</span> |
+| **Descripción:** | <span>Publicación de anuncios breves o destacados. Similar a noticias pero con formato distinto.</span> |
+| **Actores:** | <span>Administrativo del portal general</span> |
+| **Precondiciones:**| <span>Acceso al módulo de anuncios.</span> |
+| **Flujo Normal:** | <span>1.- El actor selecciona crear nuevo anuncio. <br>2.- El actor introduce la información relevante. <br>3.- El actor pulsa "Publicar" <br>4.- El sistema actualiza el portal.</span> |
+| **Flujo Alternativo:** | <span>3a. Subir multimedia: <br>1.- El actor decide añadir un banner gráfico. <br>2.- Sube la imagen al servidor. <br>3.- Asocia la imagen al anuncio. <br>4.- Retorna al flujo normal. <br>4a. Programar publicación: <br>1.- El actor elige diferir la publicación. <br>2.- Define fecha de inicio y opcionalmente fin. <br>3.- El anuncio queda en espera.</span> |
+| **Poscondiciones:**| <span>El anuncio es visible o queda programado.</span> |
+| **Artefactos relacionados:**| <span>CU-110, CU-114</span> |
 
 ---
 
@@ -296,19 +296,19 @@ $ Descripción generica del apartado de requisitos$
 | **Codigo:** | <span>CU-107</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
-| **Descripción:** | <span>Permite añadir una cita al calendario de eventos del portal.</span> |
-| **Actores:** | <span>Agenda, Administrativos</span> |
+| **Descripción:** | <span>Creación de eventos en el calendario.</span> |
+| **Actores:** | <span>Agenda</span> |
 | **Precondiciones:**| <span>El evento debe tener fecha y hora confirmadas.</span> |
 | **Flujo Normal:** | <span>1.- El actor accede a la gestión de la agenda. <br>2.- El actor crea una nueva entrada con fecha, hora y lugar. <br>3.- El actor guarda el evento en el sistema.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
+| **Flujo Alternativo:** | <span>3a. Programar publicación: <br>1.- En lugar de "Publicar", el actor selecciona "Programar". <br>2.- El sistema solicita la fecha de publicación. <br>3.- El actor introduce la fecha futura. <br>4.- El sistema guarda la noticia en estado "Pendiente".</span> |
 | **Poscondiciones:**| <span>El evento es visible en el calendario para los visitantes.</span> |
 | **Artefactos relacionados:**| <span>CU-110</span> |
 
 ---
 
-### Realizar un cambio en el contenido general
+### Realizar un cambio en el contenido (General)
 
-| **Nombre:** | <span>Realizar un cambio en el contenido general</span> |
+| **Nombre:** | <span>Realizar un cambio en el contenido (General)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-108</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -316,10 +316,10 @@ $ Descripción generica del apartado de requisitos$
 | **Descripción:** | <span>Edición de contenidos existentes en el portal general.</span> |
 | **Actores:** | <span>Administrativo del portal general</span> |
 | **Precondiciones:**| <span>El contenido a editar debe existir.</span> |
-| **Flujo Normal:** | <span>1.- El administrativo localiza el contenido que desea cambiar. <br>2.- El administrativo edita el texto o las opciones. <br>3.- El sistema registra los detalles del cambio automáticamente. <br>4.- El administrativo guarda la actualización.</span> |
+| **Flujo Normal:** | <span>1.- El administrativo localiza el contenido que desea cambiar. <br>2.- El administrativo edita el texto o las opciones. <br>3.- El sistema captura automáticamente la fecha, hora y ID del usuario. <br>4.- El sistema almacena el registro en el log de auditoría. <br> 5.- El sistema confirma que el contenido ha sido actualizado y registrado.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El contenido queda actualizado.</span> |
-| **Artefactos relacionados:**| <span>CU-109, CU-113</span> |
+| **Artefactos relacionados:**| <span>CU-119</span> |
 
 ---
 
@@ -331,12 +331,12 @@ $ Descripción generica del apartado de requisitos$
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
 | **Descripción:** | <span>Acción de borrar un elemento del sistema. Incluida en los flujos de cambio de contenido.</span> |
-| **Actores:** | <span>N/A (Caso de uso incluido)</span> |
+| **Actores:** | <span>Administrativo del portal de turismo o Administrativo del portal general</span> |
 | **Precondiciones:**| <span>El actor tiene permisos de borrado.</span> |
-| **Flujo Normal:** | <span>1.- El actor selecciona la opción de eliminar sobre un elemento. <br>2.- El actor confirma la acción en el mensaje de advertencia. <br>3.- El sistema elimina el registro.</span> |
+| **Flujo Normal:** | <span>1.- El Administrativo selecciona el contenido a eliminar. <br>2.- El actor confirma la acción en el mensaje de advertencia. <br>3.- El sistema captura automáticamente la fecha, hora y ID del usuario. <br>4.- El sistema almacena el registro en el log de auditoría. <br> 5.- El sistema confirma que el contenido ha sido actualizado y registrado. <br>6.- El sistema marca el contenido como eliminado (borrado lógico) o lo elimina físicamente.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El contenido deja de existir en el portal.</span> |
-| **Artefactos relacionados:**| <span>CU-108, CU-113</span> |
+| **Artefactos relacionados:**| <span>CU-115</span> |
 
 ---
 
@@ -348,10 +348,10 @@ $ Descripción generica del apartado de requisitos$
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
 | **Descripción:** | <span>Permite diferir la publicación de un contenido a una fecha futura.</span> |
-| **Actores:** | <span>N/A (Caso de uso de extensión)</span> |
+| **Actores:** | <span>Sistema (invocado por los administradores)</span> |
 | **Precondiciones:**| <span>El contenido está listo pero no se desea publicar ya.</span> |
-| **Flujo Normal:** | <span>1.- El actor marca la opción de programar en lugar de publicar. <br>2.- Se ejecuta la inclusión de indicar fecha de publicación. <br>3.- El sistema guarda el contenido en estado pendiente.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
+| **Flujo Normal:** | <span>1.- En lugar de "Publicar", el actor selecciona "Programar". <br>2.- El sistema solicita la fecha de publicación. <br>3.- El actor introduce la fecha futura. <br>4.- El sistema guarda la noticia en estado "Pendiente".</span> |
+| **Flujo Alternativo:** | <span>2a. Indicar fecha de vencimiento: <br>1.- El usuario indica que el contenido es temporal. <br>2.- El sistema solicita fecha de fin. <br>3.- El usuario selecciona una fecha posterior a la de publicación. <br>4.- El sistema programa la despublicación automática. <br>5.- Retorna al flujo normal.</span> |
 | **Poscondiciones:**| <span>El contenido se publicará automáticamente cuando llegue la fecha.</span> |
 | **Artefactos relacionados:**| <span>CU-105, CU-106, CU-107, CU-111, CU-112</span> |
 
@@ -365,12 +365,12 @@ $ Descripción generica del apartado de requisitos$
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
 | **Descripción:** | <span>Establece cuándo un contenido debe dejar de ser visible.</span> |
-| **Actores:** | <span>N/A (Caso de uso de extensión)</span> |
-| **Precondiciones:**| <span>N/A</span> |
-| **Flujo Normal:** | <span>1.- El actor accede a las opciones de caducidad. <br>2.- El actor selecciona el día en el calendario para la retirada del contenido.</span> |
+| **Actores:** | <span>Sistema (invocado por los administrativos)</span> |
+| **Precondiciones:**| <span>Se está programando una publicación y ya se ha definido una fecha de inicio.</span> |
+| **Flujo Normal:** | <span>1.- El usuario indica que el contenido es temporal. <br>2.- El sistema solicita fecha de fin. <br>3.- El usuario selecciona una fecha posterior a la de publicación. </span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El contenido se despublicará en la fecha indicada.</span> |
-| **Artefactos relacionados:**| <span>CU-110, CU-113</span> |
+| **Artefactos relacionados:**| <span>CU-110</span> |
 
 ---
 
@@ -382,16 +382,16 @@ $ Descripción generica del apartado de requisitos$
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
 | **Descripción:** | <span>Acción de seleccionar el día de inicio de visibilidad. Incluido en programar publicación.</span> |
-| **Actores:** | <span>N/A (Caso de uso incluido)</span> |
-| **Precondiciones:**| <span>N/A</span> |
-| **Flujo Normal:** | <span>1.- El actor despliega el calendario. <br>2.- El actor clica en el día y hora deseados.</span> |
+| **Actores:** | <span>Sistema (invocado por los administrativos)</span> |
+| **Precondiciones:**| <span>Se esta ejecutando el flujo de "Programar publicacion"</span> |
+| **Flujo Normal:** | <span>1.- El sistema solicita la fecha de publicación. <br>2.- El actor introduce la fecha futura.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>La fecha de inicio queda registrada.</span> |
 | **Artefactos relacionados:**| <span>CU-110</span> |
 
 ---
 
-### Realizar un cambio en el contenido turismo
+### Realizar un cambio en el contenido (turismo)
 
 | **Nombre:** | <span>Realizar un cambio en el contenido turismo</span> |
 | :--- | :--- |
@@ -401,10 +401,10 @@ $ Descripción generica del apartado de requisitos$
 | **Descripción:** | <span>Gestión de contenidos específica para el portal de turismo.</span> |
 | **Actores:** | <span>Administrativo del portal de turismo</span> |
 | **Precondiciones:**| <span>El actor debe estar autenticado en el área de turismo.</span> |
-| **Flujo Normal:** | <span>1.- El administrativo selecciona un recurso turístico. <br>2.- El administrativo modifica la descripción o fotos. <br>3.- El sistema registra los detalles de la auditoría. <br>4.- El administrativo guarda los cambios.</span> |
+| **Flujo Normal:** | <span>1.- El administrativo selecciona un recurso turístico. <br>2.- El administrativo modifica la descripción o fotos. <br>3.- El sistema captura automáticamente la fecha, hora y ID del usuario. <br>4.- El sistema almacena el registro en el log de auditoría. <br> 5.- El sistema confirma que el contenido ha sido actualizado y registrado.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>La información turística queda actualizada.</span> |
-| **Artefactos relacionados:**| <span>CU-109, CU-111</span> |
+| **Artefactos relacionados:**| <span>CU-119</span> |
 
 ---
 
@@ -416,11 +416,11 @@ $ Descripción generica del apartado de requisitos$
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
 | **Descripción:** | <span>Proceso de carga de archivos al servidor.</span> |
-| **Actores:** | <span>N/A (Caso de uso de extensión)</span> |
-| **Precondiciones:**| <span>El archivo debe cumplir los requisitos de tamaño y formato.</span> |
-| **Flujo Normal:** | <span>1.- El actor pulsa el botón de añadir archivo. <br>2.- El actor explora su disco duro y elige el fichero. <br>3.- El sistema carga el fichero y confirma la subida.</span> |
+| **Actores:** | <span>Administrativo del portal general</span> |
+| **Precondiciones:**| <span>El usuario debe estar en un formulario de creación/edición de contenido.</span> |
+| **Flujo Normal:** | <span>1.- El actor decide añadir un banner gráfico. <br>2.- Sube la imagen al servidor. <br>3.- Asocia la imagen al anuncio.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
-| **Poscondiciones:**| <span>El archivo está disponible en la biblioteca de medios.</span> |
+| **Poscondiciones:**| <span>El archivo se encuentra en el servidor y en el contenido al que ha sido adjunto.</span> |
 | **Artefactos relacionados:**| <span>CU-105, CU-106</span> |
 
 ---
@@ -432,14 +432,14 @@ $ Descripción generica del apartado de requisitos$
 | **Codigo:** | <span>CU-115</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
-| **Descripción:** | <span>Auditoría automática de acciones. Incluido en cambios de contenido.</span> |
-| **Actores:** | <span>N/A (Caso de uso incluido)</span> |
-| **Precondiciones:**| <span>Se ha realizado una acción de modificación.</span> |
-| **Flujo Normal:** | <span>1.- El sistema captura el ID del usuario, la fecha y el tipo de cambio. <br>2.- El sistema escribe esta entrada en el log de operaciones.</span> |
+| **Descripción:** | <span>Funcionalidad de sistema para capturar y almacenar la traza de quién hizo qué cambio y cuándo (Log de auditoría).</span> |
+| **Actores:** | <span>Sistema (invocado automáticamente por los administrativos)</span> |
+| **Precondiciones:**| <span>Se debe haber realizado una acción de modificación.</span> |
+| **Flujo Normal:** | <span>1.- El sistema captura automáticamente la fecha, hora y ID del usuario. <br>2.- El sistema almacena el registro en el log de auditoría. <br> 3.- El sistema confirma que el contenido ha sido actualizado y registrado.</span> |
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>La acción queda trazada para seguridad.</span> |
 
-| **Artefactos relacionados:**| <span>CU-108, CU-113</span> |
+| **Artefactos relacionados:**| <span>CU-119, CU-109</span> |
 
 ---
 
@@ -450,13 +450,64 @@ $ Descripción generica del apartado de requisitos$
 | **Codigo:** | <span>CU-116</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
 | **Fecha:** | <span>08/12/2025</span> |
-| **Descripción:** | <span>Permite al Administrador generar una nueva instancia o subsitio dentro de la plataforma web.</span> |
+| **Descripción:** | <span>Permite al Administrador dar de alta un nuevo portal dentro del sistema.</span> |
 | **Actores:** | <span>Administrador</span> |
 | **Precondiciones:**| <span>El Administrador debe estar autenticado.</span> |
-| **Flujo Normal:** | <span>1.- El Administrador selecciona la opción de crear nuevo portal. <br>2.- El Administrador define el nombre, la URL y selecciona una plantilla base. <br>3.- El Administrador finaliza el asistente de creación.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
-| **Poscondiciones:**| <span>Un nuevo portal queda creado y accesible para su configuración.</span> |
+| **Flujo Normal:** | <span>1.- El Administrador selecciona la opción de crear nuevo portal. <br>2.- El Administrador define el nombre, la URL y selecciona una plantilla base. <br>3.- El sistema valida que la URL no exista. <br>4.- El sistema crea la estructura de base de datos y archivos. <br>5.- El sistema confirma la creación del portal.</span> |
+| **Flujo Alternativo:** | <span>4a. La URL ya existe: <br>1.- El sistema muestra un error indicando duplicidad. <br>2.- El sistema solicita una nueva URL. <br>3.- Vuelve al paso 3 del flujo normal.</span> |
+| **Poscondiciones:**| <span>El nuevo portal está activo y listo para ser configurado.</span> |
 | **Artefactos relacionados:**| <span>N/A</span> |
+
+---
+
+### Eliminar contenido (general)
+
+| **Nombre:** | <span>Eliminar contenido (general)</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-117</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>08/12/2025</span> |
+| **Descripción:** | <span>Permite borrar contenido del portal general. Es una especialización de la acción genérica de eliminar.</span> |
+| **Actores:** | <span>Administrativo del portal general</span> |
+| **Precondiciones:**| <span>El contenido debe existir y no estar bloqueado.</span> |
+| **Flujo Normal:** | <span>1.- El Administrativo selecciona el contenido a eliminar. <br>2.- El actor confirma la acción en el mensaje de advertencia. <br>3.- El sistema captura automáticamente la fecha, hora y ID del usuario. <br>4.- El sistema almacena el registro en el log de auditoría. <br> 5.- El sistema confirma que el contenido ha sido actualizado y registrado. <br>6.- El sistema marca el contenido como eliminado (borrado lógico) o lo elimina físicamente.</span> |
+| **Flujo Alternativo:** | <span>N/A</span> |
+| **Poscondiciones:**| <span>El contenido deja de existir en el portal.</span> |
+| **Artefactos relacionados:**| <span>CU-109</span> |
+
+---
+
+### Eliminar contenido (turismo)
+
+| **Nombre:** | <span>Eliminar contenido</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-118</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>08/12/2025</span> |
+| **Descripción:** | <span>Eliminación de contenidos dentro del ámbito turístico.</span> |
+| **Actores:** | <span>Administrativo del portal de turismo</span> |
+| **Precondiciones:**| <span>El actor tiene permisos de borrado.</span> |
+| **Flujo Normal:** | <span>1.- El Administrativo selecciona el contenido a eliminar. <br>2.- El actor confirma la acción en el mensaje de advertencia. <br>3.- El sistema captura automáticamente la fecha, hora y ID del usuario. <br>4.- El sistema almacena el registro en el log de auditoría. <br> 5.- El sistema confirma que el contenido ha sido actualizado y registrado. <br>6.- El sistema marca el contenido como eliminado (borrado lógico) o lo elimina físicamente.</span> |
+| **Flujo Alternativo:** | <span>N/A</span> |
+| **Poscondiciones:**| <span>El contenido deja de existir en el portal.</span> |
+| **Artefactos relacionados:**| <span>CU-109</span> |
+
+---
+
+### Realizar un cambio en el contenido
+
+| **Nombre:** | <span>Realizar un cambio en el contenido turismo</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-119</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>08/12/2025</span> |
+| **Descripción:** | <span>Caso de uso general que encapsula la lógica común de edición de contenidos.</span> |
+| **Actores:** | <span>Administrativo del portal de turismo o Administrativo del portal general</span> |
+| **Precondiciones:**| <span>Usuario autenticado con permisos de edición.</span> |
+| **Flujo Normal:** | <span>1.- El administrativo modifica la descripción o fotos. <br>2.- El sistema captura automáticamente la fecha, hora y ID del usuario. <br>3.- El sistema almacena el registro en el log de auditoría. <br> 4.- El sistema confirma que el contenido ha sido actualizado y registrado.</span> |
+| **Flujo Alternativo:** | <span>N/A</span> |
+| **Poscondiciones:**| <span>Contenido modificado.</span> |
+| **Artefactos relacionados:**| <span>CU-109, CU-111</span> |
 
 ---
 

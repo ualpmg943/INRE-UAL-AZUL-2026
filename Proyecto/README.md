@@ -107,7 +107,33 @@ Fotos de los diagramas de casos de uso
 | <span>CU-114</span> | <span>Subir multimedia</span> |
 | <span>CU-115</span> | <span>Registrar detalles</span> |
 | <span>CU-116</span> | <span>Crear portal</span> |
-
+| <span>CU-201</span> | <span>Ver informacion sobre la ciudad</span> |
+| <span>CU-202</span> | <span>Ver informacion sobre la historia de la ciudad</span> |
+| <span>CU-203</span> | <span>Ver recursos naturales</span> |
+| <span>CU-204</span> | <span>Ver patrimonio monumental artistico</span> |
+| <span>CU-205</span> | <span>Ver esculturas urbanas</span> |
+| <span>CU-206</span> | <span>Ver informacion sobre la ruta de la plata</span> |
+| <span>CU-207</span> | <span>Ver informacion sobre la situacion de la ciudad</span> |
+| <span>CU-208</span> | <span>Buscar informacion turismo</span> |
+| <span>CU-209</span> | <span>Acceder a las redes sociales turismo</span> |
+| <span>CU-210</span> | <span>Ver informacion util turismo</span> |
+| <span>CU-211</span> | <span>Ver rutas por Benavente</span> |
+| <span>CU-212</span> | <span>Comprar entrada de un evento del teatro</span> |
+| <span>CU-213</span> | <span>Registrarse como cliente</span> |
+| <span>CU-214</span> | <span>Iniciar sesion como cliente</span> |
+| <span>CU-215</span> | <span>Ver eventos del teatro</span> |
+| <span>CU-216</span> | <span>Añadir evento al calendario turismo</span> |
+| <span>CU-217</span> | <span>Ver mas informacion de un evento del teatro</span> |
+| <span>CU-218</span> | <span>Abrir mapa en google maps</span> |
+| <span>CU-219</span> | <span>Ver localizacion del teatro en google maps</span> |
+| <span>CU-220</span> | <span>Acceder a la agenda de eventos turismo</span> |
+| <span>CU-221</span> | <span>Seleccionar dia del evento turismo</span> |
+| <span>CU-222</span> | <span>Ver evento turismo</span> |
+| <span>CU-223</span> | <span>Buscar nombre del evento turismo</span> |
+| <span>CU-224</span> | <span>Seleccionar categoria de evento turismo</span> |
+| <span>CU-225</span> | <span>Ver tour virtual turismo</span> |
+| <span>CU-226</span> | <span>Acceder al portal del organizador del evento turismo</span> |
+| <span>CU-227</span> | <span>Compartir evento en redes sociales turismo</span> |
 | <span>CU-301</span> | <span>Ver las Ferias y Fiestas del Toro Enmaromado</span> |
 | <span>CU-302</span> | <span>Consultar actualidad</span> |
 | <span>CU-303</span> | <span>Ver todas las noticias</span> |
@@ -1365,6 +1391,24 @@ Fotos de los diagramas de casos de uso
 
 ---
 
+### Añadir evento al calendario turismo
+
+| **Nombre:** | <span>Añadir evento al calendario turismo</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-216</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>07/12/2025</span> |
+| **Descripción:** | <span>Exportar cita a la agenda personal.</span> |
+| **Actores:** | <span>N/A (Caso de uso incluido)</span> |
+| **Precondiciones:**| <span>N/A</span> |
+| **Flujo Normal:** | <span>1.- El turista selecciona guardar en calendario. <br>2.- El sistema descarga el archivo .ics.</span> |
+| **Flujo Alternativo:** | <span>N/A</span> |
+| **Poscondiciones:**| <span>El evento queda agendado en el dispositivo del usuario.</span> |
+
+| **Artefactos relacionados:**| <span>CU-222</span> |
+
+---
+
 ### Ver mas informacion de un evento del teatro
 
 | **Nombre:** | <span>Ver mas informacion de un evento del teatro</span> |
@@ -1549,28 +1593,6 @@ Fotos de los diagramas de casos de uso
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El evento se comparte socialmente.</span> |
 | **Artefactos relacionados:**| <span>CU-222</span> |
-
----
-
-### Añadir evento al calendario turismo
-
-| **Nombre:** | <span>Añadir evento al calendario turismo</span> |
-| :--- | :--- |
-| **Codigo:** | <span>CU-216</span> |
-| **Autor:** | <span>INRE Equipo Azul</span> |
-| **Fecha:** | <span>07/12/2025</span> |
-| **Descripción:** | <span>Exportar cita a la agenda personal.</span> |
-| **Actores:** | <span>N/A (Caso de uso incluido)</span> |
-| **Precondiciones:**| <span>N/A</span> |
-| **Flujo Normal:** | <span>1.- El turista selecciona guardar en calendario. <br>2.- El sistema descarga el archivo .ics.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
-| **Poscondiciones:**| <span>El evento queda agendado en el dispositivo del usuario.</span> |
-
-| **Artefactos relacionados:**| <span>CU-222</span> |
-
----
-
-### DCU - CMS
 
 ---
 

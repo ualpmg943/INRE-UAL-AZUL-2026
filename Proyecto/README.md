@@ -89,11 +89,48 @@ Fotos de los diagramas de casos de uso
 
 #### 4.2.2 Lista general de casos de uso
 
-Tabla solo de los nombres y codigo de cada caso de uso
-
 | Código | Nombre |
 | :--- | :--- |
 | <span>CU-301</span> | <span>Ver las Ferias y Fiestas del Toro Enmaromado</span> |
+| <span>CU-302</span> | <span>Consultar actualidad</span> |
+| <span>CU-303</span> | <span>Ver todas las noticias</span> |
+| <span>CU-304</span> | <span>Ver noticia</span> |
+| <span>CU-305</span> | <span>Ver todos los anuncios</span> |
+| <span>CU-306</span> | <span>Ver anuncio</span> |
+| <span>CU-307</span> | <span>Ver informacion util</span> |
+| <span>CU-308</span> | <span>Ver tablon virtual</span> |
+| <span>CU-309</span> | <span>Acceder a Factura Electronica</span> |
+| <span>CU-310</span> | <span>Ver webs municipales</span> |
+| <span>CU-311</span> | <span>Acceder a atencion ciudadana</span> |
+| <span>CU-312</span> | <span>Ver areas municipales</span> |
+| <span>CU-313</span> | <span>Acceder al portal de turismo</span> |
+| <span>CU-314</span> | <span>Acceder al canal plenario</span> |
+| <span>CU-315</span> | <span>Gestionar tramites</span> |
+| <span>CU-316</span> | <span>Iniciar proceso de envio de incidencia</span> |
+| <span>CU-317</span> | <span>Ver solicitudes</span> |
+| <span>CU-318</span> | <span>Ver contratos</span> |
+| <span>CU-319</span> | <span>Ver factura electronica</span> |
+| <span>CU-320</span> | <span>Seleccionar la categoria de incidencia</span> |
+| <span>CU-321</span> | <span>Seleccionar lugar de la incidencia</span> |
+| <span>CU-322</span> | <span>Describir la incidencia</span> |
+| <span>CU-323</span> | <span>Adjuntar imagenes</span> |
+| <span>CU-324</span> | <span>Introducir datos personales</span> |
+| <span>CU-325</span> | <span>Enviar incidencia</span> |
+| <span>CU-326</span> | <span>Acceder a la pasarela de pago</span> |
+| <span>CU-327</span> | <span>Acceder a los pagos de tributos online</span> |
+| <span>CU-328</span> | <span>Acceder a la Sede Electronica</span> |
+| <span>CU-329</span> | <span>Acceder al portal de transparencia</span> |
+| <span>CU-330</span> | <span>Visitar las redes sociales</span> |
+| <span>CU-331</span> | <span>Acceder a la agenda de eventos</span> |
+| <span>CU-332</span> | <span>Ver evento</span> |
+| <span>CU-333</span> | <span>Buscar información</span> |
+| <span>CU-334</span> | <span>Ver tour virtual</span> |
+| <span>CU-335</span> | <span>Seleccionar día del evento</span> |
+| <span>CU-336</span> | <span>Seleccionar categoría de evento</span> |
+| <span>CU-337</span> | <span>Buscar nombre del evento</span> |
+| <span>CU-338</span> | <span>Añadir evento al calendario</span> |
+| <span>CU-339</span> | <span>Compartir evento en redes sociales</span> |
+| <span>CU-340</span> | <span>Acceder al portal del organizador del evento</span> |
 
 #### 4.2.3 Detalles de los casos de uso
 
@@ -371,6 +408,57 @@ Tabla solo de los nombres y codigo de cada caso de uso
 
 ---
 
+### Ver solicitudes
+
+| Nombre: | <span>Ver solicitudes</span> |
+| :--- | :--- |
+| Codigo: | <span>CU-317</span> |
+| Autor: | <span>INRE Equipo Azul</span> |
+| Fecha: | <span>08/12/2025</span> |
+| Descripción: | <span>Permite comprobar el estado y las respuestas a escritos realizados.</span> |
+| Actores: | <span>Visitante (Vía CU-315)</span> |
+| Precondiciones: | <span>Sesión administrativa iniciada.</span> |
+| Flujo Normal: | <span>1.- El ciudadano abre el historial de sus solicitudes administrativas. <br>2.- El sistema muestra el estado de trámite de cada petición.</span> |
+| Flujo Alternativo: | <span></span> |
+| Poscondiciones: | <span>Consulta de expedientes administrativos terminada.</span> |
+| Artefactos relacionados: | <span>CU-315</span> |
+
+---
+
+### Ver contratos
+
+| Nombre: | <span>Ver contratos</span> |
+| :--- | :--- |
+| Codigo: | <span>CU-318</span> |
+| Autor: | <span>INRE Equipo Azul</span> |
+| Fecha: | <span>08/12/2025</span> |
+| Descripción: | <span>Acceso a documentos contractuales públicos asociados al perfil.</span> |
+| Actores: | <span>Visitante (Vía CU-315)</span> |
+| Precondiciones: | <span>Ser poseedor de un contrato firmado con el ayuntamiento.</span> |
+| Flujo Normal: | <span>1.- El usuario solicita ver la lista de sus contratos registrados. <br>2.- El sistema permite descargar o visualizar los documentos en formato digital.</span> |
+| Flujo Alternativo: | <span></span> |
+| Poscondiciones: | <span>El ciudadano accede a sus contratos municipales.</span> |
+| Artefactos relacionados: | <span>CU-315</span> |
+
+---
+
+### Ver factura electronica (tramites)
+
+| Nombre: | <span>Ver factura electronica</span> |
+| :--- | :--- |
+| Codigo: | <span>CU-319</span> |
+| Autor: | <span>INRE Equipo Azul</span> |
+| Fecha: | <span>08/12/2025</span> |
+| Descripción: | <span>Consulta de justificantes de pago internos de gestiones.</span> |
+| Actores: | <span>Visitante (Vía CU-315)</span> |
+| Precondiciones: | <span>Existencia de facturas emitidas al ciudadano.</span> |
+| Flujo Normal: | <span>1.- El ciudadano accede a la lista de sus facturas de trámites. <br>2.- El sistema muestra los datos de facturación e importes liquidados.</span> |
+| Flujo Alternativo: | <span></span> |
+| Poscondiciones: | <span>Información de facturación municipal consultada.</span> |
+| Artefactos relacionados: | <span>CU-315</span> |
+
+---
+
 ### Seleccionar la categoria de incidencia
 
 | Nombre: | <span>Seleccionar la categoria de incidencia</span> |
@@ -470,57 +558,6 @@ Tabla solo de los nombres y codigo de cada caso de uso
 | Flujo Alternativo: | <span></span> |
 | Poscondiciones: | <span>Trámite de incidencia enviado satisfactoriamente.</span> |
 | Artefactos relacionados: | <span>CU-324</span> |
-
----
-
-### Ver solicitudes
-
-| Nombre: | <span>Ver solicitudes</span> |
-| :--- | :--- |
-| Codigo: | <span>CU-317</span> |
-| Autor: | <span>INRE Equipo Azul</span> |
-| Fecha: | <span>08/12/2025</span> |
-| Descripción: | <span>Permite comprobar el estado y las respuestas a escritos realizados.</span> |
-| Actores: | <span>Visitante (Vía CU-315)</span> |
-| Precondiciones: | <span>Sesión administrativa iniciada.</span> |
-| Flujo Normal: | <span>1.- El ciudadano abre el historial de sus solicitudes administrativas. <br>2.- El sistema muestra el estado de trámite de cada petición.</span> |
-| Flujo Alternativo: | <span></span> |
-| Poscondiciones: | <span>Consulta de expedientes administrativos terminada.</span> |
-| Artefactos relacionados: | <span>CU-315</span> |
-
----
-
-### Ver contratos
-
-| Nombre: | <span>Ver contratos</span> |
-| :--- | :--- |
-| Codigo: | <span>CU-318</span> |
-| Autor: | <span>INRE Equipo Azul</span> |
-| Fecha: | <span>08/12/2025</span> |
-| Descripción: | <span>Acceso a documentos contractuales públicos asociados al perfil.</span> |
-| Actores: | <span>Visitante (Vía CU-315)</span> |
-| Precondiciones: | <span>Ser poseedor de un contrato firmado con el ayuntamiento.</span> |
-| Flujo Normal: | <span>1.- El usuario solicita ver la lista de sus contratos registrados. <br>2.- El sistema permite descargar o visualizar los documentos en formato digital.</span> |
-| Flujo Alternativo: | <span></span> |
-| Poscondiciones: | <span>El ciudadano accede a sus contratos municipales.</span> |
-| Artefactos relacionados: | <span>CU-315</span> |
-
----
-
-### Ver factura electronica (tramites)
-
-| Nombre: | <span>Ver factura electronica</span> |
-| :--- | :--- |
-| Codigo: | <span>CU-319</span> |
-| Autor: | <span>INRE Equipo Azul</span> |
-| Fecha: | <span>08/12/2025</span> |
-| Descripción: | <span>Consulta de justificantes de pago internos de gestiones.</span> |
-| Actores: | <span>Visitante (Vía CU-315)</span> |
-| Precondiciones: | <span>Existencia de facturas emitidas al ciudadano.</span> |
-| Flujo Normal: | <span>1.- El ciudadano accede a la lista de sus facturas de trámites. <br>2.- El sistema muestra los datos de facturación e importes liquidados.</span> |
-| Flujo Alternativo: | <span></span> |
-| Poscondiciones: | <span>Información de facturación municipal consultada.</span> |
-| Artefactos relacionados: | <span>CU-315</span> |
 
 ---
 

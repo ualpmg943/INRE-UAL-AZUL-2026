@@ -91,9 +91,11 @@ Fotos de los diagramas de casos de uso
 
 Tabla solo de los nombres y codigo de cada caso de uso
 
-#### 4.2.3 Detalles de los casos de uso
+| Código | Nombre |
+| :--- | :--- |
+| <span>CU-301</span> | <span>Ver las Ferias y Fiestas del Toro Enmaromado</span> |
 
-Tablas grandes de cada caso de uso
+#### 4.2.3 Detalles de los casos de uso
 
 ### DCU - Portal general del ayuntamiento
 

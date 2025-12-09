@@ -91,6 +91,23 @@ Fotos de los diagramas de casos de uso
 
 | Código | Nombre |
 | :--- | :--- |
+| <span>CU-101</span> | <span>Gestionar permisos</span> |
+| <span>CU-102</span> | <span>Gestionar rol de usuario</span> |
+| <span>CU-103</span> | <span>Colocar banner en la pagina principal</span> |
+| <span>CU-104</span> | <span>Crear formulario</span> |
+| <span>CU-105</span> | <span>CU-105</span> |
+| <span>CU-106</span> | <span>Publicar anuncio</span> |
+| <span>CU-107</span> | <span>Publicar evento en la agenda</span> |
+| <span>CU-108</span> | <span>Realizar un cambio en el contenido general</span> |
+| <span>CU-109</span> | <span>Eliminar contenido</span> |
+| <span>CU-110</span> | <span>Programar publicacion</span> |
+| <span>CU-111</span> | <span>Indicar fecha de vencimiento</span> |
+| <span>CU-112</span> | <span>Indicar fecha de publicacion</span> |
+| <span>CU-113</span> | <span>Realizar un cambio en el contenido turismo</span> |
+| <span>CU-114</span> | <span>Subir multimedia</span> |
+| <span>CU-115</span> | <span>Registrar detalles</span> |
+| <span>CU-116</span> | <span>Crear portal</span> |
+
 | <span>CU-301</span> | <span>Ver las Ferias y Fiestas del Toro Enmaromado</span> |
 | <span>CU-302</span> | <span>Consultar actualidad</span> |
 | <span>CU-303</span> | <span>Ver todas las noticias</span> |
@@ -167,23 +184,6 @@ Fotos de los diagramas de casos de uso
 | **Flujo Alternativo:** | <span>N/A</span> |
 | **Poscondiciones:**| <span>El usuario tiene asignado su nuevo rol y las capacidades asociadas al mismo.</span> |
 | **Artefactos relacionados:**| <span>CU-101</span> |
-
----
-
-### Crear portal
-
-| **Nombre:** | <span>Crear portal</span> |
-| :--- | :--- |
-| **Codigo:** | <span>CU-116</span> |
-| **Autor:** | <span>INRE Equipo Azul</span> |
-| **Fecha:** | <span>08/12/2025</span> |
-| **Descripción:** | <span>Permite al Administrador generar una nueva instancia o subsitio dentro de la plataforma web.</span> |
-| **Actores:** | <span>Administrador</span> |
-| **Precondiciones:**| <span>El Administrador debe estar autenticado.</span> |
-| **Flujo Normal:** | <span>1.- El Administrador selecciona la opción de crear nuevo portal. <br>2.- El Administrador define el nombre, la URL y selecciona una plantilla base. <br>3.- El Administrador finaliza el asistente de creación.</span> |
-| **Flujo Alternativo:** | <span>N/A</span> |
-| **Poscondiciones:**| <span>Un nuevo portal queda creado y accesible para su configuración.</span> |
-| **Artefactos relacionados:**| <span>N/A</span> |
 
 ---
 
@@ -406,6 +406,25 @@ Fotos de los diagramas de casos de uso
 | **Poscondiciones:**| <span>La acción queda trazada para seguridad.</span> |
 
 | **Artefactos relacionados:**| <span>CU-108, CU-113</span> |
+
+---
+
+### Crear portal
+
+| **Nombre:** | <span>Crear portal</span> |
+| :--- | :--- |
+| **Codigo:** | <span>CU-116</span> |
+| **Autor:** | <span>INRE Equipo Azul</span> |
+| **Fecha:** | <span>08/12/2025</span> |
+| **Descripción:** | <span>Permite al Administrador generar una nueva instancia o subsitio dentro de la plataforma web.</span> |
+| **Actores:** | <span>Administrador</span> |
+| **Precondiciones:**| <span>El Administrador debe estar autenticado.</span> |
+| **Flujo Normal:** | <span>1.- El Administrador selecciona la opción de crear nuevo portal. <br>2.- El Administrador define el nombre, la URL y selecciona una plantilla base. <br>3.- El Administrador finaliza el asistente de creación.</span> |
+| **Flujo Alternativo:** | <span>N/A</span> |
+| **Poscondiciones:**| <span>Un nuevo portal queda creado y accesible para su configuración.</span> |
+| **Artefactos relacionados:**| <span>N/A</span> |
+
+---
 
 ### DCU - Portal general del ayuntamiento
 

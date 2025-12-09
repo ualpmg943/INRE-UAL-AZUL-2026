@@ -75,9 +75,47 @@ A continuación, se detallan estos artefactos de análisis para sentar las bases
 
 ## 4. Requisitos del sistema a desarrollar
 
-$ Descripción generica del apartado de requisitos$
+El proyecto tiene como objetivo principal la modernización de la presencia digital del Ayuntamiento de Benavente mediante la actualización de su imagen corporativa, la creación de un Portal de Turismo y Cultura unificado, y la renovación del Portal Web Oficial.
+
+El sistema debe basarse en un Gestor de Contenidos (CMS), preferiblemente Wordpress, que permita una gestión descentralizada y ágil por parte del personal municipal, sin requerir conocimientos técnicos avanzados. El alcance no es solo estético (diseño responsive y moderno), sino técnico, exigiendo cumplimiento de estándares de seguridad (ENS nivel medio), accesibilidad (UNE-EN 301549:2022) y optimización SEO.
 
 ## 4.1 Requisitos
+
+### 4.1.1 Requisitos funcionales
+
+| Código | Nombre |
+| :--- | :--- |
+| <span>RF-01</span> | <span>Gestión de Usuarios y Roles: El CMS debe permitir crear usuarios y asignar permisos diferenciados (ej. administradores vs. departamentos específicos) para que cada área gestione solo su contenido. <br>CU: CU-101, CU-102</span> |
+| RF-02 | Gestión de Contenidos: Creación, edición y eliminación de contenidos de forma dinámica e intuitiva. Debe incluir versionado automático para revertir cambios. <br>CU: CU-119, CU-118, CU-105. |
+| RF-03 | Programación de Publicaciones: El sistema debe permitir programar la fecha de publicación y la fecha de caducidad (despublicación automática) de los contenidos. <br>CU: CU-110, CU-111 |
+| RF-04 | Gestión Multimedia: Capacidad para subir imágenes y vídeos o enlazarlos desde sitios externos, así como gestionar archivos para compartir mediante enlace. <br>CU: CU-114 |
+| RF-05 | Creación de Formularios: El CMS debe permitir a los técnicos crear formularios personalizados (contacto, quejas) con sistemas antispam. <br>CU: CU-104 |
+| RF-06 | Gestión de Banners: Posibilidad de colocar y gestionar banners en la página principal para redirigir a otros servicios. <br>CU: CU-103 |
+| RF-07 | Agenda y Eventos: Visualización de eventos mediante calendario, con sincronización para evitar duplicidades entre portales. <br>CU: CU-220, CU-332, CU-338 |
+| RF-08 | Buscador Interno: Motor de búsqueda capaz de indexar toda la información para facilitar la localización de contenidos. <br>CU: CU-333, CU-337 |
+| RF-09 | Integración con Redes Sociales: Botones visibles para compartir contenidos y acceso a los perfiles oficiales (Twitter, Facebook, Instagram, etc.). <br>CU:  CU-330, CU-339 |
+| RF-10 | Formularios de Incidencias: El usuario debe poder enviar incidencias (ej. vía formulario). <br>CU: CU-316, CU-323 y CU-325. |
+| RF-11 | Enlaces a Servicios Externos: Redirección clara a servicios fuera del alcance como la Sede Electrónica, Venta de Entradas o Perfil del Contratante. <br>CU: CU-328, CU-319, CU-326 |
+| RF-12 | Catálogo de Recursos: Mostrar información sobre recursos naturales, patrimonio, historia, rutas, etc. <br>CU: CU-203, CU-204, CU-211. |
+| RF-13 | Venta de Entradas (Exclusión/Redirección): La web NO gestionará la venta directa, sino que debe redirigir a la plataforma de venta de entradas existente desde la sección de teatro. <br>CU: CU-212 |
+
+### 4.1.2 Requisitos no funcionales
+
+| Código | Nombre |
+| :--- | :--- |
+| RNF-01 | Diseño Responsive: Adaptabilidad total a dispositivos móviles (smartphones, tablets) y diferentes resoluciones mediante maquetación flexible (HTML5/CSS3). |
+| RNF-02 | Identidad Corporativa: El diseño debe basarse estrictamente en el nuevo Manual de Identidad Corporativa y Guía de Estilo. |
+| RNF-03 | Accesibilidad: Cumplimiento de las pautas WCAG según la norma UNE-EN 301549:2022 y validación mediante el modelo IRA. |
+| RNF-04 | Experiencia de Usuario (UX): Análisis mediante mapas de calor (heatmaps) y reestructuración basada en analíticas tras los primeros meses de uso. |
+| RNF-05 | Caché y Estáticos: Generación de versiones estáticas de las páginas y sistema avanzado de caché para maximizar velocidad. |
+| RNF-06 | Disponibilidad (SLA): Servicio accesible 24x7x365. Penalizaciones si la resolución de incidencias críticas supera las 6 horas. |
+| RNF-07 | Hosting: Alojamiento en tecnología 'Cloud' asumido por el licitador durante el primer año. |
+| RNF-08 | Esquema Nacional de Seguridad (ENS): Cumplimiento de medidas para un sistema de nivel medio. |
+| RNF-09 | Copias de Seguridad: Backup diario sin pérdida de datos y con tiempo de recuperación menor de 4 horas. |
+| RNF-10 | Protección: Sistemas anti-DDoS, control de IPs, y Hardening periódico de sistemas. |
+| RNF-11 | Protección de Datos: Cumplimiento del Reglamento (UE) 2016/679 y LOPD 3/2018 (política de cookies, privacidad, avisos legales). |
+| RNF-12 | Posicionamiento SEO: Generación de URLs amigables, gestión de metadatos y mantenimiento del posicionamiento adquirido. |
+| RNF-13 | Analítica Web: Integración con Google Analytics (o similar) para medir accesos, tiempos de navegación y páginas vistas. |
 
 ## 4.2 Casos de Uso
 
@@ -103,7 +141,7 @@ $ Descripción generica del apartado de requisitos$
 | <span>CU-102</span> | <span>Gestionar rol de usuario</span> |
 | <span>CU-103</span> | <span>Colocar banner en la pagina principal</span> |
 | <span>CU-104</span> | <span>Crear formulario</span> |
-| <span>CU-105</span> | <span>CU-105</span> |
+| <span>CU-105</span> | <span>Publicar noticia</span> |
 | <span>CU-106</span> | <span>Publicar anuncio</span> |
 | <span>CU-107</span> | <span>Publicar evento en la agenda</span> |
 | <span>CU-108</span> | <span>Realizar un cambio en el contenido general</span> |
@@ -116,8 +154,8 @@ $ Descripción generica del apartado de requisitos$
 | <span>CU-115</span> | <span>Registrar detalles</span> |
 | <span>CU-116</span> | <span>Crear portal</span> |
 | <span>CU-117</span> | <span>Eliminar contenido (general)</span> |
-| <span>CU-118</span> | <span>Eliminar contenido</span> |
-| <span>CU-119</span> | <span>Realizar un cambio en el contenido turismo</span> |
+| <span>CU-118</span> | <span>Eliminar contenido (turismo)</span> |
+| <span>CU-119</span> | <span>Realizar un cambio en el contenido</span> |
 | <span>CU-201</span> | <span>Ver informacion sobre la ciudad</span> |
 | <span>CU-202</span> | <span>Ver informacion sobre la historia de la ciudad</span> |
 | <span>CU-203</span> | <span>Ver recursos naturales</span> |
@@ -482,7 +520,7 @@ $ Descripción generica del apartado de requisitos$
 
 ### Eliminar contenido (turismo)
 
-| **Nombre:** | <span>Eliminar contenido</span> |
+| **Nombre:** | <span>Eliminar contenido (turismo)</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-118</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
@@ -499,7 +537,7 @@ $ Descripción generica del apartado de requisitos$
 
 ### Realizar un cambio en el contenido
 
-| **Nombre:** | <span>Realizar un cambio en el contenido turismo</span> |
+| **Nombre:** | <span>Realizar un cambio en el contenido</span> |
 | :--- | :--- |
 | **Codigo:** | <span>CU-119</span> |
 | **Autor:** | <span>INRE Equipo Azul</span> |
